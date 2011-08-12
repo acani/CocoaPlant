@@ -1,0 +1,402 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C90B0CB713F55026009C18B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B0CB613F55026009C18B1 /* Foundation.framework */; };
+		C90B0CBD13F55026009C18B1 /* CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B0CBC13F55026009C18B1 /* CocoaPlant.m */; };
+		C90B0CC513F55026009C18B1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B0CC413F55026009C18B1 /* SenTestingKit.framework */; };
+		C90B0CC713F55026009C18B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B0CC613F55026009C18B1 /* UIKit.framework */; };
+		C90B0CC813F55026009C18B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B0CB613F55026009C18B1 /* Foundation.framework */; };
+		C90B0CCB13F55026009C18B1 /* libCocoaPlant.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B0CB313F55026009C18B1 /* libCocoaPlant.a */; };
+		C90B0CD113F55026009C18B1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C90B0CCF13F55026009C18B1 /* InfoPlist.strings */; };
+		C90B0CD413F55026009C18B1 /* CocoaPlantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B0CD313F55026009C18B1 /* CocoaPlantTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C90B0CC913F55026009C18B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C90B0CAA13F55026009C18B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C90B0CB213F55026009C18B1;
+			remoteInfo = CocoaPlant;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C90B0CB313F55026009C18B1 /* libCocoaPlant.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocoaPlant.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90B0CB613F55026009C18B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C90B0CBA13F55026009C18B1 /* CocoaPlant-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaPlant-Prefix.pch"; sourceTree = "<group>"; };
+		C90B0CBB13F55026009C18B1 /* CocoaPlant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaPlant.h; sourceTree = "<group>"; };
+		C90B0CBC13F55026009C18B1 /* CocoaPlant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaPlant.m; sourceTree = "<group>"; };
+		C90B0CC313F55026009C18B1 /* CocoaPlantTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaPlantTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90B0CC413F55026009C18B1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C90B0CC613F55026009C18B1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		C90B0CCE13F55026009C18B1 /* CocoaPlantTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaPlantTests-Info.plist"; sourceTree = "<group>"; };
+		C90B0CD013F55026009C18B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C90B0CD213F55026009C18B1 /* CocoaPlantTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaPlantTests.h; sourceTree = "<group>"; };
+		C90B0CD313F55026009C18B1 /* CocoaPlantTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaPlantTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C90B0CB013F55026009C18B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C90B0CB713F55026009C18B1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C90B0CBF13F55026009C18B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C90B0CC513F55026009C18B1 /* SenTestingKit.framework in Frameworks */,
+				C90B0CC713F55026009C18B1 /* UIKit.framework in Frameworks */,
+				C90B0CC813F55026009C18B1 /* Foundation.framework in Frameworks */,
+				C90B0CCB13F55026009C18B1 /* libCocoaPlant.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C90B0CA813F55026009C18B1 = {
+			isa = PBXGroup;
+			children = (
+				C90B0CB813F55026009C18B1 /* CocoaPlant */,
+				C90B0CCC13F55026009C18B1 /* CocoaPlantTests */,
+				C90B0CB513F55026009C18B1 /* Frameworks */,
+				C90B0CB413F55026009C18B1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C90B0CB413F55026009C18B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C90B0CB313F55026009C18B1 /* libCocoaPlant.a */,
+				C90B0CC313F55026009C18B1 /* CocoaPlantTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C90B0CB513F55026009C18B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C90B0CB613F55026009C18B1 /* Foundation.framework */,
+				C90B0CC413F55026009C18B1 /* SenTestingKit.framework */,
+				C90B0CC613F55026009C18B1 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C90B0CB813F55026009C18B1 /* CocoaPlant */ = {
+			isa = PBXGroup;
+			children = (
+				C90B0CBB13F55026009C18B1 /* CocoaPlant.h */,
+				C90B0CBC13F55026009C18B1 /* CocoaPlant.m */,
+				C90B0CB913F55026009C18B1 /* Supporting Files */,
+			);
+			path = CocoaPlant;
+			sourceTree = "<group>";
+		};
+		C90B0CB913F55026009C18B1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C90B0CBA13F55026009C18B1 /* CocoaPlant-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C90B0CCC13F55026009C18B1 /* CocoaPlantTests */ = {
+			isa = PBXGroup;
+			children = (
+				C90B0CD213F55026009C18B1 /* CocoaPlantTests.h */,
+				C90B0CD313F55026009C18B1 /* CocoaPlantTests.m */,
+				C90B0CCD13F55026009C18B1 /* Supporting Files */,
+			);
+			path = CocoaPlantTests;
+			sourceTree = "<group>";
+		};
+		C90B0CCD13F55026009C18B1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C90B0CCE13F55026009C18B1 /* CocoaPlantTests-Info.plist */,
+				C90B0CCF13F55026009C18B1 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C90B0CB113F55026009C18B1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C90B0CB213F55026009C18B1 /* CocoaPlant */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C90B0CD713F55026009C18B1 /* Build configuration list for PBXNativeTarget "CocoaPlant" */;
+			buildPhases = (
+				C90B0CAF13F55026009C18B1 /* Sources */,
+				C90B0CB013F55026009C18B1 /* Frameworks */,
+				C90B0CB113F55026009C18B1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CocoaPlant;
+			productName = CocoaPlant;
+			productReference = C90B0CB313F55026009C18B1 /* libCocoaPlant.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C90B0CC213F55026009C18B1 /* CocoaPlantTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C90B0CDA13F55026009C18B1 /* Build configuration list for PBXNativeTarget "CocoaPlantTests" */;
+			buildPhases = (
+				C90B0CBE13F55026009C18B1 /* Sources */,
+				C90B0CBF13F55026009C18B1 /* Frameworks */,
+				C90B0CC013F55026009C18B1 /* Resources */,
+				C90B0CC113F55026009C18B1 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C90B0CCA13F55026009C18B1 /* PBXTargetDependency */,
+			);
+			name = CocoaPlantTests;
+			productName = CocoaPlantTests;
+			productReference = C90B0CC313F55026009C18B1 /* CocoaPlantTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C90B0CAA13F55026009C18B1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = C90B0CAD13F55026009C18B1 /* Build configuration list for PBXProject "CocoaPlant" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C90B0CA813F55026009C18B1;
+			productRefGroup = C90B0CB413F55026009C18B1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C90B0CB213F55026009C18B1 /* CocoaPlant */,
+				C90B0CC213F55026009C18B1 /* CocoaPlantTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C90B0CC013F55026009C18B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C90B0CD113F55026009C18B1 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C90B0CC113F55026009C18B1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C90B0CAF13F55026009C18B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C90B0CBD13F55026009C18B1 /* CocoaPlant.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C90B0CBE13F55026009C18B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C90B0CD413F55026009C18B1 /* CocoaPlantTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C90B0CCA13F55026009C18B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C90B0CB213F55026009C18B1 /* CocoaPlant */;
+			targetProxy = C90B0CC913F55026009C18B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C90B0CCF13F55026009C18B1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C90B0CD013F55026009C18B1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C90B0CD513F55026009C18B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C90B0CD613F55026009C18B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C90B0CD813F55026009C18B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/CocoaPlant.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CocoaPlant/CocoaPlant-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C90B0CD913F55026009C18B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/CocoaPlant.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CocoaPlant/CocoaPlant-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C90B0CDB13F55026009C18B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CocoaPlant/CocoaPlant-Prefix.pch";
+				INFOPLIST_FILE = "CocoaPlantTests/CocoaPlantTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		C90B0CDC13F55026009C18B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CocoaPlant/CocoaPlant-Prefix.pch";
+				INFOPLIST_FILE = "CocoaPlantTests/CocoaPlantTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C90B0CAD13F55026009C18B1 /* Build configuration list for PBXProject "CocoaPlant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C90B0CD513F55026009C18B1 /* Debug */,
+				C90B0CD613F55026009C18B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C90B0CD713F55026009C18B1 /* Build configuration list for PBXNativeTarget "CocoaPlant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C90B0CD813F55026009C18B1 /* Debug */,
+				C90B0CD913F55026009C18B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C90B0CDA13F55026009C18B1 /* Build configuration list for PBXNativeTarget "CocoaPlantTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C90B0CDB13F55026009C18B1 /* Debug */,
+				C90B0CDC13F55026009C18B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C90B0CAA13F55026009C18B1 /* Project object */;
+}

@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'CocoaPlant' target in the 'CocoaPlant' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif

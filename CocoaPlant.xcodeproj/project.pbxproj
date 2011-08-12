@@ -13,7 +13,6 @@
 		C90B0CC713F55026009C18B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B0CC613F55026009C18B1 /* UIKit.framework */; };
 		C90B0CC813F55026009C18B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B0CB613F55026009C18B1 /* Foundation.framework */; };
 		C90B0CCB13F55026009C18B1 /* libCocoaPlant.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B0CB313F55026009C18B1 /* libCocoaPlant.a */; };
-		C90B0CD113F55026009C18B1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C90B0CCF13F55026009C18B1 /* InfoPlist.strings */; };
 		C90B0CD413F55026009C18B1 /* CocoaPlantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B0CD313F55026009C18B1 /* CocoaPlantTests.m */; };
 /* End PBXBuildFile section */
 
@@ -36,8 +35,6 @@
 		C90B0CC313F55026009C18B1 /* CocoaPlantTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaPlantTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90B0CC413F55026009C18B1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		C90B0CC613F55026009C18B1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		C90B0CCE13F55026009C18B1 /* CocoaPlantTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaPlantTests-Info.plist"; sourceTree = "<group>"; };
-		C90B0CD013F55026009C18B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C90B0CD213F55026009C18B1 /* CocoaPlantTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaPlantTests.h; sourceTree = "<group>"; };
 		C90B0CD313F55026009C18B1 /* CocoaPlantTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaPlantTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,7 +106,7 @@
 			children = (
 				C90B0CBA13F55026009C18B1 /* CocoaPlant-Prefix.pch */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		C90B0CCC13F55026009C18B1 /* CocoaPlantTests */ = {
@@ -117,18 +114,8 @@
 			children = (
 				C90B0CD213F55026009C18B1 /* CocoaPlantTests.h */,
 				C90B0CD313F55026009C18B1 /* CocoaPlantTests.m */,
-				C90B0CCD13F55026009C18B1 /* Supporting Files */,
 			);
 			path = CocoaPlantTests;
-			sourceTree = "<group>";
-		};
-		C90B0CCD13F55026009C18B1 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				C90B0CCE13F55026009C18B1 /* CocoaPlantTests-Info.plist */,
-				C90B0CCF13F55026009C18B1 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,7 +198,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C90B0CD113F55026009C18B1 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,17 +245,6 @@
 			targetProxy = C90B0CC913F55026009C18B1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		C90B0CCF13F55026009C18B1 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C90B0CD013F55026009C18B1 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C90B0CD513F55026009C18B1 /* Debug */ = {
@@ -319,7 +294,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/CocoaPlant.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CocoaPlant/CocoaPlant-Prefix.pch";
+				GCC_PREFIX_HEADER = "CocoaPlant/Supporting Files/CocoaPlant-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -331,7 +306,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/CocoaPlant.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CocoaPlant/CocoaPlant-Prefix.pch";
+				GCC_PREFIX_HEADER = "CocoaPlant/Supporting Files/CocoaPlant-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -346,8 +321,7 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CocoaPlant/CocoaPlant-Prefix.pch";
-				INFOPLIST_FILE = "CocoaPlantTests/CocoaPlantTests-Info.plist";
+				GCC_PREFIX_HEADER = "CocoaPlant/Supporting Files/CocoaPlant-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -361,8 +335,7 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CocoaPlant/CocoaPlant-Prefix.pch";
-				INFOPLIST_FILE = "CocoaPlantTests/CocoaPlantTests-Info.plist";
+				GCC_PREFIX_HEADER = "CocoaPlant/Supporting Files/CocoaPlant-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};

@@ -13,7 +13,7 @@
 		C90B0CC713F55026009C18B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B0CC613F55026009C18B1 /* UIKit.framework */; };
 		C90B0CC813F55026009C18B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B0CB613F55026009C18B1 /* Foundation.framework */; };
 		C90B0CCB13F55026009C18B1 /* libCocoaPlant.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B0CB313F55026009C18B1 /* libCocoaPlant.a */; };
-		C90B0CD413F55026009C18B1 /* CocoaPlantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B0CD313F55026009C18B1 /* CocoaPlantTests.m */; };
+		C90B0CD413F55026009C18B1 /* CocoaPlantSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B0CD313F55026009C18B1 /* CocoaPlantSpecs.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,11 +32,11 @@
 		C90B0CBA13F55026009C18B1 /* CocoaPlant-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaPlant-Prefix.pch"; sourceTree = "<group>"; };
 		C90B0CBB13F55026009C18B1 /* CocoaPlant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaPlant.h; sourceTree = "<group>"; };
 		C90B0CBC13F55026009C18B1 /* CocoaPlant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaPlant.m; sourceTree = "<group>"; };
-		C90B0CC313F55026009C18B1 /* CocoaPlantTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaPlantTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90B0CC313F55026009C18B1 /* CocoaPlantSpecs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaPlantSpecs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90B0CC413F55026009C18B1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		C90B0CC613F55026009C18B1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		C90B0CD213F55026009C18B1 /* CocoaPlantTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaPlantTests.h; sourceTree = "<group>"; };
-		C90B0CD313F55026009C18B1 /* CocoaPlantTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaPlantTests.m; sourceTree = "<group>"; };
+		C90B0CD213F55026009C18B1 /* CocoaPlantSpecs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaPlantSpecs.h; sourceTree = "<group>"; };
+		C90B0CD313F55026009C18B1 /* CocoaPlantSpecs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaPlantSpecs.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				C90B0CB813F55026009C18B1 /* CocoaPlant */,
-				C90B0CCC13F55026009C18B1 /* CocoaPlantTests */,
+				C90B0CCC13F55026009C18B1 /* CocoaPlantSpecs */,
 				C90B0CB513F55026009C18B1 /* Frameworks */,
 				C90B0CB413F55026009C18B1 /* Products */,
 			);
@@ -76,7 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				C90B0CB313F55026009C18B1 /* libCocoaPlant.a */,
-				C90B0CC313F55026009C18B1 /* CocoaPlantTests.octest */,
+				C90B0CC313F55026009C18B1 /* CocoaPlantSpecs.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,13 +109,13 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C90B0CCC13F55026009C18B1 /* CocoaPlantTests */ = {
+		C90B0CCC13F55026009C18B1 /* CocoaPlantSpecs */ = {
 			isa = PBXGroup;
 			children = (
-				C90B0CD213F55026009C18B1 /* CocoaPlantTests.h */,
-				C90B0CD313F55026009C18B1 /* CocoaPlantTests.m */,
+				C90B0CD213F55026009C18B1 /* CocoaPlantSpecs.h */,
+				C90B0CD313F55026009C18B1 /* CocoaPlantSpecs.m */,
 			);
-			path = CocoaPlantTests;
+			path = CocoaPlantSpecs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,9 +148,9 @@
 			productReference = C90B0CB313F55026009C18B1 /* libCocoaPlant.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		C90B0CC213F55026009C18B1 /* CocoaPlantTests */ = {
+		C90B0CC213F55026009C18B1 /* CocoaPlantSpecs */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C90B0CDA13F55026009C18B1 /* Build configuration list for PBXNativeTarget "CocoaPlantTests" */;
+			buildConfigurationList = C90B0CDA13F55026009C18B1 /* Build configuration list for PBXNativeTarget "CocoaPlantSpecs" */;
 			buildPhases = (
 				C90B0CBE13F55026009C18B1 /* Sources */,
 				C90B0CBF13F55026009C18B1 /* Frameworks */,
@@ -162,9 +162,9 @@
 			dependencies = (
 				C90B0CCA13F55026009C18B1 /* PBXTargetDependency */,
 			);
-			name = CocoaPlantTests;
-			productName = CocoaPlantTests;
-			productReference = C90B0CC313F55026009C18B1 /* CocoaPlantTests.octest */;
+			name = CocoaPlantSpecs;
+			productName = CocoaPlantSpecs;
+			productReference = C90B0CC313F55026009C18B1 /* CocoaPlantSpecs.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -188,7 +188,7 @@
 			projectRoot = "";
 			targets = (
 				C90B0CB213F55026009C18B1 /* CocoaPlant */,
-				C90B0CC213F55026009C18B1 /* CocoaPlantTests */,
+				C90B0CC213F55026009C18B1 /* CocoaPlantSpecs */,
 			);
 		};
 /* End PBXProject section */
@@ -232,7 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C90B0CD413F55026009C18B1 /* CocoaPlantTests.m in Sources */,
+				C90B0CD413F55026009C18B1 /* CocoaPlantSpecs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,14 +360,16 @@
 				C90B0CD913F55026009C18B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		C90B0CDA13F55026009C18B1 /* Build configuration list for PBXNativeTarget "CocoaPlantTests" */ = {
+		C90B0CDA13F55026009C18B1 /* Build configuration list for PBXNativeTarget "CocoaPlantSpecs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C90B0CDB13F55026009C18B1 /* Debug */,
 				C90B0CDC13F55026009C18B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

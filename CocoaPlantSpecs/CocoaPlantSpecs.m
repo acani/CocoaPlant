@@ -1,14 +1,14 @@
 //
-//  CocoaPlantTests.m
-//  CocoaPlantTests
+//  CocoaPlantSpecs.m
+//  CocoaPlantSpecs
 //
 //  Created by Matt Di Pasquale on 8/12/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "CocoaPlantTests.h"
+#import "CocoaPlantSpecs.h"
 
-@implementation CocoaPlantTests
+@implementation CocoaPlantSpecs
 
 - (void)setUp
 {
@@ -26,7 +26,7 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in CocoaPlantTests");
+    STFail(@"Unit tests are not implemented yet in CocoaPlantSpecs");
 }
 
 @end

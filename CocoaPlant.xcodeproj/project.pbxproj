@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C90B0CB713F55026009C18B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B0CB613F55026009C18B1 /* Foundation.framework */; };
 		C90B0CBD13F55026009C18B1 /* CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B0CBC13F55026009C18B1 /* CocoaPlant.m */; };
-		C90B0CC513F55026009C18B1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B0CC413F55026009C18B1 /* SenTestingKit.framework */; };
-		C90B0CC713F55026009C18B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B0CC613F55026009C18B1 /* UIKit.framework */; };
-		C90B0CC813F55026009C18B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B0CB613F55026009C18B1 /* Foundation.framework */; };
 		C90B0CCB13F55026009C18B1 /* libCocoaPlant.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B0CB313F55026009C18B1 /* libCocoaPlant.a */; };
 		C90B0CD413F55026009C18B1 /* CocoaPlantSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B0CD313F55026009C18B1 /* CocoaPlantSpecs.m */; };
+		C980C36B13F6A7DD0075AD0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C980C36A13F6A7DD0075AD0B /* UIKit.framework */; };
+		C980C36E13F6A8930075AD0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C980C36D13F6A8930075AD0B /* Foundation.framework */; };
+		C980C37013F6A8B90075AD0B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C980C36F13F6A8B90075AD0B /* SenTestingKit.framework */; };
 		C98CEF5613F6A3E2006B3659 /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C98CEF4F13F6A3A6006B3659 /* libKiwi.a */; };
 /* End PBXBuildFile section */
 
@@ -64,14 +63,14 @@
 
 /* Begin PBXFileReference section */
 		C90B0CB313F55026009C18B1 /* libCocoaPlant.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocoaPlant.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C90B0CB613F55026009C18B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C90B0CBA13F55026009C18B1 /* CocoaPlant-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaPlant-Prefix.pch"; sourceTree = "<group>"; };
 		C90B0CBB13F55026009C18B1 /* CocoaPlant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaPlant.h; sourceTree = "<group>"; };
 		C90B0CBC13F55026009C18B1 /* CocoaPlant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaPlant.m; sourceTree = "<group>"; };
 		C90B0CC313F55026009C18B1 /* CocoaPlantSpecs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaPlantSpecs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C90B0CC413F55026009C18B1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		C90B0CC613F55026009C18B1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		C90B0CD313F55026009C18B1 /* CocoaPlantSpecs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaPlantSpecs.m; sourceTree = "<group>"; };
+		C980C36A13F6A7DD0075AD0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C980C36D13F6A8930075AD0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C980C36F13F6A8B90075AD0B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		C98CEF4113F6A3A5006B3659 /* Kiwi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kiwi.xcodeproj; path = Vendor/Kiwi/Kiwi.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,7 +79,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C90B0CB713F55026009C18B1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,9 +86,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C90B0CC513F55026009C18B1 /* SenTestingKit.framework in Frameworks */,
-				C90B0CC713F55026009C18B1 /* UIKit.framework in Frameworks */,
-				C90B0CC813F55026009C18B1 /* Foundation.framework in Frameworks */,
+				C980C36E13F6A8930075AD0B /* Foundation.framework in Frameworks */,
+				C980C36B13F6A7DD0075AD0B /* UIKit.framework in Frameworks */,
+				C980C37013F6A8B90075AD0B /* SenTestingKit.framework in Frameworks */,
 				C90B0CCB13F55026009C18B1 /* libCocoaPlant.a in Frameworks */,
 				C98CEF5613F6A3E2006B3659 /* libKiwi.a in Frameworks */,
 			);
@@ -122,9 +120,9 @@
 		C90B0CB513F55026009C18B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C90B0CB613F55026009C18B1 /* Foundation.framework */,
-				C90B0CC413F55026009C18B1 /* SenTestingKit.framework */,
-				C90B0CC613F55026009C18B1 /* UIKit.framework */,
+				C980C36D13F6A8930075AD0B /* Foundation.framework */,
+				C980C36A13F6A7DD0075AD0B /* UIKit.framework */,
+				C980C36F13F6A8B90075AD0B /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

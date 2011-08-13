@@ -1,32 +1,21 @@
-//
-//  CocoaPlantSpecs.m
-//  CocoaPlantSpecs
-//
-//  Created by Matt Di Pasquale on 8/12/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
-//
+#import <Kiwi/Kiwi.h>
 
-#import "CocoaPlantSpecs.h"
+#import "CocoaPlant.h"
 
-@implementation CocoaPlantSpecs
+SPEC_BEGIN(CocoaPlantSpec)
 
-- (void)setUp
-{
-    [super setUp];
+describe(@"CocoaPlant", ^{
+    __block CocoaPlant *cocoaPlant;
     
-    // Set-up code here.
-}
-
-- (void)tearDown
-{
-    // Tear-down code here.
+    beforeEach(^{
+        cocoaPlant = [[CocoaPlant alloc] init];
+    });
     
-    [super tearDown];
-}
+    describe(@"-test", ^{
+        specify(@"fail", ^{
+            [[@"cool" should] equal:@"cools"];
+        });
+    });
+});
 
-- (void)testExample
-{
-    STFail(@"Unit tests are not implemented yet in CocoaPlantSpecs");
-}
-
-@end
+SPEC_END

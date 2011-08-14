@@ -1,0 +1,34 @@
+CocoaPlant:
+	- add files & convert specs to kiwi
+	- add minimal app target
+		- UIRequiresPersistentWifi
+	- Test with Network Link Conditioner
+	Plantation:
+		- NSArray firstObject
+
+	UIPlant:
+
+	PlantConnection:
+		- JSONConnection
+//			- Check for airplane mode. Show alert to turn it off, or at least go to settings. @future
+//				- Add UIRequiresPersistentWiFi
+			- If iOS 5, use native JSON, else use JSONTouch.
+			- Handle connection errors.
+
+	PlantData:
+		- Handle errors for NSManagedObject fetchWithOptions:(NSDictionary *)options.
+		- add methods w/o error
+			- set up, save, fetch, etc.
+
+	Pollination:
+		- RESTConnection
+		- Add to README.md
+
+4. Pollination (network stuff)
+
+### Pollination
+
+Related
+* Pollination
+  * Seriously 
+  * RestKit

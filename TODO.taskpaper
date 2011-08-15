@@ -2,23 +2,25 @@ CocoaPlant:
 	- add files & convert specs to kiwi
 	- add minimal app target
 		- UIRequiresPersistentWifi
+	- Spec UIAlertView
 	- Test with Network Link Conditioner
+
 	Plantation:
-		- NSArray firstObject
 
 	UIPlant:
 
-	PlantConnection:
-		- JSONConnection
-//			- Check for airplane mode. Show alert to turn it off, or at least go to settings. @future
-//				- Add UIRequiresPersistentWiFi
-			- If iOS 5, use native JSON, else use JSONTouch.
-			- Handle connection errors.
-
 	PlantData:
+		- Add save method to NSManagedObjectContext
 		- Handle errors for NSManagedObject fetchWithOptions:(NSDictionary *)options.
 		- add methods w/o error
 			- set up, save, fetch, etc.
+
+	PlantConnection:
+		- JSONConnection
+		- Check for airplane mode. Show alert to turn it off, or at least go to settings. @future
+		- Add UIRequiresPersistentWiFi
+		- If iOS 5, use native JSON, else use JSONKit.
+		- Handle connection errors.
 
 	Pollination:
 		- RESTConnection

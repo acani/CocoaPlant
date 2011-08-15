@@ -7,17 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C90B0CBD13F55026009C18B1 /* CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B0CBC13F55026009C18B1 /* CocoaPlant.m */; };
 		C90B0CCB13F55026009C18B1 /* libCocoaPlant.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B0CB313F55026009C18B1 /* libCocoaPlant.a */; };
-		C90B0CD413F55026009C18B1 /* CocoaPlantSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = C90B0CD313F55026009C18B1 /* CocoaPlantSpecs.m */; };
+		C951D3E213F87926001D12CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C980C36A13F6A7DD0075AD0B /* UIKit.framework */; };
+		C951D3E313F87926001D12CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C980C36D13F6A8930075AD0B /* Foundation.framework */; };
+		C951D3E513F87926001D12CD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C951D3E413F87926001D12CD /* CoreData.framework */; };
+		C951D3ED13F87926001D12CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C951D3EC13F87926001D12CD /* main.m */; };
+		C951D3F113F87926001D12CD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C951D3F013F87926001D12CD /* AppDelegate.m */; };
+		C951D3F713F87926001D12CD /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C951D3F613F87926001D12CD /* MasterViewController.m */; };
+		C951D3FA13F87926001D12CD /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C951D3F913F87926001D12CD /* DetailViewController.m */; };
+		C951D41013F87CEB001D12CD /* libCocoaPlant.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B0CB313F55026009C18B1 /* libCocoaPlant.a */; };
+		C951D41713F883BB001D12CD /* NSBundle+CocoaPlant.h in Headers */ = {isa = PBXBuildFile; fileRef = C951D41513F883BB001D12CD /* NSBundle+CocoaPlant.h */; };
+		C951D41813F883BB001D12CD /* NSBundle+CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C951D41613F883BB001D12CD /* NSBundle+CocoaPlant.m */; };
+		C976911213F8A71900B41267 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C951D3E413F87926001D12CD /* CoreData.framework */; };
+		C976911513F8AE9300B41267 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = C976911413F8AE9300B41267 /* Event.m */; };
 		C980C36B13F6A7DD0075AD0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C980C36A13F6A7DD0075AD0B /* UIKit.framework */; };
 		C980C36E13F6A8930075AD0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C980C36D13F6A8930075AD0B /* Foundation.framework */; };
 		C980C37013F6A8B90075AD0B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C980C36F13F6A8B90075AD0B /* SenTestingKit.framework */; };
+		C980C38F13F6CC940075AD0B /* NSArray+CocoaPlant.h in Headers */ = {isa = PBXBuildFile; fileRef = C980C37B13F6CC940075AD0B /* NSArray+CocoaPlant.h */; };
+		C980C39013F6CC940075AD0B /* NSArray+CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C37C13F6CC940075AD0B /* NSArray+CocoaPlant.m */; };
+		C980C39113F6CC940075AD0B /* NSFileManager+CocoaPlant.h in Headers */ = {isa = PBXBuildFile; fileRef = C980C37D13F6CC940075AD0B /* NSFileManager+CocoaPlant.h */; };
+		C980C39213F6CC940075AD0B /* NSFileManager+CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C37E13F6CC940075AD0B /* NSFileManager+CocoaPlant.m */; };
+		C980C39313F6CC940075AD0B /* NSString+CocoaPlant.h in Headers */ = {isa = PBXBuildFile; fileRef = C980C37F13F6CC940075AD0B /* NSString+CocoaPlant.h */; };
+		C980C39413F6CC940075AD0B /* NSString+CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C38013F6CC940075AD0B /* NSString+CocoaPlant.m */; };
+		C980C39513F6CC940075AD0B /* NSManagedObject+CocoaPlant.h in Headers */ = {isa = PBXBuildFile; fileRef = C980C38213F6CC940075AD0B /* NSManagedObject+CocoaPlant.h */; };
+		C980C39613F6CC940075AD0B /* NSManagedObject+CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C38313F6CC940075AD0B /* NSManagedObject+CocoaPlant.m */; };
+		C980C39713F6CC940075AD0B /* NSManagedObjectContext+CocoaPlant.h in Headers */ = {isa = PBXBuildFile; fileRef = C980C38413F6CC940075AD0B /* NSManagedObjectContext+CocoaPlant.h */; };
+		C980C39813F6CC940075AD0B /* NSManagedObjectContext+CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C38513F6CC940075AD0B /* NSManagedObjectContext+CocoaPlant.m */; };
+		C980C39913F6CC940075AD0B /* NSManagedObjectModel+CocoaPlant.h in Headers */ = {isa = PBXBuildFile; fileRef = C980C38613F6CC940075AD0B /* NSManagedObjectModel+CocoaPlant.h */; };
+		C980C39A13F6CC940075AD0B /* NSManagedObjectModel+CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C38713F6CC940075AD0B /* NSManagedObjectModel+CocoaPlant.m */; };
+		C980C39B13F6CC940075AD0B /* NSPersistentStore+CocoaPlant.h in Headers */ = {isa = PBXBuildFile; fileRef = C980C38813F6CC940075AD0B /* NSPersistentStore+CocoaPlant.h */; };
+		C980C39C13F6CC940075AD0B /* NSPersistentStore+CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C38913F6CC940075AD0B /* NSPersistentStore+CocoaPlant.m */; };
+		C980C39D13F6CC940075AD0B /* NSPersistentStoreCoordinator+CocoaPlant.h in Headers */ = {isa = PBXBuildFile; fileRef = C980C38A13F6CC940075AD0B /* NSPersistentStoreCoordinator+CocoaPlant.h */; };
+		C980C39E13F6CC940075AD0B /* NSPersistentStoreCoordinator+CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C38B13F6CC940075AD0B /* NSPersistentStoreCoordinator+CocoaPlant.m */; };
+		C980C39F13F6CC940075AD0B /* UIAlertView+CocoaPlant.h in Headers */ = {isa = PBXBuildFile; fileRef = C980C38D13F6CC940075AD0B /* UIAlertView+CocoaPlant.h */; };
+		C980C3A013F6CC940075AD0B /* UIAlertView+CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C38E13F6CC940075AD0B /* UIAlertView+CocoaPlant.m */; };
+		C980C3AB13F6CE910075AD0B /* NSArray+CocoaPlantSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C3A213F6CE910075AD0B /* NSArray+CocoaPlantSpecs.m */; };
+		C980C3AC13F6CE910075AD0B /* NSFileManager+CocoaPlantSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C3A313F6CE910075AD0B /* NSFileManager+CocoaPlantSpecs.m */; };
+		C980C3AD13F6CE910075AD0B /* NSString+CocoaPlantSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C3A413F6CE910075AD0B /* NSString+CocoaPlantSpecs.m */; };
+		C980C3AE13F6CE910075AD0B /* NSManagedObject+CocoaPlantSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C3A613F6CE910075AD0B /* NSManagedObject+CocoaPlantSpecs.m */; };
+		C980C3AF13F6CE910075AD0B /* NSManagedObjectContext+CocoaPlantSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C3A713F6CE910075AD0B /* NSManagedObjectContext+CocoaPlantSpecs.m */; };
+		C980C3B013F6CE910075AD0B /* NSManagedObjectModel+CocoaPlantSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C3A813F6CE910075AD0B /* NSManagedObjectModel+CocoaPlantSpecs.m */; };
+		C980C3B113F6CE910075AD0B /* NSPersistentStore+CocoaPlantSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C3A913F6CE910075AD0B /* NSPersistentStore+CocoaPlantSpecs.m */; };
+		C980C3B213F6CE910075AD0B /* NSPersistentStoreCoordinator+CocoaPlantSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C3AA13F6CE910075AD0B /* NSPersistentStoreCoordinator+CocoaPlantSpecs.m */; };
 		C98CEF5613F6A3E2006B3659 /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C98CEF4F13F6A3A6006B3659 /* libKiwi.a */; };
+		C9F182AF13F8BAA30026AF0D /* NSBundle+CocoaPlantSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F182AE13F8BAA30026AF0D /* NSBundle+CocoaPlantSpecs.m */; };
+		C9F182B813F8BE170026AF0D /* CocoaPlantApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9F182B113F8BD980026AF0D /* CocoaPlantApp.xcdatamodeld */; };
+		C9F182EE13F8BF470026AF0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C980C36D13F6A8930075AD0B /* Foundation.framework */; };
+		C9F182EF13F8BF500026AF0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C980C36A13F6A7DD0075AD0B /* UIKit.framework */; };
+		C9F182F013F8BF540026AF0D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C951D3E413F87926001D12CD /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		C90B0CC913F55026009C18B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C90B0CAA13F55026009C18B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C90B0CB213F55026009C18B1;
+			remoteInfo = CocoaPlant;
+		};
+		C951D40E13F87CE0001D12CD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C90B0CAA13F55026009C18B1 /* Project object */;
 			proxyType = 1;
@@ -65,13 +113,56 @@
 		C90B0CB313F55026009C18B1 /* libCocoaPlant.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocoaPlant.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90B0CBA13F55026009C18B1 /* CocoaPlant-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaPlant-Prefix.pch"; sourceTree = "<group>"; };
 		C90B0CBB13F55026009C18B1 /* CocoaPlant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaPlant.h; sourceTree = "<group>"; };
-		C90B0CBC13F55026009C18B1 /* CocoaPlant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaPlant.m; sourceTree = "<group>"; };
 		C90B0CC313F55026009C18B1 /* CocoaPlantSpecs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaPlantSpecs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C90B0CD313F55026009C18B1 /* CocoaPlantSpecs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaPlantSpecs.m; sourceTree = "<group>"; };
+		C951D3E013F87926001D12CD /* CocoaPlantApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaPlantApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C951D3E413F87926001D12CD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C951D3E813F87926001D12CD /* CocoaPlantApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaPlantApp-Info.plist"; sourceTree = "<group>"; };
+		C951D3EC13F87926001D12CD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C951D3EE13F87926001D12CD /* CocoaPlantApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaPlantApp-Prefix.pch"; sourceTree = "<group>"; };
+		C951D3EF13F87926001D12CD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C951D3F013F87926001D12CD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C951D3F513F87926001D12CD /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		C951D3F613F87926001D12CD /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		C951D3F813F87926001D12CD /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		C951D3F913F87926001D12CD /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		C951D41513F883BB001D12CD /* NSBundle+CocoaPlant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CocoaPlant.h"; sourceTree = "<group>"; };
+		C951D41613F883BB001D12CD /* NSBundle+CocoaPlant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CocoaPlant.m"; sourceTree = "<group>"; };
+		C976911313F8AE9300B41267 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		C976911413F8AE9300B41267 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		C980C36A13F6A7DD0075AD0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C980C36D13F6A8930075AD0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C980C36F13F6A8B90075AD0B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C980C37B13F6CC940075AD0B /* NSArray+CocoaPlant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CocoaPlant.h"; sourceTree = "<group>"; };
+		C980C37C13F6CC940075AD0B /* NSArray+CocoaPlant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CocoaPlant.m"; sourceTree = "<group>"; };
+		C980C37D13F6CC940075AD0B /* NSFileManager+CocoaPlant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+CocoaPlant.h"; sourceTree = "<group>"; };
+		C980C37E13F6CC940075AD0B /* NSFileManager+CocoaPlant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+CocoaPlant.m"; sourceTree = "<group>"; };
+		C980C37F13F6CC940075AD0B /* NSString+CocoaPlant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CocoaPlant.h"; sourceTree = "<group>"; };
+		C980C38013F6CC940075AD0B /* NSString+CocoaPlant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CocoaPlant.m"; sourceTree = "<group>"; };
+		C980C38213F6CC940075AD0B /* NSManagedObject+CocoaPlant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+CocoaPlant.h"; sourceTree = "<group>"; };
+		C980C38313F6CC940075AD0B /* NSManagedObject+CocoaPlant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+CocoaPlant.m"; sourceTree = "<group>"; };
+		C980C38413F6CC940075AD0B /* NSManagedObjectContext+CocoaPlant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+CocoaPlant.h"; sourceTree = "<group>"; };
+		C980C38513F6CC940075AD0B /* NSManagedObjectContext+CocoaPlant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+CocoaPlant.m"; sourceTree = "<group>"; };
+		C980C38613F6CC940075AD0B /* NSManagedObjectModel+CocoaPlant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectModel+CocoaPlant.h"; sourceTree = "<group>"; };
+		C980C38713F6CC940075AD0B /* NSManagedObjectModel+CocoaPlant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectModel+CocoaPlant.m"; sourceTree = "<group>"; };
+		C980C38813F6CC940075AD0B /* NSPersistentStore+CocoaPlant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPersistentStore+CocoaPlant.h"; sourceTree = "<group>"; };
+		C980C38913F6CC940075AD0B /* NSPersistentStore+CocoaPlant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPersistentStore+CocoaPlant.m"; sourceTree = "<group>"; };
+		C980C38A13F6CC940075AD0B /* NSPersistentStoreCoordinator+CocoaPlant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPersistentStoreCoordinator+CocoaPlant.h"; sourceTree = "<group>"; };
+		C980C38B13F6CC940075AD0B /* NSPersistentStoreCoordinator+CocoaPlant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPersistentStoreCoordinator+CocoaPlant.m"; sourceTree = "<group>"; };
+		C980C38D13F6CC940075AD0B /* UIAlertView+CocoaPlant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+CocoaPlant.h"; sourceTree = "<group>"; };
+		C980C38E13F6CC940075AD0B /* UIAlertView+CocoaPlant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+CocoaPlant.m"; sourceTree = "<group>"; };
+		C980C3A213F6CE910075AD0B /* NSArray+CocoaPlantSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CocoaPlantSpecs.m"; sourceTree = "<group>"; };
+		C980C3A313F6CE910075AD0B /* NSFileManager+CocoaPlantSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+CocoaPlantSpecs.m"; sourceTree = "<group>"; };
+		C980C3A413F6CE910075AD0B /* NSString+CocoaPlantSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CocoaPlantSpecs.m"; sourceTree = "<group>"; };
+		C980C3A613F6CE910075AD0B /* NSManagedObject+CocoaPlantSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+CocoaPlantSpecs.m"; sourceTree = "<group>"; };
+		C980C3A713F6CE910075AD0B /* NSManagedObjectContext+CocoaPlantSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+CocoaPlantSpecs.m"; sourceTree = "<group>"; };
+		C980C3A813F6CE910075AD0B /* NSManagedObjectModel+CocoaPlantSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectModel+CocoaPlantSpecs.m"; sourceTree = "<group>"; };
+		C980C3A913F6CE910075AD0B /* NSPersistentStore+CocoaPlantSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPersistentStore+CocoaPlantSpecs.m"; sourceTree = "<group>"; };
+		C980C3AA13F6CE910075AD0B /* NSPersistentStoreCoordinator+CocoaPlantSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPersistentStoreCoordinator+CocoaPlantSpecs.m"; sourceTree = "<group>"; };
+		C980C3B313F6CF2A0075AD0B /* CocoaPlantDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaPlantDefines.h; sourceTree = "<group>"; };
+		C980C3C113F6CF550075AD0B /* CocoaPlantSpecs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaPlantSpecs-Prefix.pch"; sourceTree = "<group>"; };
 		C98CEF4113F6A3A5006B3659 /* Kiwi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kiwi.xcodeproj; path = Vendor/Kiwi/Kiwi.xcodeproj; sourceTree = "<group>"; };
+		C9F182AE13F8BAA30026AF0D /* NSBundle+CocoaPlantSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CocoaPlantSpecs.m"; sourceTree = "<group>"; };
+		C9F182B213F8BD980026AF0D /* CocoaPlantApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CocoaPlantApp.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +170,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9F182EE13F8BF470026AF0D /* Foundation.framework in Frameworks */,
+				C9F182EF13F8BF500026AF0D /* UIKit.framework in Frameworks */,
+				C9F182F013F8BF540026AF0D /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,9 +182,21 @@
 			files = (
 				C980C36E13F6A8930075AD0B /* Foundation.framework in Frameworks */,
 				C980C36B13F6A7DD0075AD0B /* UIKit.framework in Frameworks */,
+				C976911213F8A71900B41267 /* CoreData.framework in Frameworks */,
 				C980C37013F6A8B90075AD0B /* SenTestingKit.framework in Frameworks */,
 				C90B0CCB13F55026009C18B1 /* libCocoaPlant.a in Frameworks */,
 				C98CEF5613F6A3E2006B3659 /* libKiwi.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C951D3DD13F87926001D12CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C951D3E313F87926001D12CD /* Foundation.framework in Frameworks */,
+				C951D3E213F87926001D12CD /* UIKit.framework in Frameworks */,
+				C951D3E513F87926001D12CD /* CoreData.framework in Frameworks */,
+				C951D41013F87CEB001D12CD /* libCocoaPlant.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				C90B0CB813F55026009C18B1 /* CocoaPlant */,
+				C951D3E613F87926001D12CD /* CocoaPlantApp */,
 				C90B0CCC13F55026009C18B1 /* CocoaPlantSpecs */,
 				C90B0CB513F55026009C18B1 /* Frameworks */,
 				C90B0CB413F55026009C18B1 /* Products */,
@@ -113,6 +220,7 @@
 			children = (
 				C90B0CB313F55026009C18B1 /* libCocoaPlant.a */,
 				C90B0CC313F55026009C18B1 /* CocoaPlantSpecs.octest */,
+				C951D3E013F87926001D12CD /* CocoaPlantApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,6 +230,7 @@
 			children = (
 				C980C36D13F6A8930075AD0B /* Foundation.framework */,
 				C980C36A13F6A7DD0075AD0B /* UIKit.framework */,
+				C951D3E413F87926001D12CD /* CoreData.framework */,
 				C980C36F13F6A8B90075AD0B /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
@@ -131,7 +240,9 @@
 			isa = PBXGroup;
 			children = (
 				C90B0CBB13F55026009C18B1 /* CocoaPlant.h */,
-				C90B0CBC13F55026009C18B1 /* CocoaPlant.m */,
+				C980C37A13F6CC940075AD0B /* Plantation */,
+				C980C38C13F6CC940075AD0B /* UIPlant */,
+				C980C38113F6CC940075AD0B /* PlantData */,
 				C90B0CB913F55026009C18B1 /* Supporting Files */,
 			);
 			path = CocoaPlant;
@@ -141,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				C90B0CBA13F55026009C18B1 /* CocoaPlant-Prefix.pch */,
+				C980C3B313F6CF2A0075AD0B /* CocoaPlantDefines.h */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -148,9 +260,115 @@
 		C90B0CCC13F55026009C18B1 /* CocoaPlantSpecs */ = {
 			isa = PBXGroup;
 			children = (
-				C90B0CD313F55026009C18B1 /* CocoaPlantSpecs.m */,
+				C980C3A113F6CE910075AD0B /* Plantation */,
+				C980C3A513F6CE910075AD0B /* PlantData */,
+				C980C3C013F6CF550075AD0B /* Supporting Files */,
 			);
 			path = CocoaPlantSpecs;
+			sourceTree = "<group>";
+		};
+		C951D3E613F87926001D12CD /* CocoaPlantApp */ = {
+			isa = PBXGroup;
+			children = (
+				C951D3EF13F87926001D12CD /* AppDelegate.h */,
+				C951D3F013F87926001D12CD /* AppDelegate.m */,
+				C9F182B013F8BCE50026AF0D /* Controllers */,
+				C976911613F8AEB500B41267 /* Models */,
+				C951D3E713F87926001D12CD /* Supporting Files */,
+			);
+			path = CocoaPlantApp;
+			sourceTree = "<group>";
+		};
+		C951D3E713F87926001D12CD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C951D3E813F87926001D12CD /* CocoaPlantApp-Info.plist */,
+				C951D3EC13F87926001D12CD /* main.m */,
+				C951D3EE13F87926001D12CD /* CocoaPlantApp-Prefix.pch */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C976911613F8AEB500B41267 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C9F182B113F8BD980026AF0D /* CocoaPlantApp.xcdatamodeld */,
+				C976911313F8AE9300B41267 /* Event.h */,
+				C976911413F8AE9300B41267 /* Event.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C980C37A13F6CC940075AD0B /* Plantation */ = {
+			isa = PBXGroup;
+			children = (
+				C980C37B13F6CC940075AD0B /* NSArray+CocoaPlant.h */,
+				C980C37C13F6CC940075AD0B /* NSArray+CocoaPlant.m */,
+				C951D41513F883BB001D12CD /* NSBundle+CocoaPlant.h */,
+				C951D41613F883BB001D12CD /* NSBundle+CocoaPlant.m */,
+				C980C37D13F6CC940075AD0B /* NSFileManager+CocoaPlant.h */,
+				C980C37E13F6CC940075AD0B /* NSFileManager+CocoaPlant.m */,
+				C980C37F13F6CC940075AD0B /* NSString+CocoaPlant.h */,
+				C980C38013F6CC940075AD0B /* NSString+CocoaPlant.m */,
+			);
+			path = Plantation;
+			sourceTree = "<group>";
+		};
+		C980C38113F6CC940075AD0B /* PlantData */ = {
+			isa = PBXGroup;
+			children = (
+				C980C38213F6CC940075AD0B /* NSManagedObject+CocoaPlant.h */,
+				C980C38313F6CC940075AD0B /* NSManagedObject+CocoaPlant.m */,
+				C980C38413F6CC940075AD0B /* NSManagedObjectContext+CocoaPlant.h */,
+				C980C38513F6CC940075AD0B /* NSManagedObjectContext+CocoaPlant.m */,
+				C980C38613F6CC940075AD0B /* NSManagedObjectModel+CocoaPlant.h */,
+				C980C38713F6CC940075AD0B /* NSManagedObjectModel+CocoaPlant.m */,
+				C980C38813F6CC940075AD0B /* NSPersistentStore+CocoaPlant.h */,
+				C980C38913F6CC940075AD0B /* NSPersistentStore+CocoaPlant.m */,
+				C980C38A13F6CC940075AD0B /* NSPersistentStoreCoordinator+CocoaPlant.h */,
+				C980C38B13F6CC940075AD0B /* NSPersistentStoreCoordinator+CocoaPlant.m */,
+			);
+			path = PlantData;
+			sourceTree = "<group>";
+		};
+		C980C38C13F6CC940075AD0B /* UIPlant */ = {
+			isa = PBXGroup;
+			children = (
+				C980C38D13F6CC940075AD0B /* UIAlertView+CocoaPlant.h */,
+				C980C38E13F6CC940075AD0B /* UIAlertView+CocoaPlant.m */,
+			);
+			path = UIPlant;
+			sourceTree = "<group>";
+		};
+		C980C3A113F6CE910075AD0B /* Plantation */ = {
+			isa = PBXGroup;
+			children = (
+				C980C3A213F6CE910075AD0B /* NSArray+CocoaPlantSpecs.m */,
+				C9F182AE13F8BAA30026AF0D /* NSBundle+CocoaPlantSpecs.m */,
+				C980C3A313F6CE910075AD0B /* NSFileManager+CocoaPlantSpecs.m */,
+				C980C3A413F6CE910075AD0B /* NSString+CocoaPlantSpecs.m */,
+			);
+			path = Plantation;
+			sourceTree = "<group>";
+		};
+		C980C3A513F6CE910075AD0B /* PlantData */ = {
+			isa = PBXGroup;
+			children = (
+				C980C3A613F6CE910075AD0B /* NSManagedObject+CocoaPlantSpecs.m */,
+				C980C3A713F6CE910075AD0B /* NSManagedObjectContext+CocoaPlantSpecs.m */,
+				C980C3A813F6CE910075AD0B /* NSManagedObjectModel+CocoaPlantSpecs.m */,
+				C980C3A913F6CE910075AD0B /* NSPersistentStore+CocoaPlantSpecs.m */,
+				C980C3AA13F6CE910075AD0B /* NSPersistentStoreCoordinator+CocoaPlantSpecs.m */,
+			);
+			path = PlantData;
+			sourceTree = "<group>";
+		};
+		C980C3C013F6CF550075AD0B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C980C3C113F6CF550075AD0B /* CocoaPlantSpecs-Prefix.pch */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		C98CEF3F13F6A364006B3659 /* Vendor */ = {
@@ -172,6 +390,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C9F182B013F8BCE50026AF0D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C951D3F513F87926001D12CD /* MasterViewController.h */,
+				C951D3F613F87926001D12CD /* MasterViewController.m */,
+				C951D3F813F87926001D12CD /* DetailViewController.h */,
+				C951D3F913F87926001D12CD /* DetailViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -179,6 +408,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C980C38F13F6CC940075AD0B /* NSArray+CocoaPlant.h in Headers */,
+				C951D41713F883BB001D12CD /* NSBundle+CocoaPlant.h in Headers */,
+				C980C39113F6CC940075AD0B /* NSFileManager+CocoaPlant.h in Headers */,
+				C980C39313F6CC940075AD0B /* NSString+CocoaPlant.h in Headers */,
+				C980C39F13F6CC940075AD0B /* UIAlertView+CocoaPlant.h in Headers */,
+				C980C39513F6CC940075AD0B /* NSManagedObject+CocoaPlant.h in Headers */,
+				C980C39713F6CC940075AD0B /* NSManagedObjectContext+CocoaPlant.h in Headers */,
+				C980C39913F6CC940075AD0B /* NSManagedObjectModel+CocoaPlant.h in Headers */,
+				C980C39B13F6CC940075AD0B /* NSPersistentStore+CocoaPlant.h in Headers */,
+				C980C39D13F6CC940075AD0B /* NSPersistentStoreCoordinator+CocoaPlant.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +461,24 @@
 			productReference = C90B0CC313F55026009C18B1 /* CocoaPlantSpecs.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
+		C951D3DF13F87926001D12CD /* CocoaPlantApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C951D40113F87926001D12CD /* Build configuration list for PBXNativeTarget "CocoaPlantApp" */;
+			buildPhases = (
+				C951D3DC13F87926001D12CD /* Sources */,
+				C951D3DD13F87926001D12CD /* Frameworks */,
+				C951D3DE13F87926001D12CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C951D40F13F87CE0001D12CD /* PBXTargetDependency */,
+			);
+			name = CocoaPlantApp;
+			productName = CocoaPlantApp;
+			productReference = C951D3E013F87926001D12CD /* CocoaPlantApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -249,6 +506,7 @@
 			projectRoot = "";
 			targets = (
 				C90B0CB213F55026009C18B1 /* CocoaPlant */,
+				C951D3DF13F87926001D12CD /* CocoaPlantApp */,
 				C90B0CC213F55026009C18B1 /* CocoaPlantSpecs */,
 			);
 		};
@@ -293,6 +551,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C951D3DE13F87926001D12CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -316,7 +581,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C90B0CBD13F55026009C18B1 /* CocoaPlant.m in Sources */,
+				C980C39013F6CC940075AD0B /* NSArray+CocoaPlant.m in Sources */,
+				C951D41813F883BB001D12CD /* NSBundle+CocoaPlant.m in Sources */,
+				C980C39213F6CC940075AD0B /* NSFileManager+CocoaPlant.m in Sources */,
+				C980C39413F6CC940075AD0B /* NSString+CocoaPlant.m in Sources */,
+				C980C3A013F6CC940075AD0B /* UIAlertView+CocoaPlant.m in Sources */,
+				C980C39613F6CC940075AD0B /* NSManagedObject+CocoaPlant.m in Sources */,
+				C980C39813F6CC940075AD0B /* NSManagedObjectContext+CocoaPlant.m in Sources */,
+				C980C39A13F6CC940075AD0B /* NSManagedObjectModel+CocoaPlant.m in Sources */,
+				C980C39C13F6CC940075AD0B /* NSPersistentStore+CocoaPlant.m in Sources */,
+				C980C39E13F6CC940075AD0B /* NSPersistentStoreCoordinator+CocoaPlant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +598,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C90B0CD413F55026009C18B1 /* CocoaPlantSpecs.m in Sources */,
+				C980C3AB13F6CE910075AD0B /* NSArray+CocoaPlantSpecs.m in Sources */,
+				C9F182AF13F8BAA30026AF0D /* NSBundle+CocoaPlantSpecs.m in Sources */,
+				C980C3AC13F6CE910075AD0B /* NSFileManager+CocoaPlantSpecs.m in Sources */,
+				C980C3AD13F6CE910075AD0B /* NSString+CocoaPlantSpecs.m in Sources */,
+				C980C3AE13F6CE910075AD0B /* NSManagedObject+CocoaPlantSpecs.m in Sources */,
+				C980C3AF13F6CE910075AD0B /* NSManagedObjectContext+CocoaPlantSpecs.m in Sources */,
+				C980C3B013F6CE910075AD0B /* NSManagedObjectModel+CocoaPlantSpecs.m in Sources */,
+				C980C3B113F6CE910075AD0B /* NSPersistentStore+CocoaPlantSpecs.m in Sources */,
+				C980C3B213F6CE910075AD0B /* NSPersistentStoreCoordinator+CocoaPlantSpecs.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C951D3DC13F87926001D12CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C951D3ED13F87926001D12CD /* main.m in Sources */,
+				C951D3F113F87926001D12CD /* AppDelegate.m in Sources */,
+				C951D3F713F87926001D12CD /* MasterViewController.m in Sources */,
+				C951D3FA13F87926001D12CD /* DetailViewController.m in Sources */,
+				C9F182B813F8BE170026AF0D /* CocoaPlantApp.xcdatamodeld in Sources */,
+				C976911513F8AE9300B41267 /* Event.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +630,11 @@
 			isa = PBXTargetDependency;
 			target = C90B0CB213F55026009C18B1 /* CocoaPlant */;
 			targetProxy = C90B0CC913F55026009C18B1 /* PBXContainerItemProxy */;
+		};
+		C951D40F13F87CE0001D12CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C90B0CB213F55026009C18B1 /* CocoaPlant */;
+			targetProxy = C951D40E13F87CE0001D12CD /* PBXContainerItemProxy */;
 		};
 		C98CEF5513F6A3C9006B3659 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -363,7 +663,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -380,7 +680,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -413,12 +713,13 @@
 		C90B0CDB13F55026009C18B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CocoaPlantApp.app/CocoaPlantApp";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CocoaPlant/Supporting Files/CocoaPlant-Prefix.pch";
+				GCC_PREFIX_HEADER = "CocoaPlantSpecs/Supporting Files/CocoaPlantSpecs-Prefix.pch";
 				HEADER_SEARCH_PATHS = Vendor/Kiwi;
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -426,6 +727,7 @@
 					"${BUILT_PRODUCTS_DIR}/libKiwi.a",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -433,12 +735,13 @@
 		C90B0CDC13F55026009C18B1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CocoaPlantApp.app/CocoaPlantApp";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CocoaPlant/Supporting Files/CocoaPlant-Prefix.pch";
+				GCC_PREFIX_HEADER = "CocoaPlantSpecs/Supporting Files/CocoaPlantSpecs-Prefix.pch";
 				HEADER_SEARCH_PATHS = Vendor/Kiwi;
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -446,7 +749,45 @@
 					"${BUILT_PRODUCTS_DIR}/libKiwi.a",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		C951D40213F87926001D12CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CocoaPlantApp/Supporting Files/CocoaPlantApp-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)";
+				INFOPLIST_FILE = "CocoaPlantApp/Supporting Files/CocoaPlantApp-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-force_load",
+					"${BUILT_PRODUCTS_DIR}/libCocoaPlant.a",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C951D40313F87926001D12CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CocoaPlantApp/Supporting Files/CocoaPlantApp-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)";
+				INFOPLIST_FILE = "CocoaPlantApp/Supporting Files/CocoaPlantApp-Info.plist";
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-force_load",
+					"${BUILT_PRODUCTS_DIR}/libCocoaPlant.a",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
@@ -480,7 +821,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		C951D40113F87926001D12CD /* Build configuration list for PBXNativeTarget "CocoaPlantApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C951D40213F87926001D12CD /* Debug */,
+				C951D40313F87926001D12CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C9F182B113F8BD980026AF0D /* CocoaPlantApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C9F182B213F8BD980026AF0D /* CocoaPlantApp.xcdatamodel */,
+			);
+			currentVersion = C9F182B213F8BD980026AF0D /* CocoaPlantApp.xcdatamodel */;
+			path = CocoaPlantApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C90B0CAA13F55026009C18B1 /* Project object */;
 }

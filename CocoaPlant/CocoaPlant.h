@@ -1,13 +1,15 @@
-//
-//  CocoaPlant.h
-//  CocoaPlant
-//
-//  Created by Matt Di Pasquale on 8/12/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
-//
+// Plantation (Foundation)
+#import <CocoaPlant/NSArray+CocoaPlant.h>
+#import <CocoaPlant/NSBundle+CocoaPlant.h>
+#import <CocoaPlant/NSFileManager+CocoaPlant.h>
+#import <CocoaPlant/NSString+CocoaPlant.h>
 
-#import <Foundation/Foundation.h>
+// UIPlant (UIKit)
+#import <CocoaPlant/UIAlertView+CocoaPlant.h>
 
-@interface CocoaPlant : NSObject
-
-@end
+// PlantData (CoreData)
+#import <CocoaPlant/NSManagedObject+CocoaPlant.h>
+#import <CocoaPlant/NSManagedObjectContext+CocoaPlant.h>
+#import <CocoaPlant/NSManagedObjectModel+CocoaPlant.h>
+#import <CocoaPlant/NSPersistentStore+CocoaPlant.h>
+#import <CocoaPlant/NSPersistentStoreCoordinator+CocoaPlant.h>

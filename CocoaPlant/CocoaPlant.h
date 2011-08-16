@@ -1,5 +1,4 @@
 // Plantation (Foundation)
-#import <CocoaPlant/NSArray+CocoaPlant.h>
 #import <CocoaPlant/NSBundle+CocoaPlant.h>
 #import <CocoaPlant/NSFileManager+CocoaPlant.h>
 #import <CocoaPlant/NSString+CocoaPlant.h>

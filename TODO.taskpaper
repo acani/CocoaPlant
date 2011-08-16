@@ -1,7 +1,5 @@
 CocoaPlant:
 	- add files & convert specs to kiwi
-	- add minimal app target
-		- UIRequiresPersistentWifi
 	- Spec UIAlertView
 	- Test with Network Link Conditioner
 

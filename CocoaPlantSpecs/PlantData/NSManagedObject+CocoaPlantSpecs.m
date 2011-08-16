@@ -1,82 +1,76 @@
-#import <SenTestingKit/SenTestingKit.h>
+#import <Kiwi/Kiwi.h>
 #import <CoreData/CoreData.h>
-
-@interface NSManagedObject_CocoaPlantSpecs : SenTestCase {
-    NSManagedObjectContext *context;
-}
-
-@end
 
 #import "NSManagedObject+CocoaPlant.h"
 #import "NSManagedObjectContext+CocoaPlant.h"
 #import "Event.h"
 
-@implementation NSManagedObject_CocoaPlantSpecs
+SPEC_BEGIN(NSManagedObject_CocoaPlantSpecs)
 
-- (void)setUp {
-    [super setUp];
-    context = [NSManagedObjectContext contextWithStoreType:NSInMemoryStoreType error:NULL];
-}
+describe(@"NSManagedObject+CocoaPlant", ^{
+    __block NSManagedObjectContext *context;
 
-#pragma mark entityName
+    beforeEach(^{
+        context = [NSManagedObjectContext contextWithStoreType:NSInMemoryStoreType error:NULL];
+    });
 
-- (void)testEntityNameExists {
-    STAssertNotNil([NSManagedObject entityName], @"entity name exists");
-}
+    describe(@"-entityName", ^{
+        it(@"returns something", ^{ [[Event entityName] shouldNotBeNil]; });
+        it(@"returns enity name", ^{ [[[Event entityName] should] equal:@"Event"]; });
+    });
 
-- (void)testEntityNameIsCorrect {
-    STAssertEqualObjects([Event entityName], @"Event", @"entity name is correct");
-}
+    describe(@"-entityInContext", ^{
+        it(@"returns something", ^{ [[Event entityInContext:context] shouldNotBeNil]; });
+        
+        it(@"returns entity", ^{
+            NSString *entityName = [Event entityInContext:context].name;
+            [[entityName should] equal:@"Event"];
+        });
+    });
 
-#pragma mark insertIntoContext
+    describe(@"-insertIntoContext", ^{
+        it(@"returns something", ^{ [[Event insertIntoContext:context] shouldNotBeNil]; });
 
-- (void)testInsertIntoContextExists {
-    STAssertNotNil([Event insertIntoContext:context], @"event object exists");
-}
+        it(@"returns inserted entity", ^{
+            NSString *entityName = [[Event insertIntoContext:context] entity].name;
+            [[entityName should] equal:@"Event"];
+        });
 
-- (void)testInsertIntoContextIsCorrect {
-    NSString *entityName = [[Event insertIntoContext:context] entity].name;
-    STAssertEqualObjects(entityName, @"Event", @"event object is correct");
-}
+        it(@"inserts object into context", ^{
+            Event *event = [Event insertIntoContext:context];
+            [[context objectRegisteredForID:[event objectID]] shouldNotBeNil];
+        });
+    });
 
-#pragma mark entityInContext
+    describe(@"-fetchInContext:error:options", ^{
+        it(@"returns 0 objects", ^{
+            NSArray *results = [Event fetchInContext:context error:NULL options:NULL];
+            [[theValue([results count]) should] equal:theValue(0)];
+        });
+        
+        it(@"returns 1 object", ^{
+            [Event insertIntoContext:context];
+            NSArray *results = [Event fetchInContext:context error:NULL options:NULL];
+            [[theValue([results count]) should] equal:theValue(1)];
+        });
 
-- (void)testEntityInContextExists {
-    STAssertNotNil([Event entityInContext:context], @"event entity exists");
-}
+        it(@"returns fetched objects", ^{
+            NSArray *events = [NSArray arrayWithObject:[Event insertIntoContext:context]];
+            NSArray *fetchedEvents = [Event fetchInContext:context error:NULL options:NULL];
+            [[events should] equal:fetchedEvents];
+        });
 
-- (void)testEntityInContextIsCorrect {
-    NSString *entityName = [Event entityInContext:context].name;
-    STAssertEqualObjects(entityName, @"Event", @"event entity is correct");
-}
+        it(@"applies fetch options", ^{
+            [Event insertIntoContext:context];
+            [Event insertIntoContext:context];
+            
+            NSArray *results = [Event fetchInContext:context error:NULL options:^(NSFetchRequest *request) {
+                [request setFetchLimit:1];
+            }];
+            
+            [[theValue([results count]) should] equal:theValue(1)];
+        });
+    });
+});
 
-#pragma mark fetchInContext:error:options
-
-- (void)testFetchInContextWorks {
-    STAssertNotNil([Event fetchInContext:context error:NULL options:NULL], @"fetch works");
-}
-
-- (void)testFetchInContextExists {
-    [Event insertIntoContext:context];
-    NSArray *results = [Event fetchInContext:context error:NULL options:NULL];
-    STAssertEquals([results count], (NSUInteger)1, @"event exists");
-}
-
-- (void)testFetchInContextIsCorrect {
-    Event *event = [Event insertIntoContext:context];
-    Event *fetchedEvent = [[Event fetchInContext:context error:NULL options:NULL] objectAtIndex:0];
-    STAssertEqualObjects(event, fetchedEvent, @"event is correct");
-}
-
-- (void)testFetchInContextWithOptions {
-    [Event insertIntoContext:context];
-    [Event insertIntoContext:context];
-
-    NSArray *results = [Event fetchInContext:context error:NULL options:^(NSFetchRequest *request) {
-        [request setFetchLimit:1];
-    }];
-
-    STAssertEquals([results count], (NSUInteger)1, @"applies fetch options");
-}
-
-@end
+SPEC_END

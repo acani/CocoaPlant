@@ -4,8 +4,8 @@
 @interface NSManagedObject (CocoaPlant)
 
 + (NSString *)entityName;
-+ (id)insertIntoContext:(NSManagedObjectContext *)context;
 + (NSEntityDescription *)entityInContext:(NSManagedObjectContext *)context;
++ (id)insertIntoContext:(NSManagedObjectContext *)context;
 
 + (NSArray *)fetchInContext:(NSManagedObjectContext *)context error:(NSError **)error
                     options:(void (^)(NSFetchRequest *request))options;

@@ -6,13 +6,13 @@
     return NSStringFromClass(self);
 }
 
++ (NSEntityDescription *)entityInContext:(NSManagedObjectContext *)context {
+    return [NSEntityDescription entityForName:[self entityName] inManagedObjectContext:context];
+}
+
 + (id)insertIntoContext:(NSManagedObjectContext *)context {
     return [NSEntityDescription insertNewObjectForEntityForName:[self entityName]
                                          inManagedObjectContext:context];
-}
-
-+ (NSEntityDescription *)entityInContext:(NSManagedObjectContext *)context {
-    return [NSEntityDescription entityForName:[self entityName] inManagedObjectContext:context];
 }
 
 + (NSArray *)fetchInContext:(NSManagedObjectContext *)context error:(NSError **)error

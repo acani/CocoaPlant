@@ -55,12 +55,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C90B0CC913F55026009C18B1 /* PBXContainerItemProxy */ = {
+		C90F3E5913F9FF04002C16ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C90B0CAA13F55026009C18B1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C90B0CB213F55026009C18B1;
-			remoteInfo = CocoaPlant;
+			remoteGlobalIDString = C951D3DF13F87926001D12CD;
+			remoteInfo = CocoaPlantApp;
 		};
 		C951D40E13F87CE0001D12CD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -443,7 +443,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				C90B0CCA13F55026009C18B1 /* PBXTargetDependency */,
+				C90F3E5A13F9FF04002C16ED /* PBXTargetDependency */,
 				C98CEF5513F6A3C9006B3659 /* PBXTargetDependency */,
 			);
 			name = CocoaPlantSpecs;
@@ -614,10 +614,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C90B0CCA13F55026009C18B1 /* PBXTargetDependency */ = {
+		C90F3E5A13F9FF04002C16ED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C90B0CB213F55026009C18B1 /* CocoaPlant */;
-			targetProxy = C90B0CC913F55026009C18B1 /* PBXContainerItemProxy */;
+			target = C951D3DF13F87926001D12CD /* CocoaPlantApp */;
+			targetProxy = C90F3E5913F9FF04002C16ED /* PBXContainerItemProxy */;
 		};
 		C951D40F13F87CE0001D12CD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

@@ -1,37 +1,75 @@
-#import <SenTestingKit/SenTestingKit.h>
+#import <Kiwi/Kiwi.h>
 #import <CoreData/CoreData.h>
-
-@interface NSManagedObjectContext_CocoaPlantSpecs : SenTestCase {
-    NSManagedObjectContext *context;
-}
-
-@end
 
 #import "NSManagedObjectContext+CocoaPlant.h"
 #import "NSPersistentStoreCoordinator+CocoaPlant.h"
 
-@implementation NSManagedObjectContext_CocoaPlantSpecs
+SPEC_BEGIN(NSManagedObjectContext_CocoaPlantSpecs)
 
-#pragma mark contextWithStoreType:error:
+describe(@"NSManagedObjectContext+CocoaPlant", ^{
+    __block NSManagedObjectContext *context;
 
-- (void)testContextWithStoreTypeSQLiteExists {
-    context = [NSManagedObjectContext contextWithStoreType:NSSQLiteStoreType error:NULL];
-    STAssertNotNil(context, @"context with store type SQLite exists");
-}
+    describe(@"+contextWithStoreType:error:", ^{
+        it(@"passes arguments", ^{
+            NSString *storeType = NSSQLiteStoreType;
+            NSError *error;
+            [[NSPersistentStoreCoordinator should] receive:@selector(coordinatorWithStoreType:error:)
+             withArguments:storeType, theValue(&error)];
+            context = [NSManagedObjectContext contextWithStoreType:storeType error:&error];
+            
+        });
 
-- (void)testContextWithStoreTypeSQLiteSetsCoordinator {
-    context = [NSManagedObjectContext contextWithStoreType:NSSQLiteStoreType error:NULL];
-    STAssertNotNil(context.persistentStoreCoordinator, @"sets coordinator with store type SQLite");
-}
+//        
+//        it(@"sets coordinator", ^{
+//            [NSPersistentStoreCoordinator should] receive:@selector(coordinatorWithStoreType:error:) andReturn:<#(id)#> withArguments:<#(id), ...#>
+//        });
+//    
+//        it(@"returns something", ^{
+//            context = [NSManagedObjectContext contextWithStoreType:NSSQLiteStoreType error:NULL];
+//            [context shouldNotBeNil];
+//        });
+//
+//        it(@"sets coordinator", ^{
+//            context = [NSManagedObjectContext contextWithStoreType:NSSQLiteStoreType error:NULL];
+//            [context.persistentStoreCoordinator shouldNotBeNil];
+//        });
+    });
+});
 
-- (void)testContextWithStoreTypeInMemoryExists {
-    context = [NSManagedObjectContext contextWithStoreType:NSInMemoryStoreType error:NULL];
-    STAssertNotNil(context, @"context with store type InMemory exists");
-}
+SPEC_END
 
-- (void)testContextWithStoreTypeInMemorySetsCoordinator {
-    context = [NSManagedObjectContext contextWithStoreType:NSInMemoryStoreType error:NULL];
-    STAssertNotNil(context.persistentStoreCoordinator, @"sets coordinator with store type InMemory");
-}
-
-@end
+//
+//@interface NSManagedObjectContext_CocoaPlantSpecs : SenTestCase {
+//    NSManagedObjectContext *context;
+//}
+//
+//@end
+//
+//#import "NSManagedObjectContext+CocoaPlant.h"
+//#import "NSPersistentStoreCoordinator+CocoaPlant.h"
+//
+//@implementation NSManagedObjectContext_CocoaPlantSpecs
+//
+//#pragma mark contextWithStoreType:error:
+//
+//- (void)testContextWithStoreTypeSQLiteExists {
+//    context = [NSManagedObjectContext contextWithStoreType:NSSQLiteStoreType error:NULL];
+//    STAssertNotNil(context, @"context with store type SQLite exists");
+//}
+//
+//- (void)testContextWithStoreTypeSQLiteSetsCoordinator {
+//    context = [NSManagedObjectContext contextWithStoreType:NSSQLiteStoreType error:NULL];
+//    STAssertNotNil(context.persistentStoreCoordinator, @"sets coordinator with store type SQLite");
+//}
+//
+//- (void)testContextWithStoreTypeInMemoryExists {
+//    context = [NSManagedObjectContext contextWithStoreType:NSInMemoryStoreType error:NULL];
+//    STAssertNotNil(context, @"context with store type InMemory exists");
+//}
+//
+//- (void)testContextWithStoreTypeInMemorySetsCoordinator {
+//    context = [NSManagedObjectContext contextWithStoreType:NSInMemoryStoreType error:NULL];
+//    STAssertNotNil(context.persistentStoreCoordinator, @"sets coordinator with store type InMemory");
+//}
+//
+//@end

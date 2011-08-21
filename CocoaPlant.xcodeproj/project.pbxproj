@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C90B0CCB13F55026009C18B1 /* libCocoaPlant.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B0CB313F55026009C18B1 /* libCocoaPlant.a */; };
+		C92C58FA1401A47600C606DA /* NSSortDescriptor+CocoaPlant.h in Headers */ = {isa = PBXBuildFile; fileRef = C92C58F81401A47600C606DA /* NSSortDescriptor+CocoaPlant.h */; };
+		C92C58FB1401A47600C606DA /* NSSortDescriptor+CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C92C58F91401A47600C606DA /* NSSortDescriptor+CocoaPlant.m */; };
 		C951D3E213F87926001D12CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C980C36A13F6A7DD0075AD0B /* UIKit.framework */; };
 		C951D3E313F87926001D12CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C980C36D13F6A8930075AD0B /* Foundation.framework */; };
 		C951D3E513F87926001D12CD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C951D3E413F87926001D12CD /* CoreData.framework */; };
@@ -111,6 +113,8 @@
 		C90B0CBA13F55026009C18B1 /* CocoaPlant-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaPlant-Prefix.pch"; sourceTree = "<group>"; };
 		C90B0CBB13F55026009C18B1 /* CocoaPlant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaPlant.h; sourceTree = "<group>"; };
 		C90B0CC313F55026009C18B1 /* CocoaPlantSpecs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaPlantSpecs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C92C58F81401A47600C606DA /* NSSortDescriptor+CocoaPlant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSortDescriptor+CocoaPlant.h"; sourceTree = "<group>"; };
+		C92C58F91401A47600C606DA /* NSSortDescriptor+CocoaPlant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSortDescriptor+CocoaPlant.m"; sourceTree = "<group>"; };
 		C951D3E013F87926001D12CD /* CocoaPlantApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaPlantApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C951D3E413F87926001D12CD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C951D3E813F87926001D12CD /* CocoaPlantApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaPlantApp-Info.plist"; sourceTree = "<group>"; };
@@ -319,6 +323,8 @@
 				C980C38913F6CC940075AD0B /* NSPersistentStore+CocoaPlant.m */,
 				C980C38A13F6CC940075AD0B /* NSPersistentStoreCoordinator+CocoaPlant.h */,
 				C980C38B13F6CC940075AD0B /* NSPersistentStoreCoordinator+CocoaPlant.m */,
+				C92C58F81401A47600C606DA /* NSSortDescriptor+CocoaPlant.h */,
+				C92C58F91401A47600C606DA /* NSSortDescriptor+CocoaPlant.m */,
 			);
 			path = PlantData;
 			sourceTree = "<group>";
@@ -408,6 +414,7 @@
 				C980C39913F6CC940075AD0B /* NSManagedObjectModel+CocoaPlant.h in Headers */,
 				C980C39B13F6CC940075AD0B /* NSPersistentStore+CocoaPlant.h in Headers */,
 				C980C39D13F6CC940075AD0B /* NSPersistentStoreCoordinator+CocoaPlant.h in Headers */,
+				C92C58FA1401A47600C606DA /* NSSortDescriptor+CocoaPlant.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,6 +587,7 @@
 				C980C39A13F6CC940075AD0B /* NSManagedObjectModel+CocoaPlant.m in Sources */,
 				C980C39C13F6CC940075AD0B /* NSPersistentStore+CocoaPlant.m in Sources */,
 				C980C39E13F6CC940075AD0B /* NSPersistentStoreCoordinator+CocoaPlant.m in Sources */,
+				C92C58FB1401A47600C606DA /* NSSortDescriptor+CocoaPlant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

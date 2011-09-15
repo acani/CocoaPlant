@@ -1,0 +1,3 @@
+[submodule "Libraries/Kiwi"]
+	path = Libraries/Kiwi
+	url = https://github.com/allending/Kiwi.git

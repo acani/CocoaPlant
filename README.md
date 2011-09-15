@@ -62,8 +62,8 @@ Adding CocoaPlant to Your Project
 
         cd path/to/your/project
         
-        # I put third-party code in Vendor, created by the next command.
-        git submodule add https://github.com/acani/CocoaPlant.git Vendor/CocoaPlant
+        # Let's put third-party code in a new directory called Libraries, created by the command below.
+        git submodule add https://github.com/acani/CocoaPlant.git Libraries/CocoaPlant
         git submodule update --init
         git commit -am 'Add CocoaPlant as a submodule & update --init.'
 
@@ -80,10 +80,10 @@ Adding CocoaPlant to Your Project
 
         git sup
 
-2. In Xcode, select your project at the top of the Project Navigator (⌘1), and press Option-Command-N to create a new group. Name it, e.g., "Vendor." Then, create a new group inside Vendor called "CocoaPlant." Finally, with the CocoaPlant group selected, press Option-Command-A to add files to your project, select `CocoaPlant.xcodeproj` in `Vendor`, and confirm that "Copy items into destination group's folder (if needed)" is unchecked, "Create groups for any added folders" is selected, and only your application target is checked. Then, click Add. In Terminal, review and commit your changes.
+2. In Xcode, select your project at the top of the Project Navigator (⌘1), and press Option-Command-N to create a new group. Name it, e.g., "Libraries." Then, create a new group inside Libraries called "CocoaPlant." Finally, with the CocoaPlant group selected, press Option-Command-A to add files to your project, select `CocoaPlant.xcodeproj` in `Libraries`, and confirm that "Copy items into destination group's folder (if needed)" is unchecked, "Create groups for any added folders" is selected, and only your application target is checked. Then, click Add. In Terminal, review and commit your changes.
 
         git diff -w -M --color-words HEAD
-        git commit -am 'Add Vendor/CocoaPlant groups & CocoaPlant project.'
+        git commit -am 'Add Libraries/CocoaPlant groups & CocoaPlant project.'
 
 3. Back in Xcode, select your main Xcode project at the top of the Project Navigator (⌘1), and then, select the target you want to add CocoaPlant to.
 
@@ -95,7 +95,7 @@ Adding CocoaPlant to Your Project
 
 7. Choose the Build Settings tab. Make sure All in the top left of the bar under the tabs.
 
-8. Add `Vendor/CocoaPlant` to "Library Search Path" (Leave the "Recursive" checkbox unchecked.).
+8. Add `Libraries/CocoaPlant` to "Library Search Path" (Leave the "Recursive" checkbox unchecked.).
 
 9. [Add `-all_load` & `-ObjC` to "Other Linker Flags."][3]
 

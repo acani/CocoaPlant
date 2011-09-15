@@ -3,6 +3,7 @@ CocoaPlant:
 		- Make CocoaPlant w/o tests
 		- Add CocoaPlantApp target with tests.
 	- Play w OCMock
+		- File defaultConfigurationName = Release; issue
 	- add files & convert specs to kiwi
 	- Spec UIAlertView
 	- Test with Network Link Conditioner

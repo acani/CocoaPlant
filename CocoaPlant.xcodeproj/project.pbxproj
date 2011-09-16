@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C90718631422D82000C20915 /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90718351422C98100C20915 /* libKiwi.a */; };
 		C90B0CCB13F55026009C18B1 /* libCocoaPlant.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B0CB313F55026009C18B1 /* libCocoaPlant.a */; };
 		C92C58FA1401A47600C606DA /* NSSortDescriptor+CocoaPlant.h in Headers */ = {isa = PBXBuildFile; fileRef = C92C58F81401A47600C606DA /* NSSortDescriptor+CocoaPlant.h */; };
 		C92C58FB1401A47600C606DA /* NSSortDescriptor+CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C92C58F91401A47600C606DA /* NSSortDescriptor+CocoaPlant.m */; };
@@ -48,7 +49,6 @@
 		C980C3B013F6CE910075AD0B /* NSManagedObjectModel+CocoaPlantSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C3A813F6CE910075AD0B /* NSManagedObjectModel+CocoaPlantSpecs.m */; };
 		C980C3B113F6CE910075AD0B /* NSPersistentStore+CocoaPlantSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C3A913F6CE910075AD0B /* NSPersistentStore+CocoaPlantSpecs.m */; };
 		C980C3B213F6CE910075AD0B /* NSPersistentStoreCoordinator+CocoaPlantSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C3AA13F6CE910075AD0B /* NSPersistentStoreCoordinator+CocoaPlantSpecs.m */; };
-		C98CEF5613F6A3E2006B3659 /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C98CEF4F13F6A3A6006B3659 /* libKiwi.a */; };
 		C9F182AF13F8BAA30026AF0D /* NSBundle+CocoaPlantSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F182AE13F8BAA30026AF0D /* NSBundle+CocoaPlantSpecs.m */; };
 		C9F182B813F8BE170026AF0D /* CocoaPlantApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9F182B113F8BD980026AF0D /* CocoaPlantApp.xcdatamodeld */; };
 		C9F182EE13F8BF470026AF0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C980C36D13F6A8930075AD0B /* Foundation.framework */; };
@@ -57,6 +57,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C90718341422C98100C20915 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C98CEF4113F6A3A5006B3659 /* Kiwi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F5015B9F11583A77002E9A98;
+			remoteInfo = Kiwi;
+		};
+		C90718361422C98100C20915 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C98CEF4113F6A3A5006B3659 /* Kiwi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F5015C9E11584017002E9A98;
+			remoteInfo = KiwiTests;
+		};
+		C90718381422C98100C20915 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C98CEF4113F6A3A5006B3659 /* Kiwi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A3B16542139967B800E9CC6E;
+			remoteInfo = KiwiExamples;
+		};
+		C90718561422D7AC00C20915 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C98CEF4113F6A3A5006B3659 /* Kiwi.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F5015B9E11583A77002E9A98;
+			remoteInfo = Kiwi;
+		};
 		C90F3E5913F9FF04002C16ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C90B0CAA13F55026009C18B1 /* Project object */;
@@ -70,41 +98,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = C90B0CB213F55026009C18B1;
 			remoteInfo = CocoaPlant;
-		};
-		C98CEF4C13F6A3A6006B3659 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C98CEF4113F6A3A5006B3659 /* Kiwi.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1D6058910D05DD3D006BFB54;
-			remoteInfo = KiwiDriver;
-		};
-		C98CEF4E13F6A3A6006B3659 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C98CEF4113F6A3A5006B3659 /* Kiwi.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F5015B9F11583A77002E9A98;
-			remoteInfo = Kiwi;
-		};
-		C98CEF5013F6A3A6006B3659 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C98CEF4113F6A3A5006B3659 /* Kiwi.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F5015C9E11584017002E9A98;
-			remoteInfo = KiwiTests;
-		};
-		C98CEF5213F6A3A6006B3659 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C98CEF4113F6A3A5006B3659 /* Kiwi.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A3B16542139967B800E9CC6E;
-			remoteInfo = KiwiExamples;
-		};
-		C98CEF5413F6A3C9006B3659 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C98CEF4113F6A3A5006B3659 /* Kiwi.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F5015B9E11583A77002E9A98;
-			remoteInfo = Kiwi;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -158,7 +151,7 @@
 		C980C3AA13F6CE910075AD0B /* NSPersistentStoreCoordinator+CocoaPlantSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPersistentStoreCoordinator+CocoaPlantSpecs.m"; sourceTree = "<group>"; };
 		C980C3B313F6CF2A0075AD0B /* CocoaPlantDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaPlantDefines.h; sourceTree = "<group>"; };
 		C980C3C113F6CF550075AD0B /* CocoaPlantSpecs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaPlantSpecs-Prefix.pch"; sourceTree = "<group>"; };
-		C98CEF4113F6A3A5006B3659 /* Kiwi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kiwi.xcodeproj; path = Vendor/Kiwi/Kiwi.xcodeproj; sourceTree = "<group>"; };
+		C98CEF4113F6A3A5006B3659 /* Kiwi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kiwi.xcodeproj; path = Kiwi/Kiwi.xcodeproj; sourceTree = "<group>"; };
 		C9F182AE13F8BAA30026AF0D /* NSBundle+CocoaPlantSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CocoaPlantSpecs.m"; sourceTree = "<group>"; };
 		C9F182B213F8BD980026AF0D /* CocoaPlantApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CocoaPlantApp.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,7 +176,7 @@
 				C976911213F8A71900B41267 /* CoreData.framework in Frameworks */,
 				C980C37013F6A8B90075AD0B /* SenTestingKit.framework in Frameworks */,
 				C90B0CCB13F55026009C18B1 /* libCocoaPlant.a in Frameworks */,
-				C98CEF5613F6A3E2006B3659 /* libKiwi.a in Frameworks */,
+				C90718631422D82000C20915 /* libKiwi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +194,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C907182F1422C98100C20915 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C90718351422C98100C20915 /* libKiwi.a */,
+				C90718371422C98100C20915 /* KiwiTests.octest */,
+				C90718391422C98100C20915 /* KiwiExamples.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		C90B0CA813F55026009C18B1 = {
 			isa = PBXGroup;
 			children = (
@@ -209,7 +212,7 @@
 				C90B0CCC13F55026009C18B1 /* CocoaPlantSpecs */,
 				C90B0CB513F55026009C18B1 /* Frameworks */,
 				C90B0CB413F55026009C18B1 /* Products */,
-				C98CEF3F13F6A364006B3659 /* Vendor */,
+				C98CEF3F13F6A364006B3659 /* Libraries */,
 			);
 			sourceTree = "<group>";
 		};
@@ -368,23 +371,12 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C98CEF3F13F6A364006B3659 /* Vendor */ = {
+		C98CEF3F13F6A364006B3659 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
 				C98CEF4113F6A3A5006B3659 /* Kiwi.xcodeproj */,
 			);
-			name = Vendor;
-			sourceTree = "<group>";
-		};
-		C98CEF4213F6A3A5006B3659 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C98CEF4D13F6A3A6006B3659 /* KiwiDriver.app */,
-				C98CEF4F13F6A3A6006B3659 /* libKiwi.a */,
-				C98CEF5113F6A3A6006B3659 /* KiwiTests.octest */,
-				C98CEF5313F6A3A6006B3659 /* KiwiExamples.octest */,
-			);
-			name = Products;
+			path = Libraries;
 			sourceTree = "<group>";
 		};
 		C9F182B013F8BCE50026AF0D /* Controllers */ = {
@@ -451,7 +443,7 @@
 			);
 			dependencies = (
 				C90F3E5A13F9FF04002C16ED /* PBXTargetDependency */,
-				C98CEF5513F6A3C9006B3659 /* PBXTargetDependency */,
+				C90718571422D7AC00C20915 /* PBXTargetDependency */,
 			);
 			name = CocoaPlantSpecs;
 			productName = CocoaPlantSpecs;
@@ -496,7 +488,7 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = C98CEF4213F6A3A5006B3659 /* Products */;
+					ProductGroup = C907182F1422C98100C20915 /* Products */;
 					ProjectRef = C98CEF4113F6A3A5006B3659 /* Kiwi.xcodeproj */;
 				},
 			);
@@ -510,32 +502,25 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		C98CEF4D13F6A3A6006B3659 /* KiwiDriver.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = KiwiDriver.app;
-			remoteRef = C98CEF4C13F6A3A6006B3659 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C98CEF4F13F6A3A6006B3659 /* libKiwi.a */ = {
+		C90718351422C98100C20915 /* libKiwi.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libKiwi.a;
-			remoteRef = C98CEF4E13F6A3A6006B3659 /* PBXContainerItemProxy */;
+			remoteRef = C90718341422C98100C20915 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C98CEF5113F6A3A6006B3659 /* KiwiTests.octest */ = {
+		C90718371422C98100C20915 /* KiwiTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = KiwiTests.octest;
-			remoteRef = C98CEF5013F6A3A6006B3659 /* PBXContainerItemProxy */;
+			remoteRef = C90718361422C98100C20915 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C98CEF5313F6A3A6006B3659 /* KiwiExamples.octest */ = {
+		C90718391422C98100C20915 /* KiwiExamples.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = KiwiExamples.octest;
-			remoteRef = C98CEF5213F6A3A6006B3659 /* PBXContainerItemProxy */;
+			remoteRef = C90718381422C98100C20915 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -622,6 +607,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C90718571422D7AC00C20915 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Kiwi;
+			targetProxy = C90718561422D7AC00C20915 /* PBXContainerItemProxy */;
+		};
 		C90F3E5A13F9FF04002C16ED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C951D3DF13F87926001D12CD /* CocoaPlantApp */;
@@ -631,11 +621,6 @@
 			isa = PBXTargetDependency;
 			target = C90B0CB213F55026009C18B1 /* CocoaPlant */;
 			targetProxy = C951D40E13F87CE0001D12CD /* PBXContainerItemProxy */;
-		};
-		C98CEF5513F6A3C9006B3659 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Kiwi;
-			targetProxy = C98CEF5413F6A3C9006B3659 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -716,7 +701,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaPlantSpecs/Supporting Files/CocoaPlantSpecs-Prefix.pch";
-				HEADER_SEARCH_PATHS = Vendor/Kiwi;
+				HEADER_SEARCH_PATHS = Libraries/Kiwi;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-force_load",
@@ -738,7 +723,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaPlantSpecs/Supporting Files/CocoaPlantSpecs-Prefix.pch";
-				HEADER_SEARCH_PATHS = Vendor/Kiwi;
+				HEADER_SEARCH_PATHS = Libraries/Kiwi;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-force_load",

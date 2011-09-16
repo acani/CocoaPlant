@@ -55,91 +55,137 @@ Customize fetch requests with blocks:
                                     }];
 
 
-Adding CocoaPlant to Your Project
----------------------------------
+Project Setup
+-------------
 
-1. Add CocoaPlant as a [Git submodule][2] to facilitate updates & contributions.
+### Add CocoaPlant as a [Git submodule][2]
 
-        cd path/to/your/project
-        
-        # Let's put third-party code in a new directory called Libraries, created by the command below.
-        git submodule add https://github.com/acani/CocoaPlant.git Libraries/CocoaPlant
-        git submodule update --init
-        git commit -am 'Add CocoaPlant as a submodule & update --init.'
+This will help you [pull in updates][3] and [make contributions][4].
 
-  In the future, you can pull in remote updates with:
+    cd ~/Projects/Acani/ # sample project root directory
 
-        git submodule foreach 'git pull --rebase'
-        git commit -am 'Update submodules to latest commit.'
+    # Let's make a new directory called Libraries for third-party code.
+    git submodule add https://github.com/acani/CocoaPlant.git Libraries/CocoaPlant
+    git submodule update --init
+    git commit -am 'Add CocoaPlant as a submodule & update --init.'
 
-  Add an alias (to `~/.gitconfig`) for the first of the two commands above:
 
-        git config --global alias.sup "submodule foreach 'git pull --rebase'"
+### Add CocoaPlant to Your Xcode Project
 
-  Then, you can just do:
+In Xcode, select your project at the top of the Project Navigator (⌘1), and press Option-Command-N to create a new group. Name it, e.g., "Libraries." Then, with the Libraries group selected, press Option-Command-A to add files to your project, select `CocoaPlant.xcodeproj` in `Libraries/CocoaPlant/CocoaPlant`, and confirm that "Copy items into destination group's folder (if needed)" is unchecked, "Create groups for any added folders" is selected, and all targets are unchecked. Then, click Add.
 
-        git sup
+In Terminal, review and commit your changes:
 
-2. In Xcode, select your project at the top of the Project Navigator (⌘1), and press Option-Command-N to create a new group. Name it, e.g., "Libraries." Then, create a new group inside Libraries called "CocoaPlant." Finally, with the CocoaPlant group selected, press Option-Command-A to add files to your project, select `CocoaPlant.xcodeproj` in `Libraries`, and confirm that "Copy items into destination group's folder (if needed)" is unchecked, "Create groups for any added folders" is selected, and only your application target is checked. Then, click Add. In Terminal, review and commit your changes.
+    git diff -w -M --color-words HEAD
+    git commit -am 'Add Libraries/CocoaPlant group & CocoaPlant project.'
 
-        git diff -w -M --color-words HEAD
-        git commit -am 'Add Libraries/CocoaPlant groups & CocoaPlant project.'
 
-3. Back in Xcode, select your main Xcode project at the top of the Project Navigator (⌘1), and then, select the target you want to add CocoaPlant to.
+### Edit Your Application Target's Settings
 
-4. Select the "Build Phases" tab.
+In Xcode, select your main Xcode project at the top of the Project Navigator (⌘1), and then, select the target to which you want to add CocoaPlant.
 
-5. Under the "Target Dependencies" group, click the plus button, select CocoaPlant from the menu, and click Add.
+#### [Edit Build Phases][5]
 
-6. Under the "Link Binary With Libraries" group, click the plus button, select `libCocoaPlant.a` from the menu, and click Add.
+Select the "Build Phases" tab.
 
-7. Choose the Build Settings tab. Make sure All in the top left of the bar under the tabs.
+* Under the "Target Dependencies" group, click the plus button, select CocoaPlant from the menu, and click Add.
+* Under the "Link Binary With Libraries" group, click the plus button, select `libCocoaPlant.a` from the menu, and click Add.
 
-8. Add `Libraries/CocoaPlant` to "Library Search Path" (Leave the "Recursive" checkbox unchecked.).
+#### [Edit Build Settings][6]
 
-9. [Add `-all_load` & `-ObjC` to "Other Linker Flags."][3]
+Select the "Build Settings" tab. Make sure "All" is selected in the top left of the bar under the tabs.
 
-10. Include CocoaPlant in your app's prefix header file, e.g., `AppName-Prefix.pch`:
+* Search for "Header Search Paths," click on it, hit enter, paste `Libraries/CocoaPlant`, and hit enter. (This leaves "Recursive" unchecked.)
+* Do the same for "Other Linker Flags," except paste [`-ObjC -force_load ${BUILT_PRODUCTS_DIR}/libCocoaPlant.a`][7]
+
+In Terminal, review and commit your changes:
+
+    git diff -w -M --color-words HEAD
+    git commit -am 'Edit target info, phases & settings for CocoaPlant.'
+
+
+Using CocoaPlant in Your App
+-----------------------
+
+* Include CocoaPlant in your app's prefix header file, e.g., `AppName-Prefix.pch`:
 
         #import <CocoaPlant/CocoaPlant.h>
+
+
+<a name="update">Updating the CocoaPlant iOS SDK</a>
+-----------------------------------------------
+
+Pull in remote updates by running these commands from your project root directory:
+
+    git submodule foreach 'git pull --rebase'
+    git commit -am 'Update submodules to latest commit.'
+
+You can add an alias (to `~/.gitconfig`) for the first of the two commands above:
+
+    git config --global alias.sup "submodule foreach 'git pull --rebase'"
+
+Then, to pull in remote updates, you can just do:
+
+    git sup
+
+
+<a name="contribute">Contributing to the CocoaPlant iOS SDK</a>
+----------------------------------------------------------
+
+* Commit your changes.
+
+        cd ~/Projects/Acani/Libraries/CocoaPlant
+        git add -A
+        git commit
+
+* Fork this repo on GitHub, add your fork as a remote, and push.
+
+        git remote add myuser git@github.com:myuser/venmo-ios-sdk.git
+        git push myuser master
+
+* Send CocoaPlant a pull request on GitHub.
 
 
 Related
 -------
 
 * Foundation
-  * [CWFoundation][4]
-  * [Omni Foundation][5]
-  * [GHKit][6]
+  * [CWFoundation][8]
+  * [Omni Foundation][9]
+  * [GHKit][10]
 
 * UIKit
-  * [CWUIKit][7]
-  * [HTFramework][8]
+  * [CWUIKit][11]
+  * [HTFramework][12]
 
 * Core Data
-  * [MagicalRecord][9]
-  * [CWCoreData][10]
-  * [ObjectiveResource][11]
-  * [RestKit][12]
+  * [MagicalRecord][13]
+  * [CWCoreData][14]
+  * [ObjectiveResource][15]
+  * [RestKit][16]
 
 * General
-  * [iOS Frameworks][13]
-  * [SSToolKit][14]
-  * [Tapku][15]
+  * [iOS Frameworks][17]
+  * [SSToolKit][18]
+  * [Tapku][19]
 
 
   [1]: http://www.merriam-webster.com/dictionary/plant
   [2]: http://book.git-scm.com/5_submodules.html
-  [3]: http://developer.apple.com/library/mac/#qa/qa1490/_index.html
-  [4]: https://github.com/jayway/CWFoundation
-  [5]: http://www.omnigroup.com/company/developer/
-  [6]: http://gabriel.github.com/gh-kit/
-  [7]: https://github.com/jayway/CWUIKit
-  [8]: https://github.com/huddletech/HTFramework
-  [9]: https://github.com/magicalpanda/MagicalRecord
-  [10]: https://github.com/jayway/CWCoreData
-  [11]: http://iphoneonrails.com/
-  [12]: http://restkit.org/
-  [13]: http://iosframeworks.com/
-  [14]: http://sstoolk.it/
-  [15]: http://tapku.com/
+  [3]: #update
+  [4]: #contribute
+  [5]: http://j.mp/pBH1KE
+  [6]: http://j.mp/mR5Jco
+  [7]: http://developer.apple.com/library/mac/#qa/qa1490/_index.html
+  [8]: https://github.com/jayway/CWFoundation
+  [9]: http://www.omnigroup.com/company/developer/
+  [10]: http://gabriel.github.com/gh-kit/
+  [11]: https://github.com/jayway/CWUIKit
+  [12]: https://github.com/huddletech/HTFramework
+  [13]: https://github.com/magicalpanda/MagicalRecord
+  [14]: https://github.com/jayway/CWCoreData
+  [15]: http://iphoneonrails.com/
+  [16]: http://restkit.org/
+  [17]: http://iosframeworks.com/
+  [18]: http://sstoolk.it/
+  [19]: http://tapku.com/

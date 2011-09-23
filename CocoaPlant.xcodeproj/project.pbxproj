@@ -310,7 +310,7 @@
 				C980C37F13F6CC940075AD0B /* NSString+CocoaPlant.h */,
 				C980C38013F6CC940075AD0B /* NSString+CocoaPlant.m */,
 			);
-			path = Plantation;
+			name = Plantation;
 			sourceTree = "<group>";
 		};
 		C980C38113F6CC940075AD0B /* PlantData */ = {
@@ -329,7 +329,7 @@
 				C92C58F81401A47600C606DA /* NSSortDescriptor+CocoaPlant.h */,
 				C92C58F91401A47600C606DA /* NSSortDescriptor+CocoaPlant.m */,
 			);
-			path = PlantData;
+			name = PlantData;
 			sourceTree = "<group>";
 		};
 		C980C38C13F6CC940075AD0B /* UIPlant */ = {
@@ -338,7 +338,7 @@
 				C980C38D13F6CC940075AD0B /* UIAlertView+CocoaPlant.h */,
 				C980C38E13F6CC940075AD0B /* UIAlertView+CocoaPlant.m */,
 			);
-			path = UIPlant;
+			name = UIPlant;
 			sourceTree = "<group>";
 		};
 		C980C3A113F6CE910075AD0B /* Plantation */ = {
@@ -348,7 +348,7 @@
 				C980C3A313F6CE910075AD0B /* NSFileManager+CocoaPlantSpecs.m */,
 				C980C3A413F6CE910075AD0B /* NSString+CocoaPlantSpecs.m */,
 			);
-			path = Plantation;
+			name = Plantation;
 			sourceTree = "<group>";
 		};
 		C980C3A513F6CE910075AD0B /* PlantData */ = {
@@ -360,7 +360,7 @@
 				C980C3A913F6CE910075AD0B /* NSPersistentStore+CocoaPlantSpecs.m */,
 				C980C3AA13F6CE910075AD0B /* NSPersistentStoreCoordinator+CocoaPlantSpecs.m */,
 			);
-			path = PlantData;
+			name = PlantData;
 			sourceTree = "<group>";
 		};
 		C980C3C013F6CF550075AD0B /* Supporting Files */ = {

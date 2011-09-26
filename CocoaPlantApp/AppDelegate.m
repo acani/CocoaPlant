@@ -1,6 +1,7 @@
+#import <CocoaPlant/CocoaPlant.h>
+
 #import "AppDelegate.h"
 #import "MasterViewController.h"
-#import "NSManagedObjectContext+CocoaPlant.h"
 
 @implementation AppDelegate
 
@@ -12,7 +13,8 @@
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     MasterViewController *controller = [[MasterViewController alloc] init];
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
+    self.navigationController = [[UINavigationController alloc]
+                                 initWithRootViewController:controller];
     window.rootViewController = navigationController;
     [window makeKeyAndVisible];
     return YES;
@@ -25,8 +27,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     return managedObjectContext;
 }
 
-//- (void)saveContext
-//{
+//- (void)saveContext {
 //    NSError *error = nil;
 //    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
 //    if (managedObjectContext != nil)

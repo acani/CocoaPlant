@@ -9,6 +9,8 @@
 
 + (NSArray *)fetchInContext:(NSManagedObjectContext *)context error:(NSError **)error
                     options:(void (^)(NSFetchRequest *request))options;
++ (BOOL)deleteAllInContext:(NSManagedObjectContext *)context error:(NSError **)error;
+
 
 // TODO: handle errors:
 //+ (void) defaultErrorHandler:(NSError *)error

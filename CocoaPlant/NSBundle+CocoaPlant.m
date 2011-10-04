@@ -3,7 +3,7 @@
 @implementation NSBundle (CocoaPlant)
 
 - (NSString *)name {
-    return [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleNameKey];
+    return [[self infoDictionary] objectForKey:(NSString *)kCFBundleNameKey];
 }
 
 @end

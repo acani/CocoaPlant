@@ -23,7 +23,6 @@
 - (void)testDefaultURLIsCorrect {
     NSString *appName = [[NSBundle mainBundle] name];
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:appName withExtension:@"momd"];
-    NSLog(@"modelURL: %@", modelURL);
     STAssertEqualObjects([NSManagedObjectModel defaultURL], modelURL, @"default URL is correct");
 }
 

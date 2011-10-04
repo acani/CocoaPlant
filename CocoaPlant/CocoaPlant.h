@@ -1,3 +1,5 @@
+#import <CocoaPlant/CocoaPlantDefines.h>
+
 // Plantation (Foundation)
 #import <CocoaPlant/NSBundle+CocoaPlant.h>
 #import <CocoaPlant/NSFileManager+CocoaPlant.h>

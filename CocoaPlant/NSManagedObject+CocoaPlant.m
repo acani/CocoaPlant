@@ -27,4 +27,17 @@
     return [context executeFetchRequest:fetchRequest error:error];
 }
 
++ (BOOL)deleteAllInContext:(NSManagedObjectContext *)context error:(NSError **)error {
+    
+    NSArray *results = [self fetchInContext:context error:error options:^(NSFetchRequest *request) { 
+        [request setIncludesPropertyValues:NO];
+    }];
+    
+    for (NSManagedObject *managedObject in results) {
+        [context deleteObject:managedObject];
+    }
+    
+    return results ? YES : NO;
+}
+
 @end

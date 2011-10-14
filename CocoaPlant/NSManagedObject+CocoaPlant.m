@@ -15,20 +15,28 @@
                                          inManagedObjectContext:context];
 }
 
-+ (NSArray *)fetchInContext:(NSManagedObjectContext *)context error:(NSError **)error
-                    options:(void (^)(NSFetchRequest *request))options {
++ (NSFetchRequest *)fetchRequestInManagedObjectContext:(NSManagedObjectContext *)context
+                                           withOptions:(NSFetchRequestOptions)options {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     [fetchRequest setEntity:[self entityInContext:context]];
 
     if (options) {
         options(fetchRequest);
     }
+    
+    return fetchRequest;    
+}
 
++ (NSArray *)fetchInManagedObjectContext:(NSManagedObjectContext *)context error:(NSError **)error
+                    options:(void (^)(NSFetchRequest *request))options {
+    NSFetchRequest *fetchRequest = [self fetchRequestInManagedObjectContext:context
+                                                                withOptions:options];
     return [context executeFetchRequest:fetchRequest error:error];
 }
 
 + (BOOL)deleteAllInContext:(NSManagedObjectContext *)context error:(NSError **)error {
-    NSArray *results = [self fetchInContext:context error:error options:^(NSFetchRequest *request) { 
+    NSArray *results = [self fetchInManagedObjectContext:context error:error
+                                                 options:^(NSFetchRequest *request) { 
         [request setIncludesPropertyValues:NO];
     }];
 

@@ -42,21 +42,21 @@ describe(@"NSManagedObject+CocoaPlant", ^{
         });
     });
 
-    describe(@"-fetchInContext:error:options", ^{
+    describe(@"-fetchInManagedObjectContext:error:options", ^{
         it(@"returns 0 objects", ^{
-            NSArray *results = [Event fetchInContext:context error:NULL options:NULL];
+            NSArray *results = [Event fetchInManagedObjectContext:context error:NULL options:NULL];
             [[theValue([results count]) should] equal:theValue(0)];
         });
         
         it(@"returns 1 object", ^{
             [Event insertIntoContext:context];
-            NSArray *results = [Event fetchInContext:context error:NULL options:NULL];
+            NSArray *results = [Event fetchInManagedObjectContext:context error:NULL options:NULL];
             [[theValue([results count]) should] equal:theValue(1)];
         });
 
         it(@"returns fetched objects", ^{
             NSArray *events = [NSArray arrayWithObject:[Event insertIntoContext:context]];
-            NSArray *fetchedEvents = [Event fetchInContext:context error:NULL options:NULL];
+            NSArray *fetchedEvents = [Event fetchInManagedObjectContext:context error:NULL options:NULL];
             [[events should] equal:fetchedEvents];
         });
 
@@ -64,7 +64,7 @@ describe(@"NSManagedObject+CocoaPlant", ^{
             [Event insertIntoContext:context];
             [Event insertIntoContext:context];
             
-            NSArray *results = [Event fetchInContext:context error:NULL options:^(NSFetchRequest *request) {
+            NSArray *results = [Event fetchInManagedObjectContext:context error:NULL options:^(NSFetchRequest *request) {
                 [request setFetchLimit:1];
             }];
             

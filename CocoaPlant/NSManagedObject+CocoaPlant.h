@@ -1,13 +1,17 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+typedef void (^NSFetchRequestOptions)(NSFetchRequest *request);
+
 @interface NSManagedObject (CocoaPlant)
 
 + (NSString *)entityName;
 + (NSEntityDescription *)entityInContext:(NSManagedObjectContext *)context;
 + (id)insertIntoContext:(NSManagedObjectContext *)context;
 
-+ (NSArray *)fetchInContext:(NSManagedObjectContext *)context error:(NSError **)error
++ (NSFetchRequest *)fetchRequestInManagedObjectContext:(NSManagedObjectContext *)context
+                                           withOptions:(NSFetchRequestOptions)options;
++ (NSArray *)fetchInManagedObjectContext:(NSManagedObjectContext *)context error:(NSError **)error
                     options:(void (^)(NSFetchRequest *request))options;
 + (BOOL)deleteAllInContext:(NSManagedObjectContext *)context error:(NSError **)error;
 

@@ -49,6 +49,8 @@
 		C980C3B013F6CE910075AD0B /* NSManagedObjectModel+CocoaPlantSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C3A813F6CE910075AD0B /* NSManagedObjectModel+CocoaPlantSpecs.m */; };
 		C980C3B113F6CE910075AD0B /* NSPersistentStore+CocoaPlantSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C3A913F6CE910075AD0B /* NSPersistentStore+CocoaPlantSpecs.m */; };
 		C980C3B213F6CE910075AD0B /* NSPersistentStoreCoordinator+CocoaPlantSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C3AA13F6CE910075AD0B /* NSPersistentStoreCoordinator+CocoaPlantSpecs.m */; };
+		C985E2B6144E7DEC0076418A /* UIView+CocoaPlant.h in Headers */ = {isa = PBXBuildFile; fileRef = C985E2B4144E7DEC0076418A /* UIView+CocoaPlant.h */; };
+		C985E2B7144E7DEC0076418A /* UIView+CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C985E2B5144E7DEC0076418A /* UIView+CocoaPlant.m */; };
 		C9E3FA0E143BBA68001E0880 /* CocoaPlantDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = C980C3B313F6CF2A0075AD0B /* CocoaPlantDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9F182AF13F8BAA30026AF0D /* NSBundle+CocoaPlantSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F182AE13F8BAA30026AF0D /* NSBundle+CocoaPlantSpecs.m */; };
 		C9F182B813F8BE170026AF0D /* CocoaPlantApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9F182B113F8BD980026AF0D /* CocoaPlantApp.xcdatamodeld */; };
@@ -152,6 +154,8 @@
 		C980C3AA13F6CE910075AD0B /* NSPersistentStoreCoordinator+CocoaPlantSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPersistentStoreCoordinator+CocoaPlantSpecs.m"; sourceTree = "<group>"; };
 		C980C3B313F6CF2A0075AD0B /* CocoaPlantDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaPlantDefines.h; sourceTree = "<group>"; };
 		C980C3C113F6CF550075AD0B /* CocoaPlantSpecs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaPlantSpecs-Prefix.pch"; sourceTree = "<group>"; };
+		C985E2B4144E7DEC0076418A /* UIView+CocoaPlant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CocoaPlant.h"; sourceTree = "<group>"; };
+		C985E2B5144E7DEC0076418A /* UIView+CocoaPlant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CocoaPlant.m"; sourceTree = "<group>"; };
 		C98CEF4113F6A3A5006B3659 /* Kiwi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kiwi.xcodeproj; path = Kiwi/Kiwi.xcodeproj; sourceTree = "<group>"; };
 		C9F182AE13F8BAA30026AF0D /* NSBundle+CocoaPlantSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CocoaPlantSpecs.m"; sourceTree = "<group>"; };
 		C9F182B213F8BD980026AF0D /* CocoaPlantApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CocoaPlantApp.xcdatamodel; sourceTree = "<group>"; };
@@ -338,6 +342,8 @@
 			children = (
 				C980C38D13F6CC940075AD0B /* UIAlertView+CocoaPlant.h */,
 				C980C38E13F6CC940075AD0B /* UIAlertView+CocoaPlant.m */,
+				C985E2B4144E7DEC0076418A /* UIView+CocoaPlant.h */,
+				C985E2B5144E7DEC0076418A /* UIView+CocoaPlant.m */,
 			);
 			name = UIPlant;
 			sourceTree = "<group>";
@@ -409,6 +415,7 @@
 				C980C39B13F6CC940075AD0B /* NSPersistentStore+CocoaPlant.h in Headers */,
 				C980C39D13F6CC940075AD0B /* NSPersistentStoreCoordinator+CocoaPlant.h in Headers */,
 				C92C58FA1401A47600C606DA /* NSSortDescriptor+CocoaPlant.h in Headers */,
+				C985E2B6144E7DEC0076418A /* UIView+CocoaPlant.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +582,7 @@
 				C980C39C13F6CC940075AD0B /* NSPersistentStore+CocoaPlant.m in Sources */,
 				C980C39E13F6CC940075AD0B /* NSPersistentStoreCoordinator+CocoaPlant.m in Sources */,
 				C92C58FB1401A47600C606DA /* NSSortDescriptor+CocoaPlant.m in Sources */,
+				C985E2B7144E7DEC0076418A /* UIView+CocoaPlant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

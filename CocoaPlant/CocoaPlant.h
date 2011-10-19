@@ -6,6 +6,7 @@
 #import <CocoaPlant/NSString+CocoaPlant.h>
 
 // UIPlant (UIKit)
+#import <CocoaPlant/UIView+CocoaPlant.h>
 #import <CocoaPlant/UIAlertView+CocoaPlant.h>
 
 // PlantData (CoreData)

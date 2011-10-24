@@ -9,6 +9,8 @@
 @synthesize navigationController;
 @synthesize managedObjectContext;
 
+#pragma mark - UIApplicationDelegate
+
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -19,6 +21,8 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [window makeKeyAndVisible];
     return YES;
 }
+
+#pragma mark - AppDelegate: Properties
 
 - (NSManagedObjectContext *)managedObjectContext {
     if (managedObjectContext) return managedObjectContext;

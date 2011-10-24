@@ -6,14 +6,13 @@ typedef void (^NSFetchRequestOptions)(NSFetchRequest *request);
 @interface NSManagedObject (CocoaPlant)
 
 + (NSString *)entityName;
-+ (NSEntityDescription *)entityInContext:(NSManagedObjectContext *)context;
-+ (id)insertIntoContext:(NSManagedObjectContext *)context;
++ (NSEntityDescription *)entityInManagedObjectContext:(NSManagedObjectContext *)context;
++ (id)insertIntoManagedObjectContext:(NSManagedObjectContext *)context;
 
-+ (NSFetchRequest *)fetchRequestInManagedObjectContext:(NSManagedObjectContext *)context
-                                           withOptions:(NSFetchRequestOptions)options;
++ (NSFetchRequest *)fetchRequestInManagedObjectContext:(NSManagedObjectContext *)context;
 + (NSArray *)fetchInManagedObjectContext:(NSManagedObjectContext *)context error:(NSError **)error
-                    options:(void (^)(NSFetchRequest *request))options;
-+ (BOOL)deleteAllInContext:(NSManagedObjectContext *)context error:(NSError **)error;
+                    options:(NSFetchRequestOptions)options;
++ (BOOL)deleteAllInManagedObjectContext:(NSManagedObjectContext *)context error:(NSError **)error;
 
 
 // TODO: handle errors:

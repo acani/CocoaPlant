@@ -260,7 +260,7 @@
 			children = (
 				C90B0CBA13F55026009C18B1 /* CocoaPlant-Prefix.pch */,
 			);
-			path = "Supporting Files";
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		C90B0CCC13F55026009C18B1 /* CocoaPlantSpecs */ = {
@@ -292,7 +292,7 @@
 				C951D3EC13F87926001D12CD /* main.m */,
 				C951D3EE13F87926001D12CD /* CocoaPlantApp-Prefix.pch */,
 			);
-			path = "Supporting Files";
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		C976911613F8AEB500B41267 /* Models */ = {
@@ -302,7 +302,7 @@
 				C976911313F8AE9300B41267 /* Event.h */,
 				C976911413F8AE9300B41267 /* Event.m */,
 			);
-			path = Models;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		C980C37A13F6CC940075AD0B /* Plantation */ = {
@@ -375,7 +375,7 @@
 			children = (
 				C980C3C113F6CF550075AD0B /* CocoaPlantSpecs-Prefix.pch */,
 			);
-			path = "Supporting Files";
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		C98CEF3F13F6A364006B3659 /* Libraries */ = {
@@ -394,7 +394,7 @@
 				C951D3F813F87926001D12CD /* DetailViewController.h */,
 				C951D3F913F87926001D12CD /* DetailViewController.m */,
 			);
-			path = Controllers;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -682,7 +682,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/CocoaPlant.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CocoaPlant/Supporting Files/CocoaPlant-Prefix.pch";
+				GCC_PREFIX_HEADER = "CocoaPlant/CocoaPlant-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -694,7 +694,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/CocoaPlant.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CocoaPlant/Supporting Files/CocoaPlant-Prefix.pch";
+				GCC_PREFIX_HEADER = "CocoaPlant/CocoaPlant-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -710,7 +710,7 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CocoaPlantSpecs/Supporting Files/CocoaPlantSpecs-Prefix.pch";
+				GCC_PREFIX_HEADER = "CocoaPlantSpecs/CocoaPlantSpecs-Prefix.pch";
 				HEADER_SEARCH_PATHS = Libraries/Kiwi;
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -732,7 +732,7 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CocoaPlantSpecs/Supporting Files/CocoaPlantSpecs-Prefix.pch";
+				GCC_PREFIX_HEADER = "CocoaPlantSpecs/CocoaPlantSpecs-Prefix.pch";
 				HEADER_SEARCH_PATHS = Libraries/Kiwi;
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -750,9 +750,9 @@
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CocoaPlantApp/Supporting Files/CocoaPlantApp-Prefix.pch";
+				GCC_PREFIX_HEADER = "CocoaPlantApp/CocoaPlantApp-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)";
-				INFOPLIST_FILE = "CocoaPlantApp/Supporting Files/CocoaPlantApp-Info.plist";
+				INFOPLIST_FILE = "CocoaPlantApp/CocoaPlantApp-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-force_load",
@@ -768,9 +768,9 @@
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CocoaPlantApp/Supporting Files/CocoaPlantApp-Prefix.pch";
+				GCC_PREFIX_HEADER = "CocoaPlantApp/CocoaPlantApp-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)";
-				INFOPLIST_FILE = "CocoaPlantApp/Supporting Files/CocoaPlantApp-Info.plist";
+				INFOPLIST_FILE = "CocoaPlantApp/CocoaPlantApp-Info.plist";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = (
 					"-ObjC",

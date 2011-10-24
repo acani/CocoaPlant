@@ -17,13 +17,13 @@ describe(@"NSString+CocoaPlant", ^{
         [[[@"\n hello \n" stringByTrimmingLeadingWhitespaceAndNewlineCharacters] should]
          equal:@"hello \n"];
     });
-    
+
     it(@"-stringByTrimmingTrailingCharactersInSet", ^{
         NSCharacterSet *letterCharSet = [NSCharacterSet letterCharacterSet];
         [[[@"zip90210zip" stringByTrimmingTrailingCharactersInSet:letterCharSet] should]
          equal:@"zip90210"];
     });
-        
+
     it(@"-stringByTrimmingTrailingWhitespaceAndNewlineCharacters", ^{
         [[[@"" stringByTrimmingTrailingWhitespaceAndNewlineCharacters] should] beEmpty];
         [[[@"\n " stringByTrimmingTrailingWhitespaceAndNewlineCharacters] should] beEmpty];

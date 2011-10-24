@@ -35,7 +35,7 @@ describe(@"NSFileManager+CocoaPlant", ^{
         it(@"returns something", ^{
             [[fileManager URLForApplicationDocumentDirectory] shouldNotBeNil];
         });
-        
+
         it(@"returns application-document-directory URL", ^{
             NSURL *directoryURL = [[fileManager URLsForDirectory:NSDocumentDirectory
                                                        inDomains:NSUserDomainMask] lastObject];

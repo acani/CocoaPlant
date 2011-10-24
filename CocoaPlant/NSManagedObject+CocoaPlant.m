@@ -34,7 +34,7 @@
 
 + (BOOL)deleteAllInManagedObjectContext:(NSManagedObjectContext *)context error:(NSError **)error {
     NSArray *results = [self fetchInManagedObjectContext:context error:error
-                                                 options:^(NSFetchRequest *request) { 
+                                                 options:^(NSFetchRequest *request) {
         [request setIncludesPropertyValues:NO];
     }];
 

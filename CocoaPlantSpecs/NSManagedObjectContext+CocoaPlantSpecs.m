@@ -16,14 +16,14 @@ describe(@"NSManagedObjectContext+CocoaPlant", ^{
             [[NSPersistentStoreCoordinator should] receive:@selector(coordinatorWithStoreType:error:)
              withArguments:storeType, theValue(&error)];
             context = [NSManagedObjectContext contextWithStoreType:storeType error:&error];
-            
+
         });
 
-//        
+//
 //        it(@"sets coordinator", ^{
 //            [NSPersistentStoreCoordinator should] receive:@selector(coordinatorWithStoreType:error:) andReturn:<#(id)#> withArguments:<#(id), ...#>
 //        });
-//    
+//
 //        it(@"returns something", ^{
 //            context = [NSManagedObjectContext contextWithStoreType:NSSQLiteStoreType error:NULL];
 //            [context shouldNotBeNil];

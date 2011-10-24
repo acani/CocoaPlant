@@ -21,7 +21,7 @@ describe(@"NSManagedObject+CocoaPlant", ^{
 
     describe(@"-entityInManagedObjectContext", ^{
         it(@"returns something", ^{ [[Event entityInManagedObjectContext:context] shouldNotBeNil]; });
-        
+
         it(@"returns entity", ^{
             NSString *entityName = [Event entityInManagedObjectContext:context].name;
             [[entityName should] equal:@"Event"];
@@ -47,7 +47,7 @@ describe(@"NSManagedObject+CocoaPlant", ^{
             NSArray *results = [Event fetchInManagedObjectContext:context error:NULL options:NULL];
             [[theValue([results count]) should] equal:theValue(0)];
         });
-        
+
         it(@"returns 1 object", ^{
             [Event insertIntoManagedObjectContext:context];
             NSArray *results = [Event fetchInManagedObjectContext:context error:NULL options:NULL];
@@ -63,11 +63,11 @@ describe(@"NSManagedObject+CocoaPlant", ^{
         it(@"applies fetch options", ^{
             [Event insertIntoManagedObjectContext:context];
             [Event insertIntoManagedObjectContext:context];
-            
+
             NSArray *results = [Event fetchInManagedObjectContext:context error:NULL options:^(NSFetchRequest *request) {
                 [request setFetchLimit:1];
             }];
-            
+
             [[theValue([results count]) should] equal:theValue(1)];
         });
     });

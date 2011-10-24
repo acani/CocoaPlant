@@ -24,7 +24,7 @@
 {
     if (detailItem != newDetailItem) {
         detailItem = newDetailItem;
-        
+
         // Update the view.
         [self configureView];
     }

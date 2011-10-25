@@ -1,11 +1,10 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-
-#import "CPCoreDataTraits.h"
+#import <CocoaPlant/CocoaPlant.h>
 
 @class DetailViewController;
 
-@interface MasterViewController : UITableViewController <CPCoreDataTraits, NSFetchedResultsControllerDelegate>
+@interface MasterViewController : UITableViewController <CPCoreDataTraits>
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 

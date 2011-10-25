@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@protocol CPCoreDataTraits <NSObject>
+@protocol CPCoreDataTraits <NSFetchedResultsControllerDelegate>
 
 @optional
 

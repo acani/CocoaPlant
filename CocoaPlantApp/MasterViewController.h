@@ -4,7 +4,7 @@
 
 @class DetailViewController;
 
-@interface MasterViewController : UITableViewController <CPCoreDataTraits>
+@interface MasterViewController : CPCoreDataTableViewController
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 

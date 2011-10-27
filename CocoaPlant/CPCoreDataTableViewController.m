@@ -4,7 +4,9 @@
 @implementation CPCoreDataTableViewController
 
 @synthesize entityName;
+@synthesize predicate;
 @synthesize sortKey;
+@synthesize cacheName;
 
 @synthesize fetchedResultsController;
 @synthesize managedObjectContext;
@@ -12,7 +14,9 @@
 #pragma mark - UIViewController
 
 - (void)viewDidUnload {
+//    [NSFetchedResultsController deleteCacheWithName:entityName];
     self.fetchedResultsController = nil;
+    self.predicate = nil;
     [super viewDidUnload];
 }
 
@@ -77,13 +81,14 @@
                                     fetchRequestInManagedObjectContext:self.managedObjectContext];
     fetchRequest.fetchBatchSize = 20;
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:sortKey ascending:NO];
+    fetchRequest.predicate = predicate;
     fetchRequest.sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
 
     // Create the fetchedResultsController.
     self.fetchedResultsController = [[NSFetchedResultsController alloc]
                                      initWithFetchRequest:fetchRequest
                                      managedObjectContext:self.managedObjectContext
-                                     sectionNameKeyPath:nil cacheName:entityName];
+                                     sectionNameKeyPath:nil cacheName:cacheName];
     fetchedResultsController.delegate = self;
 
     // Perform the fetch.

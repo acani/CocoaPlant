@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C90718631422D82000C20915 /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90718351422C98100C20915 /* libKiwi.a */; };
 		C90B0CCB13F55026009C18B1 /* libCocoaPlant.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B0CB313F55026009C18B1 /* libCocoaPlant.a */; };
+		C92A5BF1145F0D4B007AA779 /* NSInvocation+SetSpecAsTestMethodPrefix.m in Sources */ = {isa = PBXBuildFile; fileRef = C92A5BF0145F0D4B007AA779 /* NSInvocation+SetSpecAsTestMethodPrefix.m */; };
+		C92A5BF3145F3B88007AA779 /* CPTestMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = C92A5BF2145F3B88007AA779 /* CPTestMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C92C58FA1401A47600C606DA /* NSSortDescriptor+CocoaPlant.h in Headers */ = {isa = PBXBuildFile; fileRef = C92C58F81401A47600C606DA /* NSSortDescriptor+CocoaPlant.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C92C58FB1401A47600C606DA /* NSSortDescriptor+CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C92C58F91401A47600C606DA /* NSSortDescriptor+CocoaPlant.m */; };
 		C951D3E213F87926001D12CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C980C36A13F6A7DD0075AD0B /* UIKit.framework */; };
@@ -112,6 +114,8 @@
 		C90B0CBA13F55026009C18B1 /* CocoaPlant-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaPlant-Prefix.pch"; sourceTree = "<group>"; };
 		C90B0CBB13F55026009C18B1 /* CocoaPlant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaPlant.h; sourceTree = "<group>"; };
 		C90B0CC313F55026009C18B1 /* CocoaPlantSpecs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaPlantSpecs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C92A5BF0145F0D4B007AA779 /* NSInvocation+SetSpecAsTestMethodPrefix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+SetSpecAsTestMethodPrefix.m"; sourceTree = "<group>"; };
+		C92A5BF2145F3B88007AA779 /* CPTestMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTestMacros.h; sourceTree = "<group>"; };
 		C92C58F81401A47600C606DA /* NSSortDescriptor+CocoaPlant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSortDescriptor+CocoaPlant.h"; sourceTree = "<group>"; };
 		C92C58F91401A47600C606DA /* NSSortDescriptor+CocoaPlant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSortDescriptor+CocoaPlant.m"; sourceTree = "<group>"; };
 		C951D3E013F87926001D12CD /* CocoaPlantApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaPlantApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -256,6 +260,7 @@
 				C980C37A13F6CC940075AD0B /* Plantation */,
 				C980C38C13F6CC940075AD0B /* UIPlant */,
 				C980C38113F6CC940075AD0B /* PlantData */,
+				C92A5BEC145F0C97007AA779 /* PlantHealth */,
 				C90B0CB913F55026009C18B1 /* Supporting Files */,
 			);
 			path = CocoaPlant;
@@ -277,6 +282,15 @@
 				C980C3C013F6CF550075AD0B /* Supporting Files */,
 			);
 			path = CocoaPlantSpecs;
+			sourceTree = "<group>";
+		};
+		C92A5BEC145F0C97007AA779 /* PlantHealth */ = {
+			isa = PBXGroup;
+			children = (
+				C92A5BF2145F3B88007AA779 /* CPTestMacros.h */,
+				C92A5BF0145F0D4B007AA779 /* NSInvocation+SetSpecAsTestMethodPrefix.m */,
+			);
+			name = PlantHealth;
 			sourceTree = "<group>";
 		};
 		C951D3E613F87926001D12CD /* CocoaPlantApp */ = {
@@ -427,6 +441,7 @@
 				C92C58FA1401A47600C606DA /* NSSortDescriptor+CocoaPlant.h in Headers */,
 				C9A3790C1455DD5D00E6A5D4 /* CPCoreDataTraits.h in Headers */,
 				C9AD93E9145654CB00871695 /* CPCoreDataTableViewController.h in Headers */,
+				C92A5BF3145F3B88007AA779 /* CPTestMacros.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +610,7 @@
 				C92C58FB1401A47600C606DA /* NSSortDescriptor+CocoaPlant.m in Sources */,
 				C985E2B7144E7DEC0076418A /* UIView+CocoaPlant.m in Sources */,
 				C9AD93EA145654CB00871695 /* CPCoreDataTableViewController.m in Sources */,
+				C92A5BF1145F0D4B007AA779 /* NSInvocation+SetSpecAsTestMethodPrefix.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

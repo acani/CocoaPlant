@@ -6,6 +6,7 @@
 @synthesize entityName;
 @synthesize predicate;
 @synthesize sortKey;
+@synthesize sortAscending;
 @synthesize cacheName;
 
 @synthesize fetchedResultsController;
@@ -80,7 +81,7 @@
     NSFetchRequest *fetchRequest = [NSClassFromString(entityName)
                                     fetchRequestInManagedObjectContext:self.managedObjectContext];
     fetchRequest.fetchBatchSize = 20;
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:sortKey ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:sortKey ascending:sortAscending];
     fetchRequest.predicate = predicate;
     fetchRequest.sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
 

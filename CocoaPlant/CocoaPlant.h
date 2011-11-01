@@ -18,6 +18,3 @@
 #import <CocoaPlant/NSSortDescriptor+CocoaPlant.h>
 #import <CocoaPlant/CPCoreDataTraits.h>
 #import <CocoaPlant/CPCoreDataTableViewController.h>
-
-// PlantHealth
-#import <CocoaPlant/CPTestMacros.h>

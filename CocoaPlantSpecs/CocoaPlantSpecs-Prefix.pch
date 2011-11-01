@@ -1,3 +1,2 @@
-#define KIWI_DISABLE_MACRO_API 1
 #import <Kiwi/Kiwi.h>
 #import "CocoaPlant-Prefix.pch"

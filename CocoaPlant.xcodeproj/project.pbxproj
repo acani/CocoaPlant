@@ -54,6 +54,8 @@
 		C980C3B213F6CE910075AD0B /* NSPersistentStoreCoordinator+CocoaPlantSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = C980C3AA13F6CE910075AD0B /* NSPersistentStoreCoordinator+CocoaPlantSpecs.m */; };
 		C985E2B6144E7DEC0076418A /* UIView+CocoaPlant.h in Headers */ = {isa = PBXBuildFile; fileRef = C985E2B4144E7DEC0076418A /* UIView+CocoaPlant.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C985E2B7144E7DEC0076418A /* UIView+CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C985E2B5144E7DEC0076418A /* UIView+CocoaPlant.m */; };
+		C99A7CF914645EC800859245 /* UIView+CocoaPlantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C99A7CF814645EC800859245 /* UIView+CocoaPlantTests.m */; };
+		C99A7CFE146460D700859245 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C99A7CFD146460D700859245 /* CoreGraphics.framework */; };
 		C9A3790C1455DD5D00E6A5D4 /* CPCoreDataTraits.h in Headers */ = {isa = PBXBuildFile; fileRef = C9A3790B1455DD5D00E6A5D4 /* CPCoreDataTraits.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9AD93E9145654CB00871695 /* CPCoreDataTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C9AD93E7145654CB00871695 /* CPCoreDataTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9AD93EA145654CB00871695 /* CPCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AD93E8145654CB00871695 /* CPCoreDataTableViewController.m */; };
@@ -166,6 +168,8 @@
 		C985E2B4144E7DEC0076418A /* UIView+CocoaPlant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CocoaPlant.h"; sourceTree = "<group>"; };
 		C985E2B5144E7DEC0076418A /* UIView+CocoaPlant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CocoaPlant.m"; sourceTree = "<group>"; };
 		C98CEF4113F6A3A5006B3659 /* Kiwi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kiwi.xcodeproj; path = Kiwi/Kiwi.xcodeproj; sourceTree = "<group>"; };
+		C99A7CF814645EC800859245 /* UIView+CocoaPlantTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CocoaPlantTests.m"; sourceTree = "<group>"; };
+		C99A7CFD146460D700859245 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C9A3790B1455DD5D00E6A5D4 /* CPCoreDataTraits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPCoreDataTraits.h; sourceTree = "<group>"; };
 		C9AD93E7145654CB00871695 /* CPCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPCoreDataTableViewController.h; sourceTree = "<group>"; };
 		C9AD93E8145654CB00871695 /* CPCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPCoreDataTableViewController.m; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 			files = (
 				C980C36E13F6A8930075AD0B /* Foundation.framework in Frameworks */,
 				C980C36B13F6A7DD0075AD0B /* UIKit.framework in Frameworks */,
+				C99A7CFE146460D700859245 /* CoreGraphics.framework in Frameworks */,
 				C976911213F8A71900B41267 /* CoreData.framework in Frameworks */,
 				C980C37013F6A8B90075AD0B /* SenTestingKit.framework in Frameworks */,
 				C90B0CCB13F55026009C18B1 /* libCocoaPlant.a in Frameworks */,
@@ -215,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				C901A25E145F587C007D6D75 /* UITextField+CocoaPlantTests.m */,
+				C99A7CF814645EC800859245 /* UIView+CocoaPlantTests.m */,
 			);
 			name = UIPlant;
 			sourceTree = "<group>";
@@ -232,6 +238,7 @@
 		C90B0CA813F55026009C18B1 = {
 			isa = PBXGroup;
 			children = (
+				C99A7CFD146460D700859245 /* CoreGraphics.framework */,
 				C90B0CB813F55026009C18B1 /* CocoaPlant */,
 				C951D3E613F87926001D12CD /* CocoaPlantApp */,
 				C90B0CCC13F55026009C18B1 /* CocoaPlantSpecs */,
@@ -630,6 +637,7 @@
 				C980C3B113F6CE910075AD0B /* NSPersistentStore+CocoaPlantSpecs.m in Sources */,
 				C980C3B213F6CE910075AD0B /* NSPersistentStoreCoordinator+CocoaPlantSpecs.m in Sources */,
 				C901A25F145F587C007D6D75 /* UITextField+CocoaPlantTests.m in Sources */,
+				C99A7CF914645EC800859245 /* UIView+CocoaPlantTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

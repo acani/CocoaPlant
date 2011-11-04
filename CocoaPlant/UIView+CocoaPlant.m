@@ -2,40 +2,68 @@
 
 @implementation UIView (CocoaPlant)
 
-- (void)setFrameOrigin:(CGPoint)origin {
-    CGRect newFrame = self.frame;
-    newFrame.origin = origin;
-    self.frame = newFrame;
+#pragma mark - origin: x, y
+
+- (CGPoint)origin {
+    return self.frame.origin;
 }
 
-- (void)setFrameSize:(CGSize)size {
-    CGRect newFrame = self.frame;
-    newFrame.size = size;
-    self.frame = newFrame;
+- (void)setOrigin:(CGPoint)origin {
+    CGRect frame = self.frame;
+    frame.origin = origin;
+    self.frame = frame;
 }
 
-- (void)setFrameOriginX:(CGFloat)originX {
-    CGRect newFrame = self.frame;
-    newFrame.origin.x = originX;
-    self.frame = newFrame;
+- (CGFloat)x {
+    return self.frame.origin.x;
 }
 
-- (void)setFrameOriginY:(CGFloat)originY {
-    CGRect newFrame = self.frame;
-    newFrame.origin.y = originY;
-    self.frame = newFrame;
+- (void)setX:(CGFloat)x {
+    CGRect frame = self.frame;
+    frame.origin.x = x;
+    self.frame = frame;
 }
 
-- (void)setFrameSizeWidth:(CGFloat)width {
-    CGRect newFrame = self.frame;
-    newFrame.size.width = width;
-    self.frame = newFrame;
+- (CGFloat)y {
+    return self.frame.origin.x;
 }
 
-- (void)setFrameSizeHeight:(CGFloat)height {
-    CGRect newFrame = self.frame;
-    newFrame.size.height = height;
-    self.frame = newFrame;
+- (void)setY:(CGFloat)y {
+    CGRect frame = self.frame;
+    frame.origin.y = y;
+    self.frame = frame;
+}
+
+#pragma mark - size: width, height
+
+- (CGSize)size {
+    return self.frame.size;
+}
+
+- (void)setSize:(CGSize)size {
+    CGRect frame = self.frame;
+    frame.size = size;
+    self.frame = frame;
+}
+
+- (CGFloat)width {
+    return self.frame.size.width;
+}
+
+- (void)setWidth:(CGFloat)width {
+    CGRect frame = self.frame;
+    frame.size.width = width;
+    self.frame = frame;
+}
+
+- (CGFloat)height {
+    return self.frame.size.height;
+}
+
+- (void)setHeight:(CGFloat)height {
+    CGRect frame = self.frame;
+    frame.size.height = height;
+    self.frame = frame;
 }
 
 @end

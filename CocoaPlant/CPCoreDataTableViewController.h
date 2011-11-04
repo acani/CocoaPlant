@@ -2,7 +2,9 @@
 #import <CoreData/CoreData.h>
 #import <CocoaPlant/CPCoreDataTraits.h>
 
-@interface CPCoreDataTableViewController : UITableViewController <CPCoreDataTraits>
+@interface CPCoreDataTableViewController : UITableViewController <CPCoreDataTraits> {
+    NSFetchedResultsController *fetchedResultsController;
+}
 
 @property (strong, nonatomic) NSString *entityName;
 @property (strong, nonatomic) NSPredicate *predicate;

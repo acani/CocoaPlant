@@ -35,4 +35,16 @@
             [NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
+- (NSMutableArray *)words {
+    NSScanner *scanner = [[NSScanner alloc] initWithString:self];
+    NSCharacterSet *whiteSpace = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    NSString *string;
+    NSMutableArray *words = [NSMutableArray array];
+    
+    while ([scanner scanUpToCharactersFromSet:whiteSpace intoString:&string]) {
+        [words addObject:string];
+    }
+    return words;
+}
+
 @end

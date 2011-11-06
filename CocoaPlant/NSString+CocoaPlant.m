@@ -35,16 +35,22 @@
             [NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
+#pragma mark - Separator Methods
+
 - (NSMutableArray *)words {
-    NSScanner *scanner = [[NSScanner alloc] initWithString:self];
+    NSScanner *scanner = [NSScanner scannerWithString:self];
     NSCharacterSet *whiteSpace = [NSCharacterSet whitespaceAndNewlineCharacterSet];
     NSString *string;
     NSMutableArray *words = [NSMutableArray array];
-    
     while ([scanner scanUpToCharactersFromSet:whiteSpace intoString:&string]) {
         [words addObject:string];
     }
     return words;
+//    // The following implementation doesn't ignore leading, trailing, or consecutive whitespaces.
+//    // Also, it's perhaps slightly slower than the solution above.
+//    // See Xcode Documentation on -[NSString componentsSeparatedByCharactersInSet:] for more info.
+//    NSCharacterSet *separators = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+//    return [self componentsSeparatedByCharactersInSet:separators];
 }
 
 @end

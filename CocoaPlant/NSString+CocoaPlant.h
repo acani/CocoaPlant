@@ -7,6 +7,7 @@
 - (NSString *)stringByTrimmingLeadingWhitespaceAndNewlineCharacters;
 - (NSString *)stringByTrimmingTrailingCharactersInSet:(NSCharacterSet *)characterSet;
 - (NSString *)stringByTrimmingTrailingWhitespaceAndNewlineCharacters;
+
 - (NSMutableArray *)words;
 
 @end

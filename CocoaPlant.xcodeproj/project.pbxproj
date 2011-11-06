@@ -293,8 +293,8 @@
 		C90B0CCC13F55026009C18B1 /* CocoaPlantSpecs */ = {
 			isa = PBXGroup;
 			children = (
-				C901A25D145F5849007D6D75 /* UIPlant */,
 				C980C3A113F6CE910075AD0B /* Plantation */,
+				C901A25D145F5849007D6D75 /* UIPlant */,
 				C980C3A513F6CE910075AD0B /* PlantData */,
 				C980C3C013F6CF550075AD0B /* Supporting Files */,
 			);

@@ -1,35 +1,54 @@
-#import <Kiwi/Kiwi.h>
+#import <SenTestingKit/SenTestingKit.h>
 
 #import "NSString+CocoaPlant.h"
 
-SPEC_BEGIN(NSString_CocoaPlantSpecs)
+@interface NSString_CocoaPlantTests : SenTestCase
+@end
 
-describe(@"NSString+CocoaPlant", ^{
-    it(@"-stringByTrimmingLeadingCharactersInSet", ^{
-        NSCharacterSet *letterCharSet = [NSCharacterSet letterCharacterSet];
-        [[[@"zip90210zip" stringByTrimmingLeadingCharactersInSet:letterCharSet] should]
-         equal:@"90210zip"];
-    });
+@implementation NSString_CocoaPlantTests
 
-    it(@"-stringByTrimmingLeadingWhitespaceAndNewlineCharacters", ^{
-        [[[@"" stringByTrimmingLeadingWhitespaceAndNewlineCharacters] should] beEmpty];
-        [[[@"\n " stringByTrimmingLeadingWhitespaceAndNewlineCharacters] should] beEmpty];
-        [[[@"\n hello \n" stringByTrimmingLeadingWhitespaceAndNewlineCharacters] should]
-         equal:@"hello \n"];
-    });
+#pragma mark - Trimming Tests
 
-    it(@"-stringByTrimmingTrailingCharactersInSet", ^{
-        NSCharacterSet *letterCharSet = [NSCharacterSet letterCharacterSet];
-        [[[@"zip90210zip" stringByTrimmingTrailingCharactersInSet:letterCharSet] should]
-         equal:@"zip90210"];
-    });
+- (void)testStringByTrimmingLeadingCharactersInSet {
+    NSCharacterSet *letterCharSet = [NSCharacterSet letterCharacterSet];
+    STAssertEqualObjects([@"zip90210zip" stringByTrimmingLeadingCharactersInSet:letterCharSet],
+                         @"90210zip", nil);
+}
 
-    it(@"-stringByTrimmingTrailingWhitespaceAndNewlineCharacters", ^{
-        [[[@"" stringByTrimmingTrailingWhitespaceAndNewlineCharacters] should] beEmpty];
-        [[[@"\n " stringByTrimmingTrailingWhitespaceAndNewlineCharacters] should] beEmpty];
-        [[[@"\n hello \n" stringByTrimmingTrailingWhitespaceAndNewlineCharacters] should]
-         equal:@"\n hello"];
-    });
-});
+- (void)testStringByTrimmingLeadingWhitespaceAndNewlineCharacters {
+    STAssertEqualObjects([@"" stringByTrimmingLeadingWhitespaceAndNewlineCharacters], @"", nil);
+    STAssertEqualObjects([@"\n " stringByTrimmingLeadingWhitespaceAndNewlineCharacters], @"", nil);
+    STAssertEqualObjects([@"\n hello \n" stringByTrimmingLeadingWhitespaceAndNewlineCharacters],
+                         @"hello \n", nil);
+}
 
-SPEC_END
+- (void)testStringByTrimmingTrailingCharactersInSet {
+    NSCharacterSet *letterCharSet = [NSCharacterSet letterCharacterSet];
+    STAssertEqualObjects([@"zip90210zip" stringByTrimmingTrailingCharactersInSet:letterCharSet],
+                         @"zip90210", nil);
+}
+
+- (void)testStringByTrimmingTrailingWhitespaceAndNewlineCharacters {
+    STAssertEqualObjects([@"" stringByTrimmingLeadingWhitespaceAndNewlineCharacters], @"", nil);
+    STAssertEqualObjects([@"\n " stringByTrimmingLeadingWhitespaceAndNewlineCharacters], @"", nil);
+    STAssertEqualObjects([@"\n hello \n" stringByTrimmingTrailingWhitespaceAndNewlineCharacters],
+                         @"\n hello", nil);
+}
+
+#pragma mark - Separator Tests
+
+- (void)testWords {
+    NSMutableArray *words = [NSMutableArray arrayWithObjects:@"hey", nil];
+    STAssertEqualObjects([@"hey" words], words, nil);
+    STAssertEqualObjects([@"\n hey \n " words], words, nil);
+
+    [words addObject:@"yo"];
+    STAssertEqualObjects([@"hey yo" words], words, nil);
+    STAssertEqualObjects([@" \n hey   yo \n" words], words, nil);
+
+    [words addObject:@"man"];
+    STAssertEqualObjects([@"hey yo man" words], words, nil);
+    STAssertEqualObjects([@" \n hey   yo\n man \n" words], words, nil);
+}
+
+@end

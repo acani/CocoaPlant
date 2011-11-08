@@ -13,7 +13,6 @@
 @property (strong, nonatomic) NSString *cacheName;
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
-- (id)objectAtIndexPath:(NSIndexPath *)indexPath;
 - (void)handleFatalError;
 
 @end

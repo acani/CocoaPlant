@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C0EF76D146B0D9B00CE4AE5 /* ResourcefulManagedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C0EF76B146B0D9B00CE4AE5 /* ResourcefulManagedObject.h */; };
+		9C0EF76E146B0D9B00CE4AE5 /* ResourcefulManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0EF76C146B0D9B00CE4AE5 /* ResourcefulManagedObject.m */; };
 		C901A258145F57E1007D6D75 /* UITextField+CocoaPlant.h in Headers */ = {isa = PBXBuildFile; fileRef = C901A256145F57E1007D6D75 /* UITextField+CocoaPlant.h */; };
 		C901A259145F57E1007D6D75 /* UITextField+CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C901A257145F57E1007D6D75 /* UITextField+CocoaPlant.m */; };
 		C901A25F145F587C007D6D75 /* UITextField+CocoaPlantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C901A25E145F587C007D6D75 /* UITextField+CocoaPlantTests.m */; };
@@ -116,6 +118,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C0EF76B146B0D9B00CE4AE5 /* ResourcefulManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourcefulManagedObject.h; sourceTree = "<group>"; };
+		9C0EF76C146B0D9B00CE4AE5 /* ResourcefulManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourcefulManagedObject.m; sourceTree = "<group>"; };
 		C901A256145F57E1007D6D75 /* UITextField+CocoaPlant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CocoaPlant.h"; sourceTree = "<group>"; };
 		C901A257145F57E1007D6D75 /* UITextField+CocoaPlant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CocoaPlant.m"; sourceTree = "<group>"; };
 		C901A25E145F587C007D6D75 /* UITextField+CocoaPlantTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CocoaPlantTests.m"; sourceTree = "<group>"; };
@@ -371,6 +375,8 @@
 				C9A3790B1455DD5D00E6A5D4 /* CPCoreDataTraits.h */,
 				C9AD93E7145654CB00871695 /* CPCoreDataTableViewController.h */,
 				C9AD93E8145654CB00871695 /* CPCoreDataTableViewController.m */,
+				9C0EF76B146B0D9B00CE4AE5 /* ResourcefulManagedObject.h */,
+				9C0EF76C146B0D9B00CE4AE5 /* ResourcefulManagedObject.m */,
 			);
 			name = PlantData;
 			sourceTree = "<group>";
@@ -462,6 +468,7 @@
 				C9AD93E9145654CB00871695 /* CPCoreDataTableViewController.h in Headers */,
 				C901A258145F57E1007D6D75 /* UITextField+CocoaPlant.h in Headers */,
 				C9C244321468268000CF83A8 /* UINavigationController+CocoaPlant.h in Headers */,
+				9C0EF76D146B0D9B00CE4AE5 /* ResourcefulManagedObject.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +639,7 @@
 				C9AD93EA145654CB00871695 /* CPCoreDataTableViewController.m in Sources */,
 				C901A259145F57E1007D6D75 /* UITextField+CocoaPlant.m in Sources */,
 				C9C244331468268000CF83A8 /* UINavigationController+CocoaPlant.m in Sources */,
+				9C0EF76E146B0D9B00CE4AE5 /* ResourcefulManagedObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

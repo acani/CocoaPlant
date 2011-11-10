@@ -10,26 +10,34 @@
       managedObjectContext:(NSManagedObjectContext *)context {
     
     // Get a set of all the served IDs.
-    NSMutableSet *servedIDsSet = [NSMutableSet setWithArray:
-                                  [servedDictionaries valueForKeyPath:keyPath]];
+    NSMutableSet *servedIDsSet = [NSMutableSet setWithArray:[servedDictionaries valueForKeyPath:keyPath]];
+        
+    if ([servedIDsSet count] == 0) return;
     
-    if (!servedIDsSet || [servedIDsSet count] == 0) return;
-    
-    // Get a set of all the fetched IDs.
+    // Get an array of all the fetched IDs.
     // TODO: handle fetch error
-    NSArray *fetchedObjects = [self fetchInManagedObjectContext:context error:NULL 
-                                                      options:^(NSFetchRequest *request) {
-        request.predicate = [NSPredicate predicateWithFormat:@"%K IN %@", attributeName, servedIDsSet];
+    NSArray *fetchedObjects = 
+    [[self class] fetchInManagedObjectContext:context error:NULL 
+                                      options:^(NSFetchRequest *request) {
+                                          NSPredicate *pred = [NSPredicate predicateWithFormat:@"%K IN %@", attributeName, servedIDsSet];
+                                          DLog(@"predicate: %@", pred);
+                                          request.predicate = pred;
     }];
     
     // Array of all the fetched IDs (in core data).
-    NSMutableSet *fetchedIDs = [NSMutableSet setWithArray:
-                                [fetchedObjects valueForKeyPath:attributeName]];
+    DLog(@"fetched object ids: %@", [fetchedObjects valueForKeyPath:attributeName]);
+    NSSet *fetchedIDs = [NSSet setWithArray:[fetchedObjects valueForKeyPath:attributeName]];
+    DLog(@"fetched ids: %@", fetchedIDs);
     
     /*
      * Insert the new objects (served - fetched).
      */
-    NSMutableSet *newServedIDs = [servedIDsSet mutableCopy]; [newServedIDs minusSet:fetchedIDs];
+    DLog(@"served ids: %@", servedIDsSet);
+    NSMutableSet *newServedIDs = [NSMutableSet setWithSet:servedIDsSet];
+    DLog(@"new served ids 1: %@", newServedIDs);
+    DLog(@"- fetched ids: %@", fetchedIDs);
+    [newServedIDs minusSet:fetchedIDs];
+    DLog(@"new served ids 2: %@", newServedIDs);
     
     NSPredicate *dictionaryPredicate = [NSPredicate predicateWithFormat:@"%K IN %@", 
                                         dictionaryKey, newServedIDs];

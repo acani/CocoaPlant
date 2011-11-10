@@ -17,7 +17,7 @@
     // Get an array of all the fetched IDs.
     // TODO: handle fetch error
     NSArray *fetchedObjects = 
-    [[self class] fetchInManagedObjectContext:context error:NULL 
+    [self fetchInManagedObjectContext:context error:NULL 
                                       options:^(NSFetchRequest *request) {
                                           NSPredicate *pred = [NSPredicate predicateWithFormat:@"%K IN %@", attributeName, servedIDsSet];
                                           DLog(@"predicate: %@", pred);
@@ -25,19 +25,13 @@
     }];
     
     // Array of all the fetched IDs (in core data).
-    DLog(@"fetched object ids: %@", [fetchedObjects valueForKeyPath:attributeName]);
     NSSet *fetchedIDs = [NSSet setWithArray:[fetchedObjects valueForKeyPath:attributeName]];
-    DLog(@"fetched ids: %@", fetchedIDs);
     
     /*
      * Insert the new objects (served - fetched).
      */
-    DLog(@"served ids: %@", servedIDsSet);
     NSMutableSet *newServedIDs = [NSMutableSet setWithSet:servedIDsSet];
-    DLog(@"new served ids 1: %@", newServedIDs);
-    DLog(@"- fetched ids: %@", fetchedIDs);
     [newServedIDs minusSet:fetchedIDs];
-    DLog(@"new served ids 2: %@", newServedIDs);
     
     NSPredicate *dictionaryPredicate = [NSPredicate predicateWithFormat:@"%K IN %@", 
                                         dictionaryKey, newServedIDs];

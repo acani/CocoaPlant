@@ -68,6 +68,6 @@
     }];
 }
 
-- (BOOL)updateWithDictionary:(NSDictionary *)dictionary { }
+- (BOOL)updateWithDictionary:(NSDictionary *)dictionary { return YES; }
 
 @end

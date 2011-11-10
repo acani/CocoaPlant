@@ -16,5 +16,7 @@
 #import <CocoaPlant/NSPersistentStore+CocoaPlant.h>
 #import <CocoaPlant/NSPersistentStoreCoordinator+CocoaPlant.h>
 #import <CocoaPlant/NSSortDescriptor+CocoaPlant.h>
+
 #import <CocoaPlant/CPCoreDataTraits.h>
 #import <CocoaPlant/CPCoreDataTableViewController.h>
+#import <CocoaPlant/CPResourcefulManagedObject.h>

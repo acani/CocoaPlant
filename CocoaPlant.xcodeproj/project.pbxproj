@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9C0EF76D146B0D9B00CE4AE5 /* ResourcefulManagedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C0EF76B146B0D9B00CE4AE5 /* ResourcefulManagedObject.h */; };
-		9C0EF76E146B0D9B00CE4AE5 /* ResourcefulManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0EF76C146B0D9B00CE4AE5 /* ResourcefulManagedObject.m */; };
+		9C0EF76D146B0D9B00CE4AE5 /* CPResourcefulManagedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C0EF76B146B0D9B00CE4AE5 /* CPResourcefulManagedObject.h */; };
+		9C0EF76E146B0D9B00CE4AE5 /* CPResourcefulManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0EF76C146B0D9B00CE4AE5 /* CPResourcefulManagedObject.m */; };
 		C901A258145F57E1007D6D75 /* UITextField+CocoaPlant.h in Headers */ = {isa = PBXBuildFile; fileRef = C901A256145F57E1007D6D75 /* UITextField+CocoaPlant.h */; };
 		C901A259145F57E1007D6D75 /* UITextField+CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C901A257145F57E1007D6D75 /* UITextField+CocoaPlant.m */; };
 		C901A25F145F587C007D6D75 /* UITextField+CocoaPlantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C901A25E145F587C007D6D75 /* UITextField+CocoaPlantTests.m */; };
@@ -118,8 +118,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9C0EF76B146B0D9B00CE4AE5 /* ResourcefulManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourcefulManagedObject.h; sourceTree = "<group>"; };
-		9C0EF76C146B0D9B00CE4AE5 /* ResourcefulManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourcefulManagedObject.m; sourceTree = "<group>"; };
+		9C0EF76B146B0D9B00CE4AE5 /* CPResourcefulManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPResourcefulManagedObject.h; sourceTree = "<group>"; };
+		9C0EF76C146B0D9B00CE4AE5 /* CPResourcefulManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPResourcefulManagedObject.m; sourceTree = "<group>"; };
 		C901A256145F57E1007D6D75 /* UITextField+CocoaPlant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CocoaPlant.h"; sourceTree = "<group>"; };
 		C901A257145F57E1007D6D75 /* UITextField+CocoaPlant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CocoaPlant.m"; sourceTree = "<group>"; };
 		C901A25E145F587C007D6D75 /* UITextField+CocoaPlantTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CocoaPlantTests.m"; sourceTree = "<group>"; };
@@ -249,7 +249,6 @@
 		C90B0CA813F55026009C18B1 = {
 			isa = PBXGroup;
 			children = (
-				C99A7CFD146460D700859245 /* CoreGraphics.framework */,
 				C90B0CB813F55026009C18B1 /* CocoaPlant */,
 				C951D3E613F87926001D12CD /* CocoaPlantApp */,
 				C90B0CCC13F55026009C18B1 /* CocoaPlantSpecs */,
@@ -274,6 +273,7 @@
 			children = (
 				C980C36D13F6A8930075AD0B /* Foundation.framework */,
 				C980C36A13F6A7DD0075AD0B /* UIKit.framework */,
+				C99A7CFD146460D700859245 /* CoreGraphics.framework */,
 				C951D3E413F87926001D12CD /* CoreData.framework */,
 				C980C36F13F6A8B90075AD0B /* SenTestingKit.framework */,
 			);
@@ -375,8 +375,8 @@
 				C9A3790B1455DD5D00E6A5D4 /* CPCoreDataTraits.h */,
 				C9AD93E7145654CB00871695 /* CPCoreDataTableViewController.h */,
 				C9AD93E8145654CB00871695 /* CPCoreDataTableViewController.m */,
-				9C0EF76B146B0D9B00CE4AE5 /* ResourcefulManagedObject.h */,
-				9C0EF76C146B0D9B00CE4AE5 /* ResourcefulManagedObject.m */,
+				9C0EF76B146B0D9B00CE4AE5 /* CPResourcefulManagedObject.h */,
+				9C0EF76C146B0D9B00CE4AE5 /* CPResourcefulManagedObject.m */,
 			);
 			name = PlantData;
 			sourceTree = "<group>";
@@ -468,7 +468,7 @@
 				C9AD93E9145654CB00871695 /* CPCoreDataTableViewController.h in Headers */,
 				C901A258145F57E1007D6D75 /* UITextField+CocoaPlant.h in Headers */,
 				C9C244321468268000CF83A8 /* UINavigationController+CocoaPlant.h in Headers */,
-				9C0EF76D146B0D9B00CE4AE5 /* ResourcefulManagedObject.h in Headers */,
+				9C0EF76D146B0D9B00CE4AE5 /* CPResourcefulManagedObject.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,7 +639,7 @@
 				C9AD93EA145654CB00871695 /* CPCoreDataTableViewController.m in Sources */,
 				C901A259145F57E1007D6D75 /* UITextField+CocoaPlant.m in Sources */,
 				C9C244331468268000CF83A8 /* UINavigationController+CocoaPlant.m in Sources */,
-				9C0EF76E146B0D9B00CE4AE5 /* ResourcefulManagedObject.m in Sources */,
+				9C0EF76E146B0D9B00CE4AE5 /* CPResourcefulManagedObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

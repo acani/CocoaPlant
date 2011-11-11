@@ -10,4 +10,6 @@
 @property (nonatomic) CGFloat width;
 @property (nonatomic) CGFloat height;
 
++ (UIViewAnimationOptions)animationOptionsWithCurve:(UIViewAnimationCurve)curve;
+
 @end

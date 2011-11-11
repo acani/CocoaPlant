@@ -66,4 +66,21 @@
     self.frame = frame;
 }
 
+#pragma mark - UIViewAnimationOptions <=> UIViewAnimationCurve
+
++ (UIViewAnimationOptions)animationOptionsWithCurve:(UIViewAnimationCurve)curve {
+    switch (curve) {
+        case UIViewAnimationCurveEaseInOut:
+            return UIViewAnimationOptionCurveEaseInOut;
+        case UIViewAnimationCurveEaseIn:
+            return UIViewAnimationOptionCurveEaseIn;
+        case UIViewAnimationCurveEaseOut:
+            return UIViewAnimationOptionCurveEaseOut;
+        case UIViewAnimationCurveLinear:
+            return UIViewAnimationOptionCurveLinear;
+        default:
+            return curve;
+    }
+}
+
 @end

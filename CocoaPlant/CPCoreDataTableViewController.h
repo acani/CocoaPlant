@@ -16,4 +16,6 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)handleFatalError;
 
+- (void)refreshTableView;
+
 @end

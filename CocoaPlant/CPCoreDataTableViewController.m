@@ -145,4 +145,6 @@
     [self.tableView endUpdates];
 }
 
+- (void)refreshTableView {}
+
 @end

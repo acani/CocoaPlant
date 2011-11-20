@@ -5,8 +5,6 @@
 
 @synthesize entityName;
 @synthesize predicate;
-//@synthesize sortKey;
-//@synthesize sortAscending;
 @synthesize sortDescriptors;
 @synthesize cacheName;
 
@@ -16,9 +14,9 @@
 #pragma mark - UIViewController
 
 - (void)viewDidUnload {
-//    [NSFetchedResultsController deleteCacheWithName:entityName];
     self.fetchedResultsController = nil;
     self.predicate = nil;
+    self.sortDescriptors = nil;
     [super viewDidUnload];
 }
 
@@ -79,7 +77,7 @@
                                     fetchRequestInManagedObjectContext:self.managedObjectContext];
     fetchRequest.fetchBatchSize = 20;
     fetchRequest.predicate = predicate;
-    fetchRequest.sortDescriptors = self.sortDescriptors;
+    fetchRequest.sortDescriptors = sortDescriptors;
 
     // Create the fetchedResultsController.
     self.fetchedResultsController = [[NSFetchedResultsController alloc]

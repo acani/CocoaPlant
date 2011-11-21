@@ -14,6 +14,7 @@ typedef void (^NSFetchRequestOptions)(NSFetchRequest *request);
                     options:(NSFetchRequestOptions)options;
 + (BOOL)deleteAllInManagedObjectContext:(NSManagedObjectContext *)context error:(NSError **)error;
 
+- (void)delete;
 
 // TODO: handle errors:
 //+ (void) defaultErrorHandler:(NSError *)error

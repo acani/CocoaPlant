@@ -74,3 +74,28 @@ describe(@"NSManagedObject+CocoaPlant", ^{
 });
 
 SPEC_END
+
+@interface NSManagedObject_CocoaPlantTests : SenTestCase {
+    NSManagedObject *managedObject;
+}
+@end
+
+@implementation NSManagedObject_CocoaPlantTests
+
+- (void)setUp {
+    NSManagedObjectContext *context = [NSManagedObjectContext contextWithStoreType:
+                                       NSInMemoryStoreType error:NULL];
+    managedObject = [Event insertIntoManagedObjectContext:context];
+}
+
+- (void)tearDown {
+    managedObject = nil;
+}
+
+- (void)testDelete {
+    STAssertFalse([managedObject isDeleted], nil);
+    [managedObject delete];
+    STAssertTrue([managedObject isDeleted], nil);
+}
+
+@end

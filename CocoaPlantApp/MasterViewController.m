@@ -14,7 +14,6 @@
     if (self) {
         self.title = NSLocalizedString(@"Master", nil);
         self.entityName = @"Event";
-        self.sortKey = @"timeStamp";
         id delegate = [[UIApplication sharedApplication] delegate];
         self.managedObjectContext = [delegate managedObjectContext];
     }
@@ -31,6 +30,9 @@
                                   initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                   target:self action:@selector(insertNewObject)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
+    self.sortDescriptors = [NSArray arrayWithObject:
+                            [NSSortDescriptor sortDescriptorWithKey:@"timeStamp" ascending:YES]];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

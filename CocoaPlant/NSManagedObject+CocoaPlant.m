@@ -45,4 +45,8 @@
     return results ? YES : NO;
 }
 
+- (void)delete {
+    [self.managedObjectContext deleteObject:self];
+}
+
 @end

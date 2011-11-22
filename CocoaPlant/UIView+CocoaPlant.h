@@ -10,6 +10,21 @@
 @property (nonatomic) CGFloat width;
 @property (nonatomic) CGFloat height;
 
-+ (UIViewAnimationOptions)animationOptionsWithCurve:(UIViewAnimationCurve)curve;
-
 @end
+
+#pragma mark - UIViewAnimationOptions <=> UIViewAnimationCurve
+
+UIKIT_STATIC_INLINE UIViewAnimationOptions UIViewAnimationOptionsWithCurve(UIViewAnimationCurve curve) {
+    switch (curve) {
+        case UIViewAnimationCurveEaseInOut:
+            return UIViewAnimationOptionCurveEaseInOut;
+        case UIViewAnimationCurveEaseIn:
+            return UIViewAnimationOptionCurveEaseIn;
+        case UIViewAnimationCurveEaseOut:
+            return UIViewAnimationOptionCurveEaseOut;
+        case UIViewAnimationCurveLinear:
+            return UIViewAnimationOptionCurveLinear;
+        default:
+            return curve;
+    }
+}

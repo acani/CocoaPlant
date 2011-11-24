@@ -3,7 +3,7 @@
 @interface CPResourcefulManagedObject : NSManagedObject
 
 + (void)updateAllWithArray:(NSArray *)servedDictionaries
-                   keyPath:(NSString *)keyPath 
+                   keyPath:(NSString *)keyPath
              attributeName:(NSString *)attributeName
              dictionaryKey:(NSString *)dictionaryKey
       managedObjectContext:(NSManagedObjectContext *)context;

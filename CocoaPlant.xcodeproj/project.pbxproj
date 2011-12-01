@@ -546,7 +546,7 @@
 		C90B0CAA13F55026009C18B1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = C90B0CAD13F55026009C18B1 /* Build configuration list for PBXProject "CocoaPlant" */;
 			compatibilityVersion = "Xcode 3.2";

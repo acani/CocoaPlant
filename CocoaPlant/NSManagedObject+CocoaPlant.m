@@ -32,6 +32,13 @@
     return [context executeFetchRequest:fetchRequest error:error];
 }
 
++ (id)fetchFirstInManagedObjectContext:(NSManagedObjectContext *)context
+                                 error:(NSError **)error
+                               options:(NSFetchRequestOptions)options {
+    NSArray *fetchedObjects = [self fetchInManagedObjectContext:context error:error options:options];
+    return ([fetchedObjects count] ? [fetchedObjects objectAtIndex:0] : nil);
+}
+
 + (BOOL)deleteAllInManagedObjectContext:(NSManagedObjectContext *)context error:(NSError **)error {
     NSArray *results = [self fetchInManagedObjectContext:context error:error
                                                  options:^(NSFetchRequest *request) {

@@ -10,10 +10,10 @@ typedef void (^NSFetchRequestOptions)(NSFetchRequest *request);
 + (id)insertIntoManagedObjectContext:(NSManagedObjectContext *)context;
 
 + (NSFetchRequest *)fetchRequestInManagedObjectContext:(NSManagedObjectContext *)context;
-+ (NSArray *)fetchInManagedObjectContext:(NSManagedObjectContext *)context error:(NSError **)error
-                    options:(NSFetchRequestOptions)options;
-+ (BOOL)deleteAllInManagedObjectContext:(NSManagedObjectContext *)context error:(NSError **)error;
++ (NSArray *)fetchInManagedObjectContext:(NSManagedObjectContext *)context error:(NSError **)error options:(NSFetchRequestOptions)options;
++ (id)fetchFirstInManagedObjectContext:(NSManagedObjectContext *)context error:(NSError **)error options:(NSFetchRequestOptions)options;
 
++ (BOOL)deleteAllInManagedObjectContext:(NSManagedObjectContext *)context error:(NSError **)error;
 - (void)delete;
 
 // TODO: handle errors:

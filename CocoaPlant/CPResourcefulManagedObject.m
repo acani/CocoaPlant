@@ -3,10 +3,10 @@
 
 @implementation CPResourcefulManagedObject
 
-+ (NSManagedObject *)updateOrInsertWithDictionary:(NSDictionary *)dictionary
-                                    dictionaryKey:(NSString *)dictionaryKey
-                                    attributeName:(NSString *)attributeName
-                           inManagedObjectContext:(NSManagedObjectContext *)context {
++ (id)updateOrInsertWithDictionary:(NSDictionary *)dictionary
+                     dictionaryKey:(NSString *)dictionaryKey
+                     attributeName:(NSString *)attributeName
+            inManagedObjectContext:(NSManagedObjectContext *)context {
     // Fetch with the ID Key.
     id fetchedObject = [self fetchFirstInManagedObjectContext:context error:NULL options:^(NSFetchRequest *request) {
         request.predicate = [NSPredicate predicateWithFormat:@"%K == %@", attributeName, [dictionary objectForKey:dictionaryKey]];

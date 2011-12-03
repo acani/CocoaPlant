@@ -2,10 +2,10 @@
 
 @interface CPResourcefulManagedObject : NSManagedObject
 
-+ (NSManagedObject *)updateOrInsertWithDictionary:(NSDictionary *)dictionary
-                                    dictionaryKey:(NSString *)dictionaryKey
-                                    attributeName:(NSString *)attributeName
-                           inManagedObjectContext:(NSManagedObjectContext *)context;
++ (id)updateOrInsertWithDictionary:(NSDictionary *)dictionary
+                     dictionaryKey:(NSString *)dictionaryKey
+                     attributeName:(NSString *)attributeName
+            inManagedObjectContext:(NSManagedObjectContext *)context;
 
 + (void)updateAllWithArray:(NSArray *)servedDictionaries
                    keyPath:(NSString *)keyPath

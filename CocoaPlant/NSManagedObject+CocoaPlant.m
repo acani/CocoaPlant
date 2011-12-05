@@ -10,6 +10,11 @@
     return [NSEntityDescription entityForName:[self entityName] inManagedObjectContext:context];
 }
 
+- (id)initWithManagedObjectContext:(NSManagedObjectContext*)context {
+    NSEntityDescription *entity = [[self class] entityInManagedObjectContext:context];
+    return [self initWithEntity:entity insertIntoManagedObjectContext:nil];
+}
+
 + (id)insertIntoManagedObjectContext:(NSManagedObjectContext *)context {
     return [NSEntityDescription insertNewObjectForEntityForName:[self entityName]
                                          inManagedObjectContext:context];

@@ -7,6 +7,7 @@ typedef void (^NSFetchRequestOptions)(NSFetchRequest *request);
 
 + (NSString *)entityName;
 + (NSEntityDescription *)entityInManagedObjectContext:(NSManagedObjectContext *)context;
+- (id)initWithManagedObjectContext:(NSManagedObjectContext*)context;
 + (id)insertIntoManagedObjectContext:(NSManagedObjectContext *)context;
 
 + (NSFetchRequest *)fetchRequestInManagedObjectContext:(NSManagedObjectContext *)context;

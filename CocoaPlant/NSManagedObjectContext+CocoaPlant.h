@@ -5,4 +5,6 @@
 
 + (NSManagedObjectContext *)contextWithStoreType:(NSString *)storeType error:(NSError **)error;
 
+- (void)handleFatalError;
+
 @end

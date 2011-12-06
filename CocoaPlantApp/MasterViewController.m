@@ -65,7 +65,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 
         NSError *error = nil;
         if (![context save:&error]) {
-            [self handleFatalError];
+            [self.managedObjectContext handleFatalError];
         }
     }
 }
@@ -104,7 +104,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     // Save the context.
     NSError *error = nil;
     if (![context save:&error]) {
-        [self handleFatalError];
+        [self.managedObjectContext handleFatalError];
     }
 }
 

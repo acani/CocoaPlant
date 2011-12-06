@@ -61,7 +61,6 @@
 		C99F602A1479F3C30045512B /* NSSet+CocoaPlant.h in Headers */ = {isa = PBXBuildFile; fileRef = C99F60281479F3C30045512B /* NSSet+CocoaPlant.h */; };
 		C99F602B1479F3C30045512B /* NSSet+CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C99F60291479F3C30045512B /* NSSet+CocoaPlant.m */; };
 		C99F60301479F5330045512B /* NSSet+CocoaPlantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C99F602F1479F5330045512B /* NSSet+CocoaPlantTests.m */; };
-		C9A3790C1455DD5D00E6A5D4 /* CPCoreDataTraits.h in Headers */ = {isa = PBXBuildFile; fileRef = C9A3790B1455DD5D00E6A5D4 /* CPCoreDataTraits.h */; settings = {ATTRIBUTES = (); }; };
 		C9AD93E9145654CB00871695 /* CPCoreDataTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C9AD93E7145654CB00871695 /* CPCoreDataTableViewController.h */; settings = {ATTRIBUTES = (); }; };
 		C9AD93EA145654CB00871695 /* CPCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AD93E8145654CB00871695 /* CPCoreDataTableViewController.m */; };
 		C9C244321468268000CF83A8 /* UINavigationController+CocoaPlant.h in Headers */ = {isa = PBXBuildFile; fileRef = C9C244301468268000CF83A8 /* UINavigationController+CocoaPlant.h */; settings = {ATTRIBUTES = (); }; };
@@ -128,7 +127,7 @@
 		C901A25E145F587C007D6D75 /* UITextField+CocoaPlantTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CocoaPlantTests.m"; sourceTree = "<group>"; };
 		C90B0CB313F55026009C18B1 /* libCocoaPlant.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocoaPlant.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90B0CBA13F55026009C18B1 /* CocoaPlant-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaPlant-Prefix.pch"; sourceTree = "<group>"; };
-		C90B0CBB13F55026009C18B1 /* CocoaPlant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaPlant.h; sourceTree = "<group>"; };
+		C90B0CBB13F55026009C18B1 /* CocoaPlant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CocoaPlant.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		C90B0CC313F55026009C18B1 /* CocoaPlantSpecs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaPlantSpecs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92C58F81401A47600C606DA /* NSSortDescriptor+CocoaPlant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSortDescriptor+CocoaPlant.h"; sourceTree = "<group>"; };
 		C92C58F91401A47600C606DA /* NSSortDescriptor+CocoaPlant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSortDescriptor+CocoaPlant.m"; sourceTree = "<group>"; };
@@ -138,8 +137,8 @@
 		C951D3EC13F87926001D12CD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C951D3EE13F87926001D12CD /* CocoaPlantApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaPlantApp-Prefix.pch"; sourceTree = "<group>"; };
 		C951D3EF13F87926001D12CD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		C951D3F013F87926001D12CD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C951D3F513F87926001D12CD /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		C951D3F013F87926001D12CD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		C951D3F513F87926001D12CD /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MasterViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		C951D3F613F87926001D12CD /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MasterViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		C951D3F813F87926001D12CD /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		C951D3F913F87926001D12CD /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
@@ -183,9 +182,8 @@
 		C99F60281479F3C30045512B /* NSSet+CocoaPlant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+CocoaPlant.h"; sourceTree = "<group>"; };
 		C99F60291479F3C30045512B /* NSSet+CocoaPlant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+CocoaPlant.m"; sourceTree = "<group>"; };
 		C99F602F1479F5330045512B /* NSSet+CocoaPlantTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+CocoaPlantTests.m"; sourceTree = "<group>"; };
-		C9A3790B1455DD5D00E6A5D4 /* CPCoreDataTraits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPCoreDataTraits.h; sourceTree = "<group>"; };
-		C9AD93E7145654CB00871695 /* CPCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPCoreDataTableViewController.h; sourceTree = "<group>"; };
-		C9AD93E8145654CB00871695 /* CPCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPCoreDataTableViewController.m; sourceTree = "<group>"; };
+		C9AD93E7145654CB00871695 /* CPCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CPCoreDataTableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		C9AD93E8145654CB00871695 /* CPCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CPCoreDataTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		C9C244301468268000CF83A8 /* UINavigationController+CocoaPlant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CocoaPlant.h"; sourceTree = "<group>"; };
 		C9C244311468268000CF83A8 /* UINavigationController+CocoaPlant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CocoaPlant.m"; sourceTree = "<group>"; };
 		C9C24437146826B600CF83A8 /* UINavigationController+CocoaPlantTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CocoaPlantTests.m"; sourceTree = "<group>"; };
@@ -380,7 +378,6 @@
 				C980C38B13F6CC940075AD0B /* NSPersistentStoreCoordinator+CocoaPlant.m */,
 				C92C58F81401A47600C606DA /* NSSortDescriptor+CocoaPlant.h */,
 				C92C58F91401A47600C606DA /* NSSortDescriptor+CocoaPlant.m */,
-				C9A3790B1455DD5D00E6A5D4 /* CPCoreDataTraits.h */,
 				C9AD93E7145654CB00871695 /* CPCoreDataTableViewController.h */,
 				C9AD93E8145654CB00871695 /* CPCoreDataTableViewController.m */,
 				9C0EF76B146B0D9B00CE4AE5 /* CPResourcefulManagedObject.h */,
@@ -476,7 +473,6 @@
 				C980C39B13F6CC940075AD0B /* NSPersistentStore+CocoaPlant.h in Headers */,
 				C980C39D13F6CC940075AD0B /* NSPersistentStoreCoordinator+CocoaPlant.h in Headers */,
 				C92C58FA1401A47600C606DA /* NSSortDescriptor+CocoaPlant.h in Headers */,
-				C9A3790C1455DD5D00E6A5D4 /* CPCoreDataTraits.h in Headers */,
 				C9AD93E9145654CB00871695 /* CPCoreDataTableViewController.h in Headers */,
 				9C0EF76D146B0D9B00CE4AE5 /* CPResourcefulManagedObject.h in Headers */,
 			);

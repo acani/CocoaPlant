@@ -1,4 +1,5 @@
 #import "CPCoreDataTableViewController.h"
+#import "NSManagedObjectContext+CocoaPlant.h"
 #import "NSManagedObject+CocoaPlant.h"
 
 @implementation CPCoreDataTableViewController
@@ -55,22 +56,10 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {}
 
-- (void)handleFatalError {
-    NSString *message = @"Delete the app and download it again from the App Store.";
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error!", nil)
-                                                    message:NSLocalizedString(message, nil)
-                                                   delegate:nil
-                                          cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                          otherButtonTitles:nil];
-    [alert show];
-}
-
 #pragma mark - NSFetchedResultsController
 
 - (NSFetchedResultsController *)fetchedResultsController {
-    if (fetchedResultsController != nil) {
-        return fetchedResultsController;
-    }
+    if (fetchedResultsController) return fetchedResultsController;
 
     // Create the fetchRequest.
     NSFetchRequest *fetchRequest = [NSClassFromString(entityName)
@@ -89,7 +78,7 @@
     // Perform the fetch.
     NSError *error = nil;
     if (![fetchedResultsController performFetch:&error]) {
-        [self handleFatalError];
+        [managedObjectContext handleFatalError];
     }
 
     return fetchedResultsController;
@@ -142,7 +131,5 @@
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView endUpdates];
 }
-
-- (void)refreshTableView {}
 
 @end

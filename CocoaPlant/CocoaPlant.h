@@ -7,8 +7,10 @@
 #import <CocoaPlant/NSString+CocoaPlant.h>
 
 // UIPlant (UIKit)
-#import <CocoaPlant/UIView+CocoaPlant.h>
 #import <CocoaPlant/UIAlertView+CocoaPlant.h>
+#import <CocoaPlant/UINavigationController+CocoaPlant.h>
+#import <CocoaPlant/UIView+CocoaPlant.h>
+#import <CocoaPlant/UIViewController+CocoaPlant.h>
 
 // PlantData (CoreData)
 #import <CocoaPlant/NSManagedObject+CocoaPlant.h>

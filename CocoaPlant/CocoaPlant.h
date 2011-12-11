@@ -12,7 +12,7 @@
 #import <CocoaPlant/UIView+CocoaPlant.h>
 #import <CocoaPlant/UIViewController+CocoaPlant.h>
 
-// PlantData (CoreData)
+// PlantData (Core Data)
 #import <CocoaPlant/NSManagedObject+CocoaPlant.h>
 #import <CocoaPlant/NSManagedObjectContext+CocoaPlant.h>
 #import <CocoaPlant/NSManagedObjectModel+CocoaPlant.h>

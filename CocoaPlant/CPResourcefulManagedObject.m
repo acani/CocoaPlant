@@ -11,11 +11,11 @@
     id fetchedObject = [self fetchFirstInManagedObjectContext:context error:NULL options:^(NSFetchRequest *request) {
         request.predicate = [NSPredicate predicateWithFormat:@"%K == %@", attributeName, [dictionary objectForKey:dictionaryKey]];
     }];
-    
+
     if (!fetchedObject) {
-        fetchedObject = [self insertIntoManagedObjectContext:context];  
+        fetchedObject = [self insertIntoManagedObjectContext:context];
     }
-    
+
     [fetchedObject updateWithDictionary:dictionary];
     return fetchedObject;
 }

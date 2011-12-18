@@ -25,7 +25,7 @@
 }
 
 - (CGFloat)y {
-    return self.frame.origin.x;
+    return self.frame.origin.y;
 }
 
 - (void)setY:(CGFloat)y {
@@ -67,3 +67,13 @@
 }
 
 @end
+
+#pragma mark - CG_EXTERN Functions
+
+CGRect CGRectInsetTop(CGRect rect, CGFloat dy) {
+    rect.origin.y += dy; rect.size.height -= dy; return rect;
+}
+
+CGRect CGRectInsetLeft(CGRect rect, CGFloat dx) {
+    rect.origin.x += dx; rect.size.width -= dx; return rect;
+}

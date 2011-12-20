@@ -31,16 +31,16 @@
     NSArray *servedIDs = [servedDictionaries valueForKeyPath:keyPath];
     if ([servedIDs count] == 0) return;
     NSMutableSet *servedIDsSet = [NSMutableSet setWithArray:servedIDs];
-
-    // TODO: handle fetch error
-    NSArray *fetchedObjects = [self fetchInManagedObjectContext:context error:NULL options:^(NSFetchRequest *request) {
-        request.predicate = [NSPredicate predicateWithFormat:@"%K IN %@", attributeName, servedIDsSet];
+    NSArray *fetchedObjects = // TODO: handle fetch error.
+    [self fetchInManagedObjectContext:context error:NULL options:^(NSFetchRequest *request) {
+        request.predicate = [NSPredicate predicateWithFormat:@"%K IN %@",
+                             attributeName, servedIDsSet];
     }];
     NSSet *fetchedIDsSet = [NSSet setWithArray:[fetchedObjects valueForKeyPath:attributeName]];
 
     // Insert newServedDictionaries (served - fetched).
-    NSMutableSet *newServedIDsSet = [servedIDsSet mutableCopy]; [newServedIDsSet minusSet:fetchedIDsSet];
-
+    NSMutableSet *newServedIDsSet = [servedIDsSet mutableCopy];
+    [newServedIDsSet minusSet:fetchedIDsSet];
     NSPredicate *dictionaryPredicate = [NSPredicate predicateWithFormat:@"%K IN %@",
                                         dictionaryKey, newServedIDsSet];
     NSArray *newServedDictionaries = [servedDictionaries
@@ -52,9 +52,12 @@
 
     // Update oldFetchedObjects (served & fetched).
     [servedIDsSet intersectSet:fetchedIDsSet];
-    dictionaryPredicate = [NSPredicate predicateWithFormat:@"%K IN %@", dictionaryKey, servedIDsSet];
-    NSPredicate *objectPredicate = [NSPredicate predicateWithFormat:@"%K IN %@", attributeName, servedIDsSet];
-    NSArray *oldServedDictionaries = [servedDictionaries filteredArrayUsingPredicate:dictionaryPredicate];
+    dictionaryPredicate = [NSPredicate predicateWithFormat:@"%K IN %@",
+                           dictionaryKey, servedIDsSet];
+    NSPredicate *objectPredicate = [NSPredicate predicateWithFormat:@"%K IN %@",
+                                    attributeName, servedIDsSet];
+    NSArray *oldServedDictionaries = [servedDictionaries
+                                      filteredArrayUsingPredicate:dictionaryPredicate];
     NSArray *oldFetchedObjects = [fetchedObjects filteredArrayUsingPredicate:objectPredicate];
 
     // Sort both arrays by object ID so that they're in sync for iteration below.
@@ -64,7 +67,8 @@
     NSArray *objectSortDescriptors = [NSArray arrayWithObject:
                                       [NSSortDescriptor sortDescriptorWithKey:attributeName
                                                                     ascending:YES]];
-    oldServedDictionaries = [oldServedDictionaries sortedArrayUsingDescriptors:dictionarySortDescriptors];
+    oldServedDictionaries = [oldServedDictionaries
+                             sortedArrayUsingDescriptors:dictionarySortDescriptors];
     oldFetchedObjects = [oldFetchedObjects sortedArrayUsingDescriptors:objectSortDescriptors];
 
     [oldFetchedObjects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {

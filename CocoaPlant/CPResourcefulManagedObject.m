@@ -39,7 +39,7 @@
     NSSet *fetchedIDsSet = [NSSet setWithArray:[fetchedObjects valueForKeyPath:attributeName]];
 
     // Insert newServedDictionaries (served - fetched).
-    NSMutableSet *newServedIDsSet = [servedIDsSet mutableCopy];
+    NSMutableSet *newServedIDsSet = [NSMutableSet setWithSet:servedIDsSet];
     [newServedIDsSet minusSet:fetchedIDsSet];
     NSPredicate *dictionaryPredicate = [NSPredicate predicateWithFormat:@"%K IN %@",
                                         dictionaryKey, newServedIDsSet];

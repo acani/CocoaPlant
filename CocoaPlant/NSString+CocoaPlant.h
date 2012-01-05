@@ -9,6 +9,5 @@
 - (NSString *)stringByTrimmingTrailingWhitespaceAndNewlineCharacters;
 
 - (NSMutableArray *)words;
--(BOOL) isValidEmail;
 
 @end

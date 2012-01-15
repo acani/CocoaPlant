@@ -121,7 +121,10 @@
             break;
 
         case NSFetchedResultsChangeUpdate:
-            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            if ([[tableView indexPathsForVisibleRows] containsObject:indexPath]) {
+                [self configureCell:[tableView cellForRowAtIndexPath:indexPath]
+                        atIndexPath:indexPath];
+            }
             break;
 
         case NSFetchedResultsChangeMove:

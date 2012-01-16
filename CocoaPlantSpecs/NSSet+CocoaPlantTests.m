@@ -1,5 +1,4 @@
-#import <Kiwi/Kiwi.h>
-
+#import <SenTestingKit/SenTestingKit.h>
 #import "NSSet+CocoaPlant.h"
 
 @interface NSSet_CocoaPlantTests : SenTestCase {

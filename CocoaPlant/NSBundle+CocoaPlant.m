@@ -6,4 +6,8 @@
     return [[self infoDictionary] objectForKey:(NSString *)kCFBundleNameKey];
 }
 
+- (NSString *)version {
+    return [[self infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
+}
+
 @end

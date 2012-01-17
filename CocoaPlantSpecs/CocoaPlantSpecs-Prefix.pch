@@ -1,2 +1,2 @@
-#import <Kiwi/Kiwi.h>
 #import "CocoaPlant-Prefix.pch"
+#import <SenTestingKit/SenTestingKit.h>

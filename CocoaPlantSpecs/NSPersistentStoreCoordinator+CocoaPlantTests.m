@@ -1,7 +1,7 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import <CoreData/CoreData.h>
 
-@interface NSPersistentStoreCoordinator_CocoaPlantSpecs : SenTestCase {
+@interface NSPersistentStoreCoordinator_CocoaPlantTests : SenTestCase {
     NSPersistentStoreCoordinator *coordinator;
 }
 
@@ -11,7 +11,7 @@
 #import "NSPersistentStore+CocoaPlant.h"
 #import "NSPersistentStoreCoordinator+CocoaPlant.h"
 
-@implementation NSPersistentStoreCoordinator_CocoaPlantSpecs
+@implementation NSPersistentStoreCoordinator_CocoaPlantTests
 
 - (void)setUp {
     [super setUp];

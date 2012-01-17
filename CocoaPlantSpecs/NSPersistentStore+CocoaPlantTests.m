@@ -1,13 +1,13 @@
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface NSPersistentStore_CocoaPlantSpecs : SenTestCase
+@interface NSPersistentStore_CocoaPlantTests : SenTestCase
 @end
 
 #import "NSPersistentStore+CocoaPlant.h"
 #import "NSBundle+CocoaPlant.h"
 #import "NSFileManager+CocoaPlant.h"
 
-@implementation NSPersistentStore_CocoaPlantSpecs
+@implementation NSPersistentStore_CocoaPlantTests
 
 #pragma mark defaultURL
 

@@ -11,6 +11,7 @@
 #import <CocoaPlant/UINavigationController+CocoaPlant.h>
 #import <CocoaPlant/UIView+CocoaPlant.h>
 #import <CocoaPlant/UIViewController+CocoaPlant.h>
+#import <CocoaPlant/UIWindow+CocoaPlant.h>
 
 // PlantData (Core Data)
 #import <CocoaPlant/NSManagedObject+CocoaPlant.h>

@@ -13,5 +13,5 @@
 - (void)testVersion {
     STAssertEqualObjects([[NSBundle mainBundle] version], @"1.0", nil);
 }
-                           
+
 @end

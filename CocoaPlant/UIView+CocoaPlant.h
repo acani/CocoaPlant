@@ -1,24 +1,33 @@
 #import <UIKit/UIKit.h>
 
-@interface UIView (CocoaPlant)
 
-@property (nonatomic) CGPoint origin;
-@property (nonatomic) CGFloat x;
-@property (nonatomic) CGFloat y;
-
-@property (nonatomic) CGSize size;
-@property (nonatomic) CGFloat width;
-@property (nonatomic) CGFloat height;
-
-@end
+#pragma mark - CGRect Inline Functions
+// Apple makes these CG_EXTERN, but I'm not sure why. So, I made them CG_INLINE for ease.
 
 // Inset top of `rect' by `dy' -- i.e., increase origin.y by `dy', and decrease size.height by `dy'.
-CG_EXTERN CGRect CGRectInsetTop(CGRect rect, CGFloat dy);
+CG_INLINE CGRect
+CGRectInsetTop(CGRect rect, CGFloat dy) {
+    rect.origin.y += dy; rect.size.height -= dy; return rect;
+}
 
 // Inset left of `rect' by `dx' -- i.e., increase origin.x by `dx', and decrease size.width by `dx'.
-CG_EXTERN CGRect CGRectInsetLeft(CGRect rect, CGFloat dx);
+CG_INLINE CGRect
+CGRectInsetLeft(CGRect rect, CGFloat dx) {
+    rect.origin.x += dx; rect.size.width -= dx; return rect;
+}
 
-/*** Definitions of inline functions. ***/
+
+#pragma mark - UIView Inline Functions
+
+UIKIT_STATIC_INLINE void
+UIViewSetFrameOrigin(UIView *view, CGPoint origin) {
+    view.frame = CGRectMake(origin.x, origin.y, view.frame.size.width, view.frame.size.height);
+}
+
+UIKIT_STATIC_INLINE void
+UIViewSetFrameSize(UIView *view, CGSize size) {
+    view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y, size.width, size.height);
+}
 
 UIKIT_STATIC_INLINE void
 UIViewSetFrameX(UIView *view, CGFloat x) {

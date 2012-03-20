@@ -72,13 +72,13 @@
     oldFetchedObjects = [oldFetchedObjects sortedArrayUsingDescriptors:objectSortDescriptors];
 
     [oldFetchedObjects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        @try {
-            [obj updateWithDictionary:[oldServedDictionaries objectAtIndex:idx]];
-        }
-        @catch (NSException *exception) {
-            // TODO: Notify user & server that the server response was bad.
-            DLog(@"derp! updateWithDictionary error: %@", exception);
-        }
+        //        @try {
+        [obj updateWithDictionary:[oldServedDictionaries objectAtIndex:idx]];
+        //        }
+        //        @catch (NSException *exception) {
+        //            // TODO: Notify user & server that the server response was bad.
+        //            DLog(@"derp! updateWithDictionary error: %@", exception);
+        //        }
     }];
 }
 

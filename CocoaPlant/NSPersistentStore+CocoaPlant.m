@@ -5,10 +5,9 @@
 @implementation NSPersistentStore (CocoaPlant)
 
 + (NSURL *)defaultURL {
-    NSString *appName = [[NSBundle mainBundle] name];
-    NSString *storeFilename = [[NSString alloc] initWithFormat:@"%@.sqlite", appName];
-    return [[[[NSFileManager alloc] init] URLForApplicationDocumentDirectory]
-            URLByAppendingPathComponent:storeFilename];
+    return [[[NSFileManager defaultManager] URLForApplicationDocumentDirectory]
+            URLByAppendingPathComponent:
+            [NSString stringWithFormat:@"%@.sqlite", [[NSBundle mainBundle] name]]];
 }
 
 @end

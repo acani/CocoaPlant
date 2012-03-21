@@ -19,7 +19,7 @@
 }
 
 - (void)tearDown {
-    [[[NSFileManager alloc] init] removeItemAtURL:[NSPersistentStore defaultURL] error:NULL];
+    [[NSFileManager defaultManager] removeItemAtURL:[NSPersistentStore defaultURL] error:NULL];
     [super tearDown];
 }
 

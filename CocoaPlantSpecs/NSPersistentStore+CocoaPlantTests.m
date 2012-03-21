@@ -18,7 +18,7 @@
 - (void)testDefaultURLIsCorrect {
     NSString *appName = [[NSBundle mainBundle] name];
     NSString *sqliteFilename = [[NSString alloc] initWithFormat:@"%@.sqlite", appName];
-    NSURL *storeURL = [[[[NSFileManager alloc] init] URLForApplicationDocumentDirectory]
+    NSURL *storeURL = [[[NSFileManager defaultManager] URLForApplicationDocumentDirectory]
                        URLByAppendingPathComponent:sqliteFilename];
     STAssertEqualObjects([NSPersistentStore defaultURL], storeURL, @"returns default URL");
 }

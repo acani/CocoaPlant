@@ -9,7 +9,7 @@
 //    __block NSFileManager *fileManager;
 //
 //    beforeEach(^{
-//        fileManager = [[NSFileManager alloc] init];
+//        fileManager = [NSFileManager defaultManager];
 //    });
 //
 //    describe(@"-URLForApplicationDirectory", ^{

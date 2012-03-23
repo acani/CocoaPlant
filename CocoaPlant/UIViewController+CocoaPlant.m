@@ -3,7 +3,7 @@
 #import <objc/runtime.h>
 #import "UIViewController+CocoaPlant.h"
 
-// Dynamically add @property (nonatomic,readonly) UIViewController *parentViewController.
+// Dynamically add @property (nonatomic,readonly) UIViewController *presentingViewController.
 UIViewController *presentingViewController4(id self, SEL _cmd);
 UIViewController *presentingViewController4(id self, SEL _cmd) {
     return [self parentViewController];

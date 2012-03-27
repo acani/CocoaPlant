@@ -50,7 +50,7 @@ UIViewSetFrameHeight(UIView *view, CGFloat height) {
 }
 
 UIKIT_STATIC_INLINE UIViewAnimationOptions
-UIViewAnimationOptionsWithCurve(UIViewAnimationCurve curve) {
+UIViewAnimationOptionsFromCurve(UIViewAnimationCurve curve) {
     switch (curve) {
         case UIViewAnimationCurveEaseInOut:
             return UIViewAnimationOptionCurveEaseInOut;

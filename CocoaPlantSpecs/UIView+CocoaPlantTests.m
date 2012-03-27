@@ -74,19 +74,19 @@
 #pragma mark - UIViewAnimationOptions <=> UIViewAnimationCurve
 
 - (void)testAnimationOptionsWithCurve {
-    UIViewAnimationCurve curve = UIViewAnimationOptionsWithCurve(UIViewAnimationCurveEaseInOut);
+    UIViewAnimationCurve curve = UIViewAnimationOptionsFromCurve(UIViewAnimationCurveEaseInOut);
     STAssertEquals(curve, UIViewAnimationOptionCurveEaseInOut, nil);
 
-    curve = UIViewAnimationOptionsWithCurve(UIViewAnimationCurveEaseIn);
+    curve = UIViewAnimationOptionsFromCurve(UIViewAnimationCurveEaseIn);
     STAssertEquals(curve, UIViewAnimationOptionCurveEaseIn, nil);
 
-    curve = UIViewAnimationOptionsWithCurve(UIViewAnimationCurveEaseOut);
+    curve = UIViewAnimationOptionsFromCurve(UIViewAnimationCurveEaseOut);
     STAssertEquals(curve, UIViewAnimationOptionCurveEaseOut, nil);
 
-    curve = UIViewAnimationOptionsWithCurve(UIViewAnimationCurveLinear);
+    curve = UIViewAnimationOptionsFromCurve(UIViewAnimationCurveLinear);
     STAssertEquals(curve, UIViewAnimationOptionCurveLinear, nil);
 
-    curve = UIViewAnimationOptionsWithCurve(4); // invalid UIViewAnimationCurve
+    curve = UIViewAnimationOptionsFromCurve(4); // invalid UIViewAnimationCurve
     STAssertEquals(curve, 4, nil);
 }
 

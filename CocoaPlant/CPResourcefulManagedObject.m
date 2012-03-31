@@ -9,6 +9,8 @@
             inManagedObjectContext:(NSManagedObjectContext *)context {
     // Fetch with the ID Key.
     id fetchedObject = [self fetchFirstInManagedObjectContext:context error:NULL options:^(NSFetchRequest *request) {
+        request.fetchBatchSize = 20;
+        request.returnsObjectsAsFaults = NO;
         request.predicate = [NSPredicate predicateWithFormat:@"%K == %@", attributeName, [dictionary objectForKey:dictionaryKey]];
     }];
 
@@ -26,6 +28,16 @@
              attributeName:(NSString *)attributeName
              dictionaryKey:(NSString *)dictionaryKey
       managedObjectContext:(NSManagedObjectContext *)context {
+    [self updateAllWithArray:servedDictionaries keyPath:keyPath attributeName:attributeName relationshipKeyPaths:nil dictionaryKey:dictionaryKey managedObjectContext:context];
+}
+
+// TODO: Test!
++ (void)updateAllWithArray:(NSArray *)servedDictionaries
+                   keyPath:(NSString *)keyPath
+             attributeName:(NSString *)attributeName
+      relationshipKeyPaths:(NSArray *)relationshipKeyPaths
+             dictionaryKey:(NSString *)dictionaryKey
+      managedObjectContext:(NSManagedObjectContext *)context {
 
     // Create sets of all servedIDs & fetchedIDs.
     NSArray *servedIDs = [servedDictionaries valueForKeyPath:keyPath];
@@ -33,11 +45,14 @@
     NSMutableSet *servedIDsSet = [NSMutableSet setWithArray:servedIDs];
     NSArray *fetchedObjects = // TODO: handle fetch error.
     [self fetchInManagedObjectContext:context error:NULL options:^(NSFetchRequest *request) {
+        request.fetchBatchSize = 20;
+        request.returnsObjectsAsFaults = NO;
+        request.relationshipKeyPathsForPrefetching = relationshipKeyPaths;
         request.predicate = [NSPredicate predicateWithFormat:@"%K IN %@",
                              attributeName, servedIDsSet];
     }];
     NSSet *fetchedIDsSet = [NSSet setWithArray:[fetchedObjects valueForKeyPath:attributeName]];
-
+    
     // Insert newServedDictionaries (served - fetched).
     NSMutableSet *newServedIDsSet = [NSMutableSet setWithSet:servedIDsSet];
     [newServedIDsSet minusSet:fetchedIDsSet];
@@ -59,7 +74,7 @@
     NSArray *oldServedDictionaries = [servedDictionaries
                                       filteredArrayUsingPredicate:dictionaryPredicate];
     NSArray *oldFetchedObjects = [fetchedObjects filteredArrayUsingPredicate:objectPredicate];
-
+    
     // Sort both arrays by object ID so that they're in sync for iteration below.
     NSArray *dictionarySortDescriptors = [NSArray arrayWithObject:
                                           [NSSortDescriptor sortDescriptorWithKey:dictionaryKey
@@ -70,7 +85,7 @@
     oldServedDictionaries = [oldServedDictionaries
                              sortedArrayUsingDescriptors:dictionarySortDescriptors];
     oldFetchedObjects = [oldFetchedObjects sortedArrayUsingDescriptors:objectSortDescriptors];
-
+    
     [oldFetchedObjects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         //        @try {
         [obj updateWithDictionary:[oldServedDictionaries objectAtIndex:idx]];

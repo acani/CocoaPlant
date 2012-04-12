@@ -60,8 +60,7 @@
     if (fetchedResultsController) return fetchedResultsController;
 
     // Create the fetchRequest.
-    NSFetchRequest *fetchRequest = [NSClassFromString(entityName)
-                                    fetchRequestInManagedObjectContext:self.managedObjectContext];
+    NSFetchRequest *fetchRequest = NSFetchRequestMake(entityName, self.managedObjectContext);
     fetchRequest.fetchBatchSize = 20;
     fetchRequest.predicate = predicate;
     fetchRequest.sortDescriptors = sortDescriptors;

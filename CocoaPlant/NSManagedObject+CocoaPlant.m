@@ -2,33 +2,25 @@
 
 @implementation NSManagedObject (CocoaPlant)
 
-+ (NSString *)entityName {
-    return NSStringFromClass(self);
-}
-
 + (NSEntityDescription *)entityInManagedObjectContext:(NSManagedObjectContext *)context {
-    return [NSEntityDescription entityForName:[self entityName] inManagedObjectContext:context];
+    return [NSEntityDescription entityForName:NSStringFromClass(self)
+                       inManagedObjectContext:context];
 }
 
 + (id)insertIntoManagedObjectContext:(NSManagedObjectContext *)context {
-    return [NSEntityDescription insertNewObjectForEntityForName:[self entityName]
+    return [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(self)
                                          inManagedObjectContext:context];
-}
-
-+ (NSFetchRequest *)fetchRequestInManagedObjectContext:(NSManagedObjectContext *)context {
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    fetchRequest.entity = [self entityInManagedObjectContext:context];
-    return fetchRequest;
 }
 
 + (NSArray *)fetchInManagedObjectContext:(NSManagedObjectContext *)context error:(NSError **)error
                     options:(NSFetchRequestOptions)options {
-    NSFetchRequest *fetchRequest = [self fetchRequestInManagedObjectContext:context];
+    NSFetchRequest *fetchRequest = NSFetchRequestMake(NSStringFromClass(self), context);
 
     if (options) {
         options(fetchRequest);
     }
 
+//    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:error];
     return [context executeFetchRequest:fetchRequest error:error];
 }
 

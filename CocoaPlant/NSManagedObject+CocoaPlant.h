@@ -3,13 +3,23 @@
 
 typedef void (^NSFetchRequestOptions)(NSFetchRequest *request);
 
+NS_INLINE NSFetchRequest *NSFetchRequestMake(NSString *entityName,
+                                             NSManagedObjectContext *managedObjectContext) {
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_5_0 // iOS Deployment Target
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    fetchRequest.entity = [NSEntityDescription entityForName:entityName
+                                      inManagedObjectContext:managedObjectContext];
+    return fetchRequest;
+#else
+    return [NSFetchRequest fetchRequestWithEntityName:entityName];
+#endif
+}
+
 @interface NSManagedObject (CocoaPlant)
 
-+ (NSString *)entityName;
 + (NSEntityDescription *)entityInManagedObjectContext:(NSManagedObjectContext *)context;
 + (id)insertIntoManagedObjectContext:(NSManagedObjectContext *)context;
 
-+ (NSFetchRequest *)fetchRequestInManagedObjectContext:(NSManagedObjectContext *)context;
 + (NSArray *)fetchInManagedObjectContext:(NSManagedObjectContext *)context error:(NSError **)error options:(NSFetchRequestOptions)options;
 + (id)fetchFirstInManagedObjectContext:(NSManagedObjectContext *)context error:(NSError **)error options:(NSFetchRequestOptions)options;
 

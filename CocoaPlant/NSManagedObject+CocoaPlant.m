@@ -20,8 +20,14 @@
         options(fetchRequest);
     }
 
-//    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:error];
-    return [context executeFetchRequest:fetchRequest error:error];
+    if (error == NULL) {
+        NSError *defaultError = nil;
+        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&defaultError];
+        NSAssert(fetchedObjects, @"error: %@", defaultError);
+        return fetchedObjects;
+    } else {
+        return [context executeFetchRequest:fetchRequest error:error];
+    }
 }
 
 + (id)fetchFirstInManagedObjectContext:(NSManagedObjectContext *)context

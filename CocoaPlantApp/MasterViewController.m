@@ -31,8 +31,7 @@
                                   target:self action:@selector(insertNewObject)];
     self.navigationItem.rightBarButtonItem = addButton;
 
-    self.sortDescriptors = [NSArray arrayWithObject:
-                            [NSSortDescriptor sortDescriptorWithKey:@"timeStamp" ascending:YES]];
+    self.sortDescriptors = NSSortDescriptors1(@"timeStamp", YES);
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

@@ -1,3 +1,4 @@
+#import "CocoaPlantDefines.h"
 #import "CPResourcefulManagedObject.h"
 #import "NSManagedObject+CocoaPlant.h"
 
@@ -76,12 +77,8 @@
     NSArray *oldFetchedObjects = [fetchedObjects filteredArrayUsingPredicate:objectPredicate];
     
     // Sort both arrays by object ID so that they're in sync for iteration below.
-    NSArray *dictionarySortDescriptors = [NSArray arrayWithObject:
-                                          [NSSortDescriptor sortDescriptorWithKey:dictionaryKey
-                                                                        ascending:YES]];
-    NSArray *objectSortDescriptors = [NSArray arrayWithObject:
-                                      [NSSortDescriptor sortDescriptorWithKey:attributeName
-                                                                    ascending:YES]];
+    NSArray *dictionarySortDescriptors = NSSortDescriptors1(dictionaryKey, YES);
+    NSArray *objectSortDescriptors = NSSortDescriptors1(attributeName, YES);
     oldServedDictionaries = [oldServedDictionaries
                              sortedArrayUsingDescriptors:dictionarySortDescriptors];
     oldFetchedObjects = [oldFetchedObjects sortedArrayUsingDescriptors:objectSortDescriptors];

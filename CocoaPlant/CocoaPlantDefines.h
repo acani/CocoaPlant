@@ -6,3 +6,17 @@
 #define DLog(xx, ...)  ((void)0)
 #define DLogVerbose(xx, ...)  ((void)0)
 #endif
+
+#define NSSortDescriptors1(key1, ascending1) \
+[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:key1 ascending:ascending1]]
+
+#define NSSortDescriptors2(key1, ascending1, key2, ascending2) \
+[NSArray arrayWithObjects: \
+[NSSortDescriptor sortDescriptorWithKey:key1 ascending:ascending1], \
+[NSSortDescriptor sortDescriptorWithKey:key2 ascending:ascending2], nil]
+
+#define NSSortDescriptors3(key1, ascending1, key2, ascending2, key3, ascending3) \
+[NSArray arrayWithObjects: \
+[NSSortDescriptor sortDescriptorWithKey:key1 ascending:ascending1], \
+[NSSortDescriptor sortDescriptorWithKey:key2 ascending:ascending2], \
+[NSSortDescriptor sortDescriptorWithKey:key3 ascending:ascending3], nil]

@@ -4,6 +4,8 @@
 typedef void (^NSFetchRequestOptions)(NSFetchRequest *request);
 
 NS_INLINE NSFetchRequest *NSFetchRequestMake(NSString *entityName,
+                                             NSManagedObjectContext *managedObjectContext);
+NS_INLINE NSFetchRequest *NSFetchRequestMake(NSString *entityName,
                                              NSManagedObjectContext *managedObjectContext) {
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_5_0 // iOS Deployment Target
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];

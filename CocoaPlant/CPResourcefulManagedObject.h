@@ -13,12 +13,7 @@
              dictionaryKey:(NSString *)dictionaryKey
       managedObjectContext:(NSManagedObjectContext *)context;
 
-+ (void)updateAllWithArray:(NSArray *)servedDictionaries
-                   keyPath:(NSString *)keyPath
-             attributeName:(NSString *)attributeName
-      relationshipKeyPaths:(NSArray *)relationshipKeyPaths
-             dictionaryKey:(NSString *)dictionaryKey
-      managedObjectContext:(NSManagedObjectContext *)context;
++ (NSArray *)relationshipKeyPathsForUpdating;
 
 - (BOOL)updateWithDictionary:(NSDictionary *)dictionary;
 

@@ -29,17 +29,6 @@
              attributeName:(NSString *)attributeName
              dictionaryKey:(NSString *)dictionaryKey
       managedObjectContext:(NSManagedObjectContext *)context {
-    [self updateAllWithArray:servedDictionaries keyPath:keyPath attributeName:attributeName relationshipKeyPaths:nil dictionaryKey:dictionaryKey managedObjectContext:context];
-}
-
-// TODO: Test!
-+ (void)updateAllWithArray:(NSArray *)servedDictionaries
-                   keyPath:(NSString *)keyPath
-             attributeName:(NSString *)attributeName
-      relationshipKeyPaths:(NSArray *)relationshipKeyPaths
-             dictionaryKey:(NSString *)dictionaryKey
-      managedObjectContext:(NSManagedObjectContext *)context {
-
     // Create sets of all servedIDs & fetchedIDs.
     NSArray *servedIDs = [servedDictionaries valueForKeyPath:keyPath];
     if ([servedIDs count] == 0) return;
@@ -48,7 +37,7 @@
     [self fetchInManagedObjectContext:context error:NULL options:^(NSFetchRequest *request) {
         request.fetchBatchSize = 20;
         request.returnsObjectsAsFaults = NO;
-        request.relationshipKeyPathsForPrefetching = relationshipKeyPaths;
+        request.relationshipKeyPathsForPrefetching = [self relationshipKeyPathsForUpdating];
         request.predicate = [NSPredicate predicateWithFormat:@"%K IN %@",
                              attributeName, servedIDsSet];
     }];
@@ -65,7 +54,7 @@
         CPResourcefulManagedObject *resource = [self insertIntoManagedObjectContext:context];
         [resource updateWithDictionary:dictionary];
     }
-
+    
     // Update oldFetchedObjects (served & fetched).
     [servedIDsSet intersectSet:fetchedIDsSet];
     dictionaryPredicate = [NSPredicate predicateWithFormat:@"%K IN %@",
@@ -94,6 +83,8 @@
         //        }
     }];
 }
+
++ (NSArray *)relationshipKeyPathsForUpdating { return nil; }
 
 - (BOOL)updateWithDictionary:(NSDictionary *)dictionary { return YES; }
 

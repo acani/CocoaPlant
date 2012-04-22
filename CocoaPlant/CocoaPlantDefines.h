@@ -20,3 +20,17 @@
 [NSSortDescriptor sortDescriptorWithKey:key1 ascending:ascending1], \
 [NSSortDescriptor sortDescriptorWithKey:key2 ascending:ascending2], \
 [NSSortDescriptor sortDescriptorWithKey:key3 ascending:ascending3], nil]
+
+#define NSSortDescriptorsStandard1(key1, ascending1) \
+[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:key1 ascending:ascending1 selector:@selector(localizedStandardCompare:)]]
+
+#define NSSortDescriptorsStandard2(key1, ascending1, key2, ascending2) \
+[NSArray arrayWithObjects: \
+[NSSortDescriptor sortDescriptorWithKey:key1 ascending:ascending1 selector:@selector(localizedStandardCompare:)], \
+[NSSortDescriptor sortDescriptorWithKey:key2 ascending:ascending2 selector:@selector(localizedStandardCompare:)], nil]
+
+#define NSSortDescriptorsStandard3(key1, ascending1, key2, ascending2, key3, ascending3) \
+[NSArray arrayWithObjects: \
+[NSSortDescriptor sortDescriptorWithKey:key1 ascending:ascending1 selector:@selector(localizedStandardCompare:)], \
+[NSSortDescriptor sortDescriptorWithKey:key2 ascending:ascending2 selector:@selector(localizedStandardCompare:)], \
+[NSSortDescriptor sortDescriptorWithKey:key3 ascending:ascending3 selector:@selector(localizedStandardCompare:)], nil]

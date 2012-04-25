@@ -1,10 +1,28 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-typedef void (^NSFetchRequestOptions)(NSFetchRequest *request);
+#define MOCFetch(managedObjectContext, fetchRequest) \
+NSManagedObjectContextFetch(self, _cmd, managedObjectContext, fetchRequest)
+
+#define MOCFetchAll(managedObjectContext, entityName) \
+NSManagedObjectContextFetch(self, _cmd, managedObjectContext, NSFetchRequestMake(entityName, managedObjectContext))
+
+#define MOCDeleteAll(managedObjectContext, entityName) \
+NSManagedObjectContextDeleteAll(self, _cmd, managedObjectContext, entityName)
 
 NS_INLINE NSFetchRequest *NSFetchRequestMake(NSString *entityName,
                                              NSManagedObjectContext *managedObjectContext);
+
+NS_INLINE NSArray *NSManagedObjectContextFetch(id self, SEL _cmd,
+                                               NSManagedObjectContext *managedObjectContext,
+                                               NSFetchRequest *fetchRequest);
+
+NS_INLINE void NSManagedObjectContextDeleteAll(id self, SEL _cmd,
+                                               NSManagedObjectContext *managedObjectContext,
+                                               NSString *entityName);
+
+// NS_INLINE Implementations
+
 NS_INLINE NSFetchRequest *NSFetchRequestMake(NSString *entityName,
                                              NSManagedObjectContext *managedObjectContext) {
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_5_0 // iOS Deployment Target
@@ -17,44 +35,33 @@ NS_INLINE NSFetchRequest *NSFetchRequestMake(NSString *entityName,
 #endif
 }
 
+NS_INLINE NSArray *NSManagedObjectContextFetch(id self, SEL _cmd,
+                                               NSManagedObjectContext *managedObjectContext,
+                                               NSFetchRequest *fetchRequest) {
+    NSError *error = nil;
+    NSArray *fetchedObjects = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    NSAssert(fetchedObjects, @"error: %@", error);
+    return fetchedObjects;
+}
+
+NS_INLINE void NSManagedObjectContextDeleteAll(id self, SEL _cmd,
+                                               NSManagedObjectContext *managedObjectContext,
+                                               NSString *entityName) {
+    NSFetchRequest *fetchRequest = NSFetchRequestMake(entityName, managedObjectContext);
+    fetchRequest.includesPropertyValues = NO;
+    fetchRequest.includesPendingChanges = NO;
+    NSArray *fetchedObjects = MOCFetch(managedObjectContext, fetchRequest);
+    
+    for (NSManagedObject *fetchedObject in fetchedObjects) {
+        [managedObjectContext deleteObject:fetchedObject];
+    }
+}
+
 @interface NSManagedObject (CocoaPlant)
 
 + (NSEntityDescription *)entityInManagedObjectContext:(NSManagedObjectContext *)context;
 + (id)insertIntoManagedObjectContext:(NSManagedObjectContext *)context;
 
-+ (NSArray *)fetchInManagedObjectContext:(NSManagedObjectContext *)context error:(NSError **)error options:(NSFetchRequestOptions)options;
-+ (id)fetchFirstInManagedObjectContext:(NSManagedObjectContext *)context error:(NSError **)error options:(NSFetchRequestOptions)options;
-
-+ (BOOL)deleteAllInManagedObjectContext:(NSManagedObjectContext *)context error:(NSError **)error;
 - (void)delete;
-
-// TODO: handle errors:
-//+ (void) defaultErrorHandler:(NSError *)error
-//{
-//    NSDictionary *userInfo = [error userInfo];
-//    for (NSArray *detailedError in [userInfo allValues])
-//    {
-//        if ([detailedError isKindOfClass:[NSArray class]])
-//        {
-//            for (NSError *e in detailedError)
-//            {
-//                if ([e respondsToSelector:@selector(userInfo)])
-//                {
-//                    ARLog(@"Error Details: %@", [e userInfo]);
-//                }
-//                else
-//                {
-//                    ARLog(@"Error Details: %@", e);
-//                }
-//            }
-//        }
-//        else
-//        {
-//            ARLog(@"Error: %@", detailedError);
-//        }
-//    }
-//    ARLog(@"Error Domain: %@", [error domain]);
-//    ARLog(@"Recovery Suggestion: %@", [error localizedRecoverySuggestion]);
-//}
 
 @end

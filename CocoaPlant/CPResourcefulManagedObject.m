@@ -5,22 +5,22 @@
 @implementation CPResourcefulManagedObject
 
 + (id)updateOrInsertWithDictionary:(NSDictionary *)dictionary
-                     dictionaryKey:(NSString *)dictionaryKey
                      attributeName:(NSString *)attributeName
+                     dictionaryKey:(NSString *)dictionaryKey
             inManagedObjectContext:(NSManagedObjectContext *)context {
     // Fetch with the ID Key.
-    id fetchedObject = [self fetchFirstInManagedObjectContext:context error:NULL options:^(NSFetchRequest *request) {
-        request.fetchBatchSize = 20;
-        request.returnsObjectsAsFaults = NO;
-        request.predicate = [NSPredicate predicateWithFormat:@"%K == %@", attributeName, [dictionary objectForKey:dictionaryKey]];
-    }];
+    NSFetchRequest *fetchRequest = NSFetchRequestMake(NSStringFromClass(self), context);
+    fetchRequest.returnsObjectsAsFaults = NO;
+    fetchRequest.relationshipKeyPathsForPrefetching = [self relationshipKeyPathsForUpdating];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"%K == %@",
+                              attributeName, [dictionary objectForKey:dictionaryKey]];
+    NSArray *fetchedObjects = MOCFetch(context, fetchRequest);
+    
+    id object = ([fetchedObjects count] ? [fetchedObjects objectAtIndex:0] :
+                 [self insertIntoManagedObjectContext:context]);
 
-    if (!fetchedObject) {
-        fetchedObject = [self insertIntoManagedObjectContext:context];
-    }
-
-    [fetchedObject updateWithDictionary:dictionary];
-    return fetchedObject;
+    [object updateWithDictionary:dictionary];
+    return object;
 }
 
 // TODO: Test!
@@ -33,14 +33,14 @@
     NSArray *servedIDs = [servedDictionaries valueForKeyPath:keyPath];
     if ([servedIDs count] == 0) return;
     NSMutableSet *servedIDsSet = [NSMutableSet setWithArray:servedIDs];
-    NSArray *fetchedObjects = // TODO: handle fetch error.
-    [self fetchInManagedObjectContext:context error:NULL options:^(NSFetchRequest *request) {
-        request.fetchBatchSize = 20;
-        request.returnsObjectsAsFaults = NO;
-        request.relationshipKeyPathsForPrefetching = [self relationshipKeyPathsForUpdating];
-        request.predicate = [NSPredicate predicateWithFormat:@"%K IN %@",
-                             attributeName, servedIDsSet];
-    }];
+
+    NSFetchRequest *fetchRequest = NSFetchRequestMake(NSStringFromClass(self), context);
+    fetchRequest.returnsObjectsAsFaults = NO;
+    fetchRequest.relationshipKeyPathsForPrefetching = [self relationshipKeyPathsForUpdating];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"%K IN %@",
+                              attributeName, servedIDsSet];
+    NSArray *fetchedObjects = MOCFetch(context, fetchRequest);
+
     NSSet *fetchedIDsSet = [NSSet setWithArray:[fetchedObjects valueForKeyPath:attributeName]];
     
     // Insert newServedDictionaries (served - fetched).
@@ -84,7 +84,7 @@
     }];
 }
 
-+ (NSArray *)relationshipKeyPathsForUpdating { return nil; }
++ (NSArray *)relationshipKeyPathsForUpdating { return [NSArray array]; }
 
 - (BOOL)updateWithDictionary:(NSDictionary *)dictionary { return YES; }
 

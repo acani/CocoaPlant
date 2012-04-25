@@ -3,8 +3,8 @@
 @interface CPResourcefulManagedObject : NSManagedObject
 
 + (id)updateOrInsertWithDictionary:(NSDictionary *)dictionary
-                     dictionaryKey:(NSString *)dictionaryKey
                      attributeName:(NSString *)attributeName
+                     dictionaryKey:(NSString *)dictionaryKey
             inManagedObjectContext:(NSManagedObjectContext *)context;
 
 + (void)updateAllWithArray:(NSArray *)servedDictionaries

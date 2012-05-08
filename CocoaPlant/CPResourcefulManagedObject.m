@@ -50,9 +50,12 @@
                                         dictionaryKey, newServedIDsSet];
     NSArray *newServedDictionaries = [servedDictionaries
                                       filteredArrayUsingPredicate:dictionaryPredicate];
+    
     for (NSDictionary *dictionary in newServedDictionaries) {
-        CPResourcefulManagedObject *resource = [self insertIntoManagedObjectContext:context];
-        [resource updateWithDictionary:dictionary];
+        @autoreleasepool {
+            CPResourcefulManagedObject *resource = [self insertIntoManagedObjectContext:context];
+            [resource updateWithDictionary:dictionary];
+        }
     }
     
     // Update oldFetchedObjects (served & fetched).
@@ -75,7 +78,9 @@
     [oldFetchedObjects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         //        @try {
         // TODO: Fix bug. objectAtIndex 4 beyond bounds 0-3.
-        [obj updateWithDictionary:[oldServedDictionaries objectAtIndex:idx]];
+        @autoreleasepool {
+            [obj updateWithDictionary:[oldServedDictionaries objectAtIndex:idx]];
+        }
         //        }
         //        @catch (NSException *exception) {
         //            // TODO: Notify user & server that the server response was bad.

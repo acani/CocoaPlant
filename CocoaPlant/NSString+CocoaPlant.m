@@ -1,6 +1,13 @@
 #import "NSString+CocoaPlant.h"
 
+static NSMutableCharacterSet *wordSeparatorsCharacterSet;
+
 @implementation NSString (CocoaPlant)
+
++ (void)load {
+    wordSeparatorsCharacterSet = [NSMutableCharacterSet whitespaceAndNewlineCharacterSet];
+    [wordSeparatorsCharacterSet formUnionWithCharacterSet:[NSCharacterSet punctuationCharacterSet]];
+}
 
 #pragma mark - Trimming Methods
 
@@ -39,10 +46,9 @@
 
 - (NSMutableArray *)words {
     NSScanner *scanner = [NSScanner scannerWithString:self];
-    NSCharacterSet *whiteSpace = [NSCharacterSet whitespaceAndNewlineCharacterSet];
     NSString *string;
     NSMutableArray *words = [NSMutableArray array];
-    while ([scanner scanUpToCharactersFromSet:whiteSpace intoString:&string]) {
+    while ([scanner scanUpToCharactersFromSet:wordSeparatorsCharacterSet intoString:&string]) {
         [words addObject:string];
     }
     return words;

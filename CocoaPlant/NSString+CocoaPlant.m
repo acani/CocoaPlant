@@ -1,12 +1,12 @@
 #import "NSString+CocoaPlant.h"
 
-static NSMutableCharacterSet *wordSeparatorsCharacterSet;
+static NSCharacterSet *wordSeparatorsCharacterSet;
 
 @implementation NSString (CocoaPlant)
 
 + (void)load {
-    wordSeparatorsCharacterSet = [NSMutableCharacterSet whitespaceAndNewlineCharacterSet];
-    [wordSeparatorsCharacterSet formUnionWithCharacterSet:[NSCharacterSet punctuationCharacterSet]];
+    wordSeparatorsCharacterSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+//    [wordSeparatorsCharacterSet formUnionWithCharacterSet:[NSCharacterSet punctuationCharacterSet]];
 }
 
 #pragma mark - Trimming Methods

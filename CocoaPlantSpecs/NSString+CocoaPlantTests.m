@@ -38,7 +38,11 @@
 #pragma mark - Separator Tests
 
 - (void)testWords {
-    NSMutableArray *words = [NSMutableArray arrayWithObjects:@"hey", nil];
+    NSMutableArray *words = [NSMutableArray arrayWithCapacity:3];
+    STAssertEqualObjects([@"" words], words, nil);
+    STAssertEqualObjects([@" \n   \n" words], words, nil);
+    
+    [words addObject:@"hey"];
     STAssertEqualObjects([@"hey" words], words, nil);
     STAssertEqualObjects([@"\n hey \n " words], words, nil);
 

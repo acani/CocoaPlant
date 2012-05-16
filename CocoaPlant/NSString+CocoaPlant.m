@@ -4,10 +4,10 @@
 
 @implementation NSString (CocoaPlant)
 
-+ (void)load {
+//+ (void)load {
 //    wordSeparatorsCharacterSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
-//    [wordSeparatorsCharacterSet formUnionWithCharacterSet:[NSCharacterSet punctuationCharacterSet]];
-}
+////    [wordSeparatorsCharacterSet formUnionWithCharacterSet:[NSCharacterSet punctuationCharacterSet]];
+//}
 
 #pragma mark - Trimming Methods
 
@@ -48,7 +48,7 @@
     NSScanner *scanner = [NSScanner scannerWithString:self];
     NSString *string;
     NSMutableArray *words = [NSMutableArray array];
-    while ([scanner scanUpToCharactersFromSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]
+    while ([scanner scanUpToCharactersFromSet:[NSCharacterSet whitespaceAndNewlineCharacterSet] // wordSeparatorsCharacterSet
                                    intoString:&string]) {
         [words addObject:string];
     }

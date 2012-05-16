@@ -1,11 +1,11 @@
 #import "NSString+CocoaPlant.h"
 
-static NSCharacterSet *wordSeparatorsCharacterSet;
+//static NSCharacterSet *wordSeparatorsCharacterSet;
 
 @implementation NSString (CocoaPlant)
 
 + (void)load {
-    wordSeparatorsCharacterSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+//    wordSeparatorsCharacterSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
 //    [wordSeparatorsCharacterSet formUnionWithCharacterSet:[NSCharacterSet punctuationCharacterSet]];
 }
 
@@ -48,7 +48,8 @@ static NSCharacterSet *wordSeparatorsCharacterSet;
     NSScanner *scanner = [NSScanner scannerWithString:self];
     NSString *string;
     NSMutableArray *words = [NSMutableArray array];
-    while ([scanner scanUpToCharactersFromSet:wordSeparatorsCharacterSet intoString:&string]) {
+    while ([scanner scanUpToCharactersFromSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]
+                                   intoString:&string]) {
         [words addObject:string];
     }
     return words;

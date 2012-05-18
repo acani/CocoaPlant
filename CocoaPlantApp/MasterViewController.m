@@ -15,7 +15,7 @@
         self.title = NSLocalizedString(@"Master", nil);
         self.entityName = @"Event";
         id delegate = [[UIApplication sharedApplication] delegate];
-        self.managedObjectContext = [delegate managedObjectContext];
+        managedObjectContext = [delegate managedObjectContext];
     }
     return self;
 }
@@ -64,7 +64,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 
         NSError *error = nil;
         if (![context save:&error]) {
-            [self.managedObjectContext handleFatalError];
+            [managedObjectContext handleFatalError];
         }
     }
 }
@@ -82,7 +82,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 
 #pragma mark - CPCoreDataTableViewController
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView configureCell:(UITableViewCell *)cell
+atIndexPath:(NSIndexPath *)indexPath {
     NSManagedObject *managedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [[managedObject valueForKey:@"timeStamp"] description];
 }
@@ -103,7 +104,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     // Save the context.
     NSError *error = nil;
     if (![context save:&error]) {
-        [self.managedObjectContext handleFatalError];
+        [managedObjectContext handleFatalError];
     }
 }
 

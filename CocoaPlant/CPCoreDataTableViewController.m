@@ -60,7 +60,7 @@
     if (fetchedResultsController) return fetchedResultsController;
 
     // Create the fetchRequest.
-    NSFetchRequest *fetchRequest = NSFetchRequestMake(entityName, self.managedObjectContext);
+    NSFetchRequest *fetchRequest = NSFetchRequestMake(entityName, managedObjectContext);
     fetchRequest.fetchBatchSize = 20;
     fetchRequest.predicate = predicate;
     fetchRequest.sortDescriptors = sortDescriptors;
@@ -68,7 +68,7 @@
     // Create the fetchedResultsController.
     self.fetchedResultsController = [[NSFetchedResultsController alloc]
                                      initWithFetchRequest:fetchRequest
-                                     managedObjectContext:self.managedObjectContext
+                                     managedObjectContext:managedObjectContext
                                      sectionNameKeyPath:nil cacheName:cacheName];
     fetchedResultsController.delegate = self;
 

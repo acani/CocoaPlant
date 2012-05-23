@@ -73,7 +73,7 @@
     fetchedResultsController.delegate = self;
 
     // Perform the fetch.
-    NSError *error = nil;
+    NSError __autoreleasing *error = nil;
     if (![fetchedResultsController performFetch:&error]) {
         [managedObjectContext handleFatalError];
     }

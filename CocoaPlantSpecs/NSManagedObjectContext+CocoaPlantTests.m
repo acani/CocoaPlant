@@ -12,7 +12,7 @@
 //    describe(@"+contextWithStoreType:error:", ^{
 //        it(@"passes arguments", ^{
 //            NSString *storeType = NSSQLiteStoreType;
-//            NSError *error;
+//            NSError __autoreleasing *error;
 //            [[NSPersistentStoreCoordinator should] receive:@selector(coordinatorWithStoreType:error:)
 //             withArguments:storeType, theValue(&error)];
 //            context = [NSManagedObjectContext contextWithStoreType:storeType error:&error];

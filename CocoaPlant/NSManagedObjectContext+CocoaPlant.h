@@ -2,7 +2,7 @@
 #import <CoreData/CoreData.h>
 
 #define MOCSave(managedObjectContext) \
-{ NSError *error = nil; \
+{ NSError __autoreleasing *error = nil; \
 NSAssert([managedObjectContext save:&error], @"\n\nMOCSave error in %@\n\n%@", \
 NSStringFromSelector(_cmd), error); }
 

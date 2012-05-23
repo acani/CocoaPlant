@@ -62,7 +62,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
         NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
         [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
 
-        NSError *error = nil;
+        NSError __autoreleasing *error = nil;
         if (![context save:&error]) {
             [managedObjectContext handleFatalError];
         }
@@ -102,7 +102,7 @@ atIndexPath:(NSIndexPath *)indexPath {
     [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
 
     // Save the context.
-    NSError *error = nil;
+    NSError __autoreleasing *error = nil;
     if (![context save:&error]) {
         [managedObjectContext handleFatalError];
     }

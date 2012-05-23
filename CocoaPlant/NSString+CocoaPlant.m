@@ -46,7 +46,7 @@
 
 - (NSMutableArray *)words {
     NSScanner *scanner = [NSScanner scannerWithString:self];
-    NSString *string;
+    NSString __autoreleasing *string;
     NSMutableArray *words = [NSMutableArray array];
     while ([scanner scanUpToCharactersFromSet:[NSCharacterSet whitespaceAndNewlineCharacterSet] // wordSeparatorsCharacterSet
                                    intoString:&string]) {

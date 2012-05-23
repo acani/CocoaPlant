@@ -39,7 +39,7 @@ NS_INLINE NSFetchRequest *NSFetchRequestMake(NSString *entityName,
 NS_INLINE NSArray *NSManagedObjectContextFetch(id self, SEL _cmd,
                                                NSManagedObjectContext *managedObjectContext,
                                                NSFetchRequest *fetchRequest) {
-    NSError *error = nil;
+    NSError __autoreleasing *error = nil;
     NSArray *fetchedObjects = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
     NSAssert(fetchedObjects, @"error: %@", error);
     return fetchedObjects;

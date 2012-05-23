@@ -7,8 +7,8 @@ NSManagedObjectContextFetch(self, _cmd, managedObjectContext, fetchRequest)
 #define MOCFetchAll(managedObjectContext, entityName) \
 NSManagedObjectContextFetch(self, _cmd, managedObjectContext, NSFetchRequestMake(entityName, managedObjectContext))
 
-#define MOCDeleteAll(managedObjectContext, entityName) \
-NSManagedObjectContextDeleteAll(self, _cmd, managedObjectContext, entityName)
+#define MOCDeleteAll(managedObjectContext, entityName, cascadeRelationships) \
+NSManagedObjectContextDeleteAll(self, _cmd, managedObjectContext, entityName, cascadeRelationships)
 
 NS_INLINE NSFetchRequest *NSFetchRequestMake(NSString *entityName,
                                              NSManagedObjectContext *managedObjectContext);
@@ -19,7 +19,8 @@ NS_INLINE NSArray *NSManagedObjectContextFetch(id self, SEL _cmd,
 
 NS_INLINE void NSManagedObjectContextDeleteAll(id self, SEL _cmd,
                                                NSManagedObjectContext *managedObjectContext,
-                                               NSString *entityName);
+                                               NSString *entityName,
+                                               NSArray *cascadeRelationships);
 
 // NS_INLINE Implementations
 
@@ -46,10 +47,12 @@ NS_INLINE NSArray *NSManagedObjectContextFetch(id self, SEL _cmd,
 
 NS_INLINE void NSManagedObjectContextDeleteAll(id self, SEL _cmd,
                                                NSManagedObjectContext *managedObjectContext,
-                                               NSString *entityName) {
+                                               NSString *entityName,
+                                               NSArray *cascadeRelationships) {
     NSFetchRequest *fetchRequest = NSFetchRequestMake(entityName, managedObjectContext);
     fetchRequest.includesPropertyValues = NO;
     fetchRequest.includesPendingChanges = NO;
+    fetchRequest.relationshipKeyPathsForPrefetching = cascadeRelationships;
     NSArray *fetchedObjects = MOCFetch(managedObjectContext, fetchRequest);
     
     for (NSManagedObject *fetchedObject in fetchedObjects) {

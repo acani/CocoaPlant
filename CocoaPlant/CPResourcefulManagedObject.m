@@ -25,13 +25,14 @@
 
 // TODO: Test!
 + (void)updateAllWithArray:(NSArray *)servedDictionaries
-                   keyPath:(NSString *)keyPath
-             attributeName:(NSString *)attributeName
              dictionaryKey:(NSString *)dictionaryKey
+             attributeName:(NSString *)attributeName
       managedObjectContext:(NSManagedObjectContext *)context {
+
+    if (![servedDictionaries count]) return;
+
     // Create sets of all servedIDs & fetchedIDs.
-    NSArray *servedIDs = [servedDictionaries valueForKeyPath:keyPath];
-    if (![servedIDs count]) return;
+    NSArray *servedIDs = [servedDictionaries valueForKeyPath:dictionaryKey];
     NSMutableSet *servedIDsSet = [NSMutableSet setWithArray:servedIDs];
 
     NSFetchRequest *fetchRequest = NSFetchRequestMake(NSStringFromClass(self), context);
@@ -39,54 +40,40 @@
     fetchRequest.relationshipKeyPathsForPrefetching = [self relationshipKeyPathsForUpdating];
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"%K IN %@",
                               attributeName, servedIDsSet];
+    fetchRequest.sortDescriptors = NSSortDescriptors1(attributeName, YES);
     NSArray *fetchedObjects = MOCFetch(context, fetchRequest);
 
-    NSSet *fetchedIDsSet = [NSSet setWithArray:[fetchedObjects valueForKeyPath:attributeName]];
-    
-    // Insert newServedDictionaries (served - fetched).
-    NSMutableSet *newServedIDsSet = [NSMutableSet setWithSet:servedIDsSet];
-    [newServedIDsSet minusSet:fetchedIDsSet];
-    NSPredicate *dictionaryPredicate = [NSPredicate predicateWithFormat:@"%K IN %@",
-                                        dictionaryKey, newServedIDsSet];
-    NSArray *newServedDictionaries = [servedDictionaries
-                                      filteredArrayUsingPredicate:dictionaryPredicate];
-    
-    for (NSDictionary *dictionary in newServedDictionaries) {
-        @autoreleasepool {
-            CPResourcefulManagedObject *resource = [self insertIntoManagedObjectContext:context];
-            [resource updateWithDictionary:dictionary];
+    // Update all fetchedObjects.
+    NSSet *fetchedIDsSet;
+    NSPredicate *dictionaryPredicate;
+    if ([fetchedObjects count]) {
+        // Get fetchedServedDictionaries, sorted by objectID, like fetchedObjects.
+        fetchedIDsSet = [NSSet setWithArray:[fetchedObjects valueForKeyPath:attributeName]];
+        dictionaryPredicate = [NSPredicate predicateWithFormat:@"%K IN %@",
+                               dictionaryKey, fetchedIDsSet];
+        NSArray *fetchedServedDictionaries = [servedDictionaries
+                                              filteredArrayUsingPredicate:dictionaryPredicate];
+        fetchedServedDictionaries = [fetchedServedDictionaries sortedArrayUsingDescriptors:
+                                     NSSortDescriptors1(dictionaryKey, YES)];        
+
+        NSUInteger idx = 0;
+        for (CPResourcefulManagedObject *object in fetchedObjects) {
+            // TODO: Fix bug. objectAtIndex 4 beyond bounds 0-3.
+            [object updateWithDictionary:[fetchedServedDictionaries objectAtIndex:idx]];
+            idx++;
         }
+
+        // Remove fetchedServedDictionaries from servedDictionaries to prepare for insert below.
+        [servedIDsSet minusSet:fetchedIDsSet];
+        dictionaryPredicate = [NSPredicate predicateWithFormat:@"%K IN %@",
+                               dictionaryKey, servedIDsSet];
+        servedDictionaries = [servedDictionaries filteredArrayUsingPredicate:dictionaryPredicate];        
     }
-    
-    // Update oldFetchedObjects (served & fetched).
-    [servedIDsSet intersectSet:fetchedIDsSet];
-    dictionaryPredicate = [NSPredicate predicateWithFormat:@"%K IN %@",
-                           dictionaryKey, servedIDsSet];
-    NSPredicate *objectPredicate = [NSPredicate predicateWithFormat:@"%K IN %@",
-                                    attributeName, servedIDsSet];
-    NSArray *oldServedDictionaries = [servedDictionaries
-                                      filteredArrayUsingPredicate:dictionaryPredicate];
-    NSArray *oldFetchedObjects = [fetchedObjects filteredArrayUsingPredicate:objectPredicate];
-    
-    // Sort both arrays by object ID so that they're in sync for iteration below.
-    NSArray *dictionarySortDescriptors = NSSortDescriptors1(dictionaryKey, YES);
-    NSArray *objectSortDescriptors = NSSortDescriptors1(attributeName, YES);
-    oldServedDictionaries = [oldServedDictionaries
-                             sortedArrayUsingDescriptors:dictionarySortDescriptors];
-    oldFetchedObjects = [oldFetchedObjects sortedArrayUsingDescriptors:objectSortDescriptors];
-    
-    [oldFetchedObjects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        //        @try {
-        // TODO: Fix bug. objectAtIndex 4 beyond bounds 0-3.
-        @autoreleasepool {
-            [obj updateWithDictionary:[oldServedDictionaries objectAtIndex:idx]];
-        }
-        //        }
-        //        @catch (NSException *exception) {
-        //            // TODO: Notify user & server that the server response was bad.
-        //            DLog(@"derp! updateWithDictionary error: %@", exception);
-        //        }
-    }];
+
+    // Insert & update the new servedDictionaries.
+    for (NSDictionary *dictionary in servedDictionaries) {
+        [[self insertIntoManagedObjectContext:context] updateWithDictionary:dictionary];
+    }
 }
 
 + (NSArray *)relationshipKeyPathsForUpdating { return [NSArray array]; }

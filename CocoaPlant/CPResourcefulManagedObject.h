@@ -8,9 +8,8 @@
             inManagedObjectContext:(NSManagedObjectContext *)context;
 
 + (void)updateAllWithArray:(NSArray *)servedDictionaries
-                   keyPath:(NSString *)keyPath
-             attributeName:(NSString *)attributeName
              dictionaryKey:(NSString *)dictionaryKey
+             attributeName:(NSString *)attributeName
       managedObjectContext:(NSManagedObjectContext *)context;
 
 + (NSArray *)relationshipKeyPathsForUpdating;

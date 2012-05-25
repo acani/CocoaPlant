@@ -70,6 +70,4 @@ NS_INLINE void NSManagedObjectContextDeleteAll(id self, SEL _cmd,
 + (NSEntityDescription *)entityInManagedObjectContext:(NSManagedObjectContext *)context;
 + (id)insertIntoManagedObjectContext:(NSManagedObjectContext *)context;
 
-- (void)delete;
-
 @end

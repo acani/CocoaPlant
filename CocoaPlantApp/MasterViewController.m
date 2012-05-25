@@ -1,11 +1,8 @@
 #import <CocoaPlant/CocoaPlant.h>
 #import "MasterViewController.h"
-#import "DetailViewController.h"
-#import "Event.h"
+#import "Task.h"
 
 @implementation MasterViewController
-
-@synthesize detailViewController;
 
 @synthesize managedObjectContext;
 @synthesize fetchedResultsController;
@@ -51,20 +48,10 @@
 #pragma mark - MasterViewController
 
 - (void)insertNewObject {
-    Event *event = [Event insertIntoManagedObjectContext:managedObjectContext];
-    event.timeStamp = [NSDate date];
+    Task *task = [Task insertIntoManagedObjectContext:managedObjectContext];
+    task.resourceID = @"*";
+    task.name = @"Untitled";
     MOCSave(managedObjectContext);
-}
-
-#pragma mark - UITableViewDelegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (!detailViewController) {
-        detailViewController = [[DetailViewController alloc] initWithNibName:nil bundle:nil];
-    }
-    NSManagedObject *selectedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    detailViewController.detailItem = selectedObject;
-    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 #pragma mark - UITableViewDataSource
@@ -93,8 +80,8 @@
 
 - (void)tableView:(UITableView *)tableView configureCell:(UITableViewCell *)cell
       atIndexPath:(NSIndexPath *)indexPath {
-    Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [event.timeStamp description];
+    Task *task = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = task.name;
 }
 
 - (void)tableView:(UITableView *)tableView
@@ -114,15 +101,15 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (fetchedResultsController) return fetchedResultsController;
     
     // Create the fetchRequest.
-    NSFetchRequest *fetchRequest = NSFetchRequestMake(@"Event", managedObjectContext);
+    NSFetchRequest *fetchRequest = NSFetchRequestMake(@"Task", managedObjectContext);
     fetchRequest.fetchBatchSize = 20;
-    fetchRequest.sortDescriptors = NSSortDescriptors1(@"timeStamp", YES);
+    fetchRequest.sortDescriptors = NSSortDescriptors1(@"resourceID", YES);
 
     // Create the fetchedResultsController.
     self.fetchedResultsController = [[NSFetchedResultsController alloc]
                                      initWithFetchRequest:fetchRequest
                                      managedObjectContext:managedObjectContext
-                                     sectionNameKeyPath:nil cacheName:@"Event"];
+                                     sectionNameKeyPath:nil cacheName:@"Task"];
     fetchedResultsController.delegate = self;
     FRCPerformFetch(fetchedResultsController);
     return fetchedResultsController;

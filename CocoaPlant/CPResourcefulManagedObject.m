@@ -44,15 +44,26 @@
     NSArray *fetchedObjects = MOCFetch(context, fetchRequest);
 
     // Update all fetchedObjects.
-    NSSet *fetchedIDsSet;
-    NSPredicate *dictionaryPredicate;
+    BOOL newServedDictionariesReturned;
     if ([fetchedObjects count]) {
         // Get fetchedServedDictionaries, sorted by objectID, like fetchedObjects.
-        fetchedIDsSet = [NSSet setWithArray:[fetchedObjects valueForKeyPath:attributeName]];
-        dictionaryPredicate = [NSPredicate predicateWithFormat:@"%K IN %@",
-                               dictionaryKey, fetchedIDsSet];
-        NSArray *fetchedServedDictionaries = [servedDictionaries
-                                              filteredArrayUsingPredicate:dictionaryPredicate];
+        NSArray *fetchedServedDictionaries;        
+        NSSet *fetchedIDsSet = [NSSet setWithArray:[fetchedObjects valueForKeyPath:attributeName]];
+        newServedDictionariesReturned = ![fetchedIDsSet isEqualToSet:servedIDsSet];
+        if (newServedDictionariesReturned) {
+            NSPredicate *dictionaryPredicate = [NSPredicate predicateWithFormat:@"%K IN %@",
+                                                dictionaryKey, fetchedIDsSet];
+            fetchedServedDictionaries = [servedDictionaries
+                                         filteredArrayUsingPredicate:dictionaryPredicate];
+            
+            // Remove fetchedServedDictionaries from servedDictionaries to prepare for insert below.
+            [servedIDsSet minusSet:fetchedIDsSet];
+            dictionaryPredicate = [NSPredicate predicateWithFormat:@"%K IN %@",
+                                   dictionaryKey, servedIDsSet];
+            servedDictionaries = [servedDictionaries filteredArrayUsingPredicate:dictionaryPredicate];
+        } else {
+            fetchedServedDictionaries = servedDictionaries;
+        }
         fetchedServedDictionaries = [fetchedServedDictionaries sortedArrayUsingDescriptors:
                                      NSSortDescriptors1(dictionaryKey, YES)];        
 
@@ -60,19 +71,17 @@
         for (CPResourcefulManagedObject *object in fetchedObjects) {
             // TODO: Fix bug. objectAtIndex 4 beyond bounds 0-3.
             [object updateWithDictionary:[fetchedServedDictionaries objectAtIndex:idx]];
-            idx++;
+            ++idx;
         }
-
-        // Remove fetchedServedDictionaries from servedDictionaries to prepare for insert below.
-        [servedIDsSet minusSet:fetchedIDsSet];
-        dictionaryPredicate = [NSPredicate predicateWithFormat:@"%K IN %@",
-                               dictionaryKey, servedIDsSet];
-        servedDictionaries = [servedDictionaries filteredArrayUsingPredicate:dictionaryPredicate];        
+    } else {
+        newServedDictionariesReturned = YES;
     }
 
     // Insert & update the new servedDictionaries.
-    for (NSDictionary *dictionary in servedDictionaries) {
-        [[self insertIntoManagedObjectContext:context] updateWithDictionary:dictionary];
+    if (newServedDictionariesReturned) {
+        for (NSDictionary *dictionary in servedDictionaries) {
+            [[self insertIntoManagedObjectContext:context] updateWithDictionary:dictionary];
+        }
     }
 }
 

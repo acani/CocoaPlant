@@ -79,10 +79,10 @@
 #import <CoreData/CoreData.h>
 #import "NSManagedObject+CocoaPlant.h"
 #import "NSManagedObjectContext+CocoaPlant.h"
-#import "Event.h"
+#import "Task.h"
 
 @interface NSManagedObject_CocoaPlantTests : SenTestCase {
-    NSManagedObject *managedObject;
+    NSManagedObject *task;
 }
 @end
 
@@ -91,17 +91,11 @@
 - (void)setUp {
     NSManagedObjectContext *context = [NSManagedObjectContext contextWithStoreType:
                                        NSInMemoryStoreType error:NULL];
-    managedObject = [Event insertIntoManagedObjectContext:context];
+    task = [Task insertIntoManagedObjectContext:context];
 }
 
 - (void)tearDown {
-    managedObject = nil;
-}
-
-- (void)testDelete {
-    STAssertFalse([managedObject isDeleted], nil);
-    [managedObject delete];
-    STAssertTrue([managedObject isDeleted], nil);
+    task = nil;
 }
 
 @end

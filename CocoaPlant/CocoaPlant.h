@@ -3,7 +3,6 @@
 // Plantation (Foundation)
 #import <CocoaPlant/NSBundle+CocoaPlant.h>
 #import <CocoaPlant/NSFileManager+CocoaPlant.h>
-#import <CocoaPlant/NSSet+CocoaPlant.h>
 #import <CocoaPlant/NSString+CocoaPlant.h>
 
 // UIPlant (UIKit)

@@ -12,8 +12,4 @@
                                          inManagedObjectContext:context];
 }
 
-- (void)delete {
-    [self.managedObjectContext deleteObject:self];
-}
-
 @end

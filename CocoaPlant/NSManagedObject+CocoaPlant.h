@@ -10,6 +10,11 @@ NSManagedObjectContextFetch(self, _cmd, managedObjectContext, NSFetchRequestMake
 #define MOCDeleteAll(managedObjectContext, entityName, cascadeRelationships) \
 NSManagedObjectContextDeleteAll(self, _cmd, managedObjectContext, entityName, cascadeRelationships)
 
+#define FRCPerformFetch(fetchedResultsController) \
+{ NSError __autoreleasing *error = nil; \
+NSAssert([fetchedResultsController performFetch:&error], \
+@"\n\nFRCPerformFetch error:\n\n%@", error); }
+
 NS_INLINE NSFetchRequest *NSFetchRequestMake(NSString *entityName,
                                              NSManagedObjectContext *managedObjectContext);
 

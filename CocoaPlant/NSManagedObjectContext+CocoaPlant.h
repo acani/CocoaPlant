@@ -3,8 +3,7 @@
 
 #define MOCSave(managedObjectContext) \
 { NSError __autoreleasing *error = nil; \
-NSAssert([managedObjectContext save:&error], @"\n\nMOCSave error in %@\n\n%@", \
-NSStringFromSelector(_cmd), error); }
+NSAssert([managedObjectContext save:&error], @"\n\nMOCSave error:\n\n%@", error); }
 
 @interface NSManagedObjectContext (CocoaPlant)
 

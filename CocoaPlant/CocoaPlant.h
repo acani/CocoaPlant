@@ -19,6 +19,4 @@
 #import <CocoaPlant/NSManagedObjectModel+CocoaPlant.h>
 #import <CocoaPlant/NSPersistentStore+CocoaPlant.h>
 #import <CocoaPlant/NSPersistentStoreCoordinator+CocoaPlant.h>
-
-#import <CocoaPlant/CPCoreDataTableViewController.h>
 #import <CocoaPlant/CPResourcefulManagedObject.h>

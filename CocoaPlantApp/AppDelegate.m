@@ -7,28 +7,25 @@
 
 @synthesize window;
 @synthesize navigationController;
+
 @synthesize managedObjectContext;
 
 #pragma mark - UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    MasterViewController *controller = [[MasterViewController alloc] init];
+    managedObjectContext = [NSManagedObjectContext contextWithStoreType:NSSQLiteStoreType
+                                                                  error:NULL];
+    window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    MasterViewController *masterViewController =
+    [[MasterViewController alloc] initWithNibName:nil bundle:nil];
+    masterViewController.title = NSLocalizedString(@"Master", nil);
+    masterViewController.managedObjectContext = managedObjectContext;
     self.navigationController = [[UINavigationController alloc]
-                                 initWithRootViewController:controller];
+                                 initWithRootViewController:masterViewController];
     window.rootViewController = navigationController;
     [window makeKeyAndVisible];
     return YES;
-}
-
-#pragma mark - AppDelegate: Properties
-
-- (NSManagedObjectContext *)managedObjectContext {
-    if (managedObjectContext) return managedObjectContext;
-    managedObjectContext = [NSManagedObjectContext contextWithStoreType:NSSQLiteStoreType
-                                                                  error:NULL];
-    return managedObjectContext;
 }
 
 @end

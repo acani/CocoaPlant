@@ -1,26 +1,38 @@
+#import <CocoaPlant/CocoaPlant.h>
 #import "MasterViewController.h"
 #import "DetailViewController.h"
-
-@interface MasterViewController ()
-- (void)insertNewObject;
-@end
+#import "Event.h"
 
 @implementation MasterViewController
 
 @synthesize detailViewController;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        self.title = NSLocalizedString(@"Master", nil);
-        self.entityName = @"Event";
-        id delegate = [[UIApplication sharedApplication] delegate];
-        managedObjectContext = [delegate managedObjectContext];
-    }
-    return self;
+@synthesize managedObjectContext;
+@synthesize fetchedResultsController;
+
+// I'm not sure if nilling out the frc's delegate first is necessary. But it might fix crash:
+// unrecognized selector sent to instance controllerWillChangeContent
+// http://stackoverflow.com/a/3533124/931746
+#pragma mark - NSObject
+
+- (void)dealloc {
+    fetchedResultsController.delegate = nil;
+    self.fetchedResultsController = nil;
 }
 
-#pragma mark - View lifecycle
+#pragma mark - UIViewController
+
+- (void)viewDidDisappear:(BOOL)animated {
+    fetchedResultsController.delegate = nil;
+    self.fetchedResultsController = nil;
+    [super viewDidDisappear:animated];
+}
+
+- (void)viewDidUnload {
+    fetchedResultsController.delegate = nil;
+    self.fetchedResultsController = nil;
+    [super viewDidUnload];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,15 +42,40 @@
                                   initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                   target:self action:@selector(insertNewObject)];
     self.navigationItem.rightBarButtonItem = addButton;
-
-    self.sortDescriptors = NSSortDescriptors1(@"timeStamp", YES);
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+#pragma mark - MasterViewController
+
+- (void)insertNewObject {
+    Event *event = [Event insertIntoManagedObjectContext:managedObjectContext];
+    event.timeStamp = [NSDate date];
+    MOCSave(managedObjectContext);
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (!detailViewController) {
+        detailViewController = [[DetailViewController alloc] initWithNibName:nil bundle:nil];
+    }
+    NSManagedObject *selectedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    detailViewController.detailItem = selectedObject;
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
 #pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [[self.fetchedResultsController sections] count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [[[self.fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
@@ -50,8 +87,14 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 
-    [self configureCell:cell atIndexPath:indexPath];
+    [self tableView:tableView configureCell:cell atIndexPath:indexPath];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView configureCell:(UITableViewCell *)cell
+      atIndexPath:(NSIndexPath *)indexPath {
+    Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = [event.timeStamp description];
 }
 
 - (void)tableView:(UITableView *)tableView
@@ -61,51 +104,84 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
         // Delete the managed object for the given index path
         NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
         [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-
-        NSError __autoreleasing *error = nil;
-        if (![context save:&error]) {
-            [managedObjectContext handleFatalError];
-        }
+        MOCSave(managedObjectContext);
     }
 }
 
-#pragma mark - UITableViewDelegate
+#pragma mark - NSFetchedResultsController
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (!detailViewController) {
-        self.detailViewController = [[DetailViewController alloc] init];
-    }
-    NSManagedObject *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-    self.detailViewController.detailItem = selectedObject;
-    [self.navigationController pushViewController:self.detailViewController animated:YES];
+- (NSFetchedResultsController *)fetchedResultsController {
+    if (fetchedResultsController) return fetchedResultsController;
+    
+    // Create the fetchRequest.
+    NSFetchRequest *fetchRequest = NSFetchRequestMake(@"Event", managedObjectContext);
+    fetchRequest.fetchBatchSize = 20;
+    fetchRequest.sortDescriptors = NSSortDescriptors1(@"timeStamp", YES);
+
+    // Create the fetchedResultsController.
+    self.fetchedResultsController = [[NSFetchedResultsController alloc]
+                                     initWithFetchRequest:fetchRequest
+                                     managedObjectContext:managedObjectContext
+                                     sectionNameKeyPath:nil cacheName:@"Event"];
+    fetchedResultsController.delegate = self;
+    FRCPerformFetch(fetchedResultsController);
+    return fetchedResultsController;
 }
 
-#pragma mark - CPCoreDataTableViewController
+#pragma mark - NSFetchedResultsControllerDelegate
 
-- (void)tableView:(UITableView *)tableView configureCell:(UITableViewCell *)cell
-atIndexPath:(NSIndexPath *)indexPath {
-    NSManagedObject *managedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[managedObject valueForKey:@"timeStamp"] description];
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView beginUpdates];
 }
 
-#pragma mark - MasterViewController
-
-- (void)insertNewObject {
-    // Create a new instance of the entity managed by the fetched results controller.
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name]
-                                                                      inManagedObjectContext:context];
-
-    // If appropriate, configure the new managed object.
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-
-    // Save the context.
-    NSError __autoreleasing *error = nil;
-    if (![context save:&error]) {
-        [managedObjectContext handleFatalError];
+- (void)controller:(NSFetchedResultsController *)controller
+  didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo
+           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+                          withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+                          withRowAnimation:UITableViewRowAnimationFade];
+            break;
     }
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath {
+    UITableView *tableView = self.tableView;
+    
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+            [self tableView:tableView configureCell:[tableView cellForRowAtIndexPath:indexPath]
+                atIndexPath:indexPath];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView endUpdates];
 }
 
 @end

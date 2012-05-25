@@ -31,7 +31,7 @@
       managedObjectContext:(NSManagedObjectContext *)context {
     // Create sets of all servedIDs & fetchedIDs.
     NSArray *servedIDs = [servedDictionaries valueForKeyPath:keyPath];
-    if ([servedIDs count] == 0) return;
+    if (![servedIDs count]) return;
     NSMutableSet *servedIDsSet = [NSMutableSet setWithArray:servedIDs];
 
     NSFetchRequest *fetchRequest = NSFetchRequestMake(NSStringFromClass(self), context);

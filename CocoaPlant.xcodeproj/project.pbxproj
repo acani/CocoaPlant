@@ -55,8 +55,6 @@
 		C99F602A1479F3C30045512B /* NSSet+CocoaPlant.h in Headers */ = {isa = PBXBuildFile; fileRef = C99F60281479F3C30045512B /* NSSet+CocoaPlant.h */; };
 		C99F602B1479F3C30045512B /* NSSet+CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C99F60291479F3C30045512B /* NSSet+CocoaPlant.m */; };
 		C99F60301479F5330045512B /* NSSet+CocoaPlantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C99F602F1479F5330045512B /* NSSet+CocoaPlantTests.m */; };
-		C9AD93E9145654CB00871695 /* CPCoreDataTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C9AD93E7145654CB00871695 /* CPCoreDataTableViewController.h */; settings = {ATTRIBUTES = (); }; };
-		C9AD93EA145654CB00871695 /* CPCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AD93E8145654CB00871695 /* CPCoreDataTableViewController.m */; };
 		C9C244321468268000CF83A8 /* UINavigationController+CocoaPlant.h in Headers */ = {isa = PBXBuildFile; fileRef = C9C244301468268000CF83A8 /* UINavigationController+CocoaPlant.h */; settings = {ATTRIBUTES = (); }; };
 		C9C244331468268000CF83A8 /* UINavigationController+CocoaPlant.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C244311468268000CF83A8 /* UINavigationController+CocoaPlant.m */; };
 		C9C24438146826B600CF83A8 /* UINavigationController+CocoaPlantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C24437146826B600CF83A8 /* UINavigationController+CocoaPlantTests.m */; };
@@ -145,8 +143,6 @@
 		C99F60281479F3C30045512B /* NSSet+CocoaPlant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+CocoaPlant.h"; sourceTree = "<group>"; };
 		C99F60291479F3C30045512B /* NSSet+CocoaPlant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+CocoaPlant.m"; sourceTree = "<group>"; };
 		C99F602F1479F5330045512B /* NSSet+CocoaPlantTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+CocoaPlantTests.m"; sourceTree = "<group>"; };
-		C9AD93E7145654CB00871695 /* CPCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CPCoreDataTableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		C9AD93E8145654CB00871695 /* CPCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CPCoreDataTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		C9C244301468268000CF83A8 /* UINavigationController+CocoaPlant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CocoaPlant.h"; sourceTree = "<group>"; };
 		C9C244311468268000CF83A8 /* UINavigationController+CocoaPlant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CocoaPlant.m"; sourceTree = "<group>"; };
 		C9C24437146826B600CF83A8 /* UINavigationController+CocoaPlantTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CocoaPlantTests.m"; sourceTree = "<group>"; };
@@ -329,8 +325,6 @@
 				C980C38913F6CC940075AD0B /* NSPersistentStore+CocoaPlant.m */,
 				C980C38A13F6CC940075AD0B /* NSPersistentStoreCoordinator+CocoaPlant.h */,
 				C980C38B13F6CC940075AD0B /* NSPersistentStoreCoordinator+CocoaPlant.m */,
-				C9AD93E7145654CB00871695 /* CPCoreDataTableViewController.h */,
-				C9AD93E8145654CB00871695 /* CPCoreDataTableViewController.m */,
 				9C0EF76B146B0D9B00CE4AE5 /* CPResourcefulManagedObject.h */,
 				9C0EF76C146B0D9B00CE4AE5 /* CPResourcefulManagedObject.m */,
 			);
@@ -416,7 +410,6 @@
 				C980C39913F6CC940075AD0B /* NSManagedObjectModel+CocoaPlant.h in Headers */,
 				C980C39B13F6CC940075AD0B /* NSPersistentStore+CocoaPlant.h in Headers */,
 				C980C39D13F6CC940075AD0B /* NSPersistentStoreCoordinator+CocoaPlant.h in Headers */,
-				C9AD93E9145654CB00871695 /* CPCoreDataTableViewController.h in Headers */,
 				9C0EF76D146B0D9B00CE4AE5 /* CPResourcefulManagedObject.h in Headers */,
 				C9F1799914C65C22009CD10A /* UIWindow+CocoaPlant.h in Headers */,
 			);
@@ -557,7 +550,6 @@
 				C980C39A13F6CC940075AD0B /* NSManagedObjectModel+CocoaPlant.m in Sources */,
 				C980C39C13F6CC940075AD0B /* NSPersistentStore+CocoaPlant.m in Sources */,
 				C980C39E13F6CC940075AD0B /* NSPersistentStoreCoordinator+CocoaPlant.m in Sources */,
-				C9AD93EA145654CB00871695 /* CPCoreDataTableViewController.m in Sources */,
 				9C0EF76E146B0D9B00CE4AE5 /* CPResourcefulManagedObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

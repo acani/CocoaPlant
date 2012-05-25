@@ -5,8 +5,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UINavigationController *navigationController;
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
-//- (void)saveContext;
+@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

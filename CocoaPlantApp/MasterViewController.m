@@ -153,11 +153,14 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
                              withRowAnimation:UITableViewRowAnimationFade];
             break;
             
-        case NSFetchedResultsChangeUpdate:
-            [self tableView:tableView configureCell:[tableView cellForRowAtIndexPath:indexPath]
-                atIndexPath:indexPath];
+        case NSFetchedResultsChangeUpdate: {
+            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            if (cell) {
+                [self tableView:tableView configureCell:cell atIndexPath:indexPath];
+            }
             break;
-            
+        }
+
         case NSFetchedResultsChangeMove:
             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
                              withRowAnimation:UITableViewRowAnimationFade];

@@ -13,7 +13,7 @@ NSManagedObjectContextDeleteAll(self, _cmd, managedObjectContext, entityName, ca
 #define FRCPerformFetch(fetchedResultsController) \
 { NSError __autoreleasing *error = nil; \
 NSAssert([fetchedResultsController performFetch:&error], \
-@"\n\nFRCPerformFetch error:\n\n%@", error); }
+@"FRCPerformFetch error:\n\n%@", error); }
 
 NS_INLINE NSFetchRequest *NSFetchRequestMake(NSString *entityName,
                                              NSManagedObjectContext *managedObjectContext);

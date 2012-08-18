@@ -1,6 +1,5 @@
 #import <UIKit/UIKit.h>
 
-
 #pragma mark - CGRect Inline Functions
 // Apple makes these CG_EXTERN, but I'm not sure why. So, I made them CG_INLINE for ease.
 
@@ -15,7 +14,6 @@ CG_INLINE CGRect
 CGRectInsetLeft(CGRect rect, CGFloat dx) {
     rect.origin.x += dx; rect.size.width -= dx; return rect;
 }
-
 
 #pragma mark - UIView Inline Functions
 

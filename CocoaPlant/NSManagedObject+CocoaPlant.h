@@ -10,50 +10,34 @@ NSManagedObjectContextFetch(self, _cmd, managedObjectContext, NSFetchRequestMake
 #define MOCDeleteAll(managedObjectContext, entityName, cascadeRelationships) \
 NSManagedObjectContextDeleteAll(self, _cmd, managedObjectContext, entityName, cascadeRelationships)
 
-#define FRCPerformFetch(fetchedResultsController) \
-{ NSError __autoreleasing *error = nil; \
-NSAssert([fetchedResultsController performFetch:&error], \
-@"FRCPerformFetch error:\n\n%@", error); }
+#define FRCPerformFetch(fetchedResultsController) { \
+NSError __autoreleasing *error = nil; \
+NSAssert([fetchedResultsController performFetch:&error], @"-[NSFetchedResultsController performFetch:] error:\n\n%@", error); }
 
-NS_INLINE NSFetchRequest *NSFetchRequestMake(NSString *entityName,
-                                             NSManagedObjectContext *managedObjectContext);
-
-NS_INLINE NSArray *NSManagedObjectContextFetch(id self, SEL _cmd,
-                                               NSManagedObjectContext *managedObjectContext,
-                                               NSFetchRequest *fetchRequest);
-
-NS_INLINE void NSManagedObjectContextDeleteAll(id self, SEL _cmd,
-                                               NSManagedObjectContext *managedObjectContext,
-                                               NSString *entityName,
-                                               NSArray *cascadeRelationships);
+NS_INLINE NSFetchRequest *NSFetchRequestMake(NSString *entityName, NSManagedObjectContext *managedObjectContext);
+NS_INLINE NSArray *NSManagedObjectContextFetch(id self, SEL _cmd, NSManagedObjectContext *managedObjectContext, NSFetchRequest *fetchRequest);
+NS_INLINE void NSManagedObjectContextDeleteAll(id self, SEL _cmd, NSManagedObjectContext *managedObjectContext, NSString *entityName, NSArray *cascadeRelationships);
 
 // NS_INLINE Implementations
 
-NS_INLINE NSFetchRequest *NSFetchRequestMake(NSString *entityName,
-                                             NSManagedObjectContext *managedObjectContext) {
+NS_INLINE NSFetchRequest *NSFetchRequestMake(NSString *entityName, NSManagedObjectContext *managedObjectContext) {
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_5_0 // iOS Deployment Target
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    fetchRequest.entity = [NSEntityDescription entityForName:entityName
-                                      inManagedObjectContext:managedObjectContext];
+    fetchRequest.entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:managedObjectContext];
     return fetchRequest;
 #else
     return [NSFetchRequest fetchRequestWithEntityName:entityName];
 #endif
 }
 
-NS_INLINE NSArray *NSManagedObjectContextFetch(id self, SEL _cmd,
-                                               NSManagedObjectContext *managedObjectContext,
-                                               NSFetchRequest *fetchRequest) {
+NS_INLINE NSArray *NSManagedObjectContextFetch(id self, SEL _cmd, NSManagedObjectContext *managedObjectContext, NSFetchRequest *fetchRequest) {
     NSError __autoreleasing *error = nil;
     NSArray *fetchedObjects = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    NSAssert(fetchedObjects, @"error: %@", error);
+    NSAssert(fetchedObjects, @"-[NSManagedObjectContext executeFetchRequest:error:] error:\n\n%@", error);
     return fetchedObjects;
 }
 
-NS_INLINE void NSManagedObjectContextDeleteAll(id self, SEL _cmd,
-                                               NSManagedObjectContext *managedObjectContext,
-                                               NSString *entityName,
-                                               NSArray *cascadeRelationships) {
+NS_INLINE void NSManagedObjectContextDeleteAll(id self, SEL _cmd, NSManagedObjectContext *managedObjectContext, NSString *entityName, NSArray *cascadeRelationships) {
     NSFetchRequest *fetchRequest = NSFetchRequestMake(entityName, managedObjectContext);
     fetchRequest.includesPropertyValues = NO;
     fetchRequest.includesPendingChanges = NO;

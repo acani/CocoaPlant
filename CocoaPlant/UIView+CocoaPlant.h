@@ -54,7 +54,7 @@ UIKIT_STATIC_INLINE UIViewAnimationOptions UIViewAnimationOptionsFromCurve(UIVie
     }
 }
 
-UIKIT_STATIC_INLINE void UIViewFadeOut(UIView *view) {
+UIKIT_STATIC_INLINE void UIViewFadeOutAndHide(UIView *view) {
     [UIView animateWithDuration:0.2 animations:^{
         view.alpha = 0;
     } completion:^(BOOL finished) {
@@ -62,7 +62,7 @@ UIKIT_STATIC_INLINE void UIViewFadeOut(UIView *view) {
     }];
 }
 
-UIKIT_STATIC_INLINE void UIViewFadeIn(UIView *view) {
+UIKIT_STATIC_INLINE void UIViewUnhideAndFadeIn(UIView *view) {
     view.hidden = NO;
     [UIView animateWithDuration:0.2 animations:^{
         view.alpha = 1;

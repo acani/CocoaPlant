@@ -50,7 +50,7 @@ UIKIT_STATIC_INLINE UIViewAnimationOptions UIViewAnimationOptionsFromCurve(UIVie
         case UIViewAnimationCurveLinear:
             return UIViewAnimationOptionCurveLinear;
         default:
-            return curve;
+            return (UIViewAnimationOptions)curve;
     }
 }
 
